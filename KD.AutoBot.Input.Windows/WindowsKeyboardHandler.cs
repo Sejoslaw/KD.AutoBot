@@ -23,7 +23,17 @@ namespace KD.AutoBot.Input.Windows
             this.PlatformInputTools.SendKeyPressed(processHandler, keyCode);
         }
 
+        public override void PressKey(IntPtr processHandler, IEnumerable<int> keyCode)
+        {
+            this.PlatformInputTools.SendKeyPressed(processHandler, keyCode);
+        }
+
         public override void ReleaseKey(IntPtr processHandler, int keyCode)
+        {
+            this.PlatformInputTools.SendKeyReleased(processHandler, keyCode);
+        }
+
+        public override void ReleaseKey(IntPtr processHandler, IEnumerable<int> keyCode)
         {
             this.PlatformInputTools.SendKeyReleased(processHandler, keyCode);
         }

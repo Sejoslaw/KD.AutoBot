@@ -27,6 +27,8 @@ namespace Test_WindowsWINAPI_Input
             windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, (int)WindowsKeyCodes.VK_B);
             windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, (int)WindowsKeyCodes.VK_O);
             windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, (int)WindowsKeyCodes.VK_T);
+            // Supports multiple inputs
+            windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, new int[] { (int)WindowsKeyCodes.LCONTROL, (int)WindowsKeyCodes.VK_S });
 
             // Sleep
             Thread.Sleep(100);

@@ -29,5 +29,9 @@ namespace KD.AutoBot.Input
         public abstract void PressKey(IntPtr processHandler, int keyCode);
 
         public abstract void ReleaseKey(IntPtr processHandler, int keyCode);
+
+        public abstract void PressKey(IntPtr processHandler, IEnumerable<int> keyCode);
+
+        public abstract void ReleaseKey(IntPtr processHandler, IEnumerable<int> keyCode);
     }
 }

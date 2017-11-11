@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace KD.AutoBot
 {
@@ -17,8 +18,16 @@ namespace KD.AutoBot
         /// </summary>
         void SendKeyPressed(IntPtr processHandler, int keyCode);
         /// <summary>
+        /// Sends multiple key pressed to current platform.
+        /// </summary>
+        void SendKeyPressed(IntPtr processHandler, IEnumerable<int> keyCode);
+        /// <summary>
         /// Sends key released to current platform.
         /// </summary>
         void SendKeyReleased(IntPtr processHandler, int keyCode);
+        /// <summary>
+        /// Sends multiple key released to current platform.
+        /// </summary>
+        void SendKeyReleased(IntPtr processHandler, IEnumerable<int> keyCode);
     }
 }

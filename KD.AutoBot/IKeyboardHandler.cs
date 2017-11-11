@@ -26,8 +26,16 @@ namespace KD.AutoBot
         /// </summary>
         void PressKey(IntPtr processHandler, int keyCode);
         /// <summary>
+        /// Simulates Bot pressing multiple keys at once. For example: CTRL-C.
+        /// </summary>
+        void PressKey(IntPtr processHandler, IEnumerable<int> keyCode);
+        /// <summary>
         /// Simulates Bot releasing key in specified process by given key code.
         /// </summary>
         void ReleaseKey(IntPtr processHandler, int keyCode);
+        /// <summary>
+        /// Simulates Bot releasing multiple keys.
+        /// </summary>
+        void ReleaseKey(IntPtr processHandler, IEnumerable<int> keyCode);
     }
 }

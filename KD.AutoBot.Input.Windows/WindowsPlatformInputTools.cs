@@ -1,6 +1,8 @@
 ﻿using KD.AutoBot.Input.Windows.Native;
 using System;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace KD.AutoBot.Input.Windows
 {
@@ -16,14 +18,36 @@ namespace KD.AutoBot.Input.Windows
 
         public override void SendKeyPressed(IntPtr processHandler, int keyCode)
         {
-            var input = this.GetPressedInputFromKeyCode(keyCode);
-            NativeMethods.SendInput(1, new INPUT[] { input }, Marshal.SizeOf(typeof(INPUT)));
+            this.SendKeyPressed(processHandler, new int[] { keyCode });
         }
 
         public override void SendKeyReleased(IntPtr processHandler, int keyCode)
         {
-            var input = this.GetReleasedInputFromKeyCode(keyCode);
-            NativeMethods.SendInput(1, new INPUT[] { input }, Marshal.SizeOf(typeof(INPUT)));
+            this.SendKeyReleased(processHandler, new int[] { keyCode });
+        }
+
+        public override void SendKeyPressed(IntPtr processHandler, IEnumerable<int> keyCode)
+        {
+            var inputs = new List<INPUT>();
+            keyCode.ToList().ForEach(input =>
+            {
+                var pressed = this.GetPressedInputFromKeyCode(input);
+                inputs.Add(pressed);
+            });
+            var inputsArray = inputs.ToArray();
+            NativeMethods.SendInput((uint)inputsArray.Length, inputsArray, Marshal.SizeOf(typeof(INPUT)));
+        }
+
+        public override void SendKeyReleased(IntPtr processHandler, IEnumerable<int> keyCode)
+        {
+            var inputs = new List<INPUT>();
+            keyCode.ToList().ForEach(input =>
+            {
+                var pressed = this.GetReleasedInputFromKeyCode(input);
+                inputs.Add(pressed);
+            });
+            var inputsArray = inputs.ToArray();
+            NativeMethods.SendInput((uint)inputsArray.Length, inputsArray, Marshal.SizeOf(typeof(INPUT)));
         }
 
         private bool IsExtendedKey(int keyCode)
