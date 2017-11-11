@@ -19,6 +19,10 @@ namespace KD.AutoBot
         /// Collection of available keys for current Input Handler.
         /// </summary>
         ICollection<IKeyDescription> AvailableKeys { get; }
+        /// <summary>
+        /// Handler for Mouse events.
+        /// </summary>
+        IMouseHandler Mouse { get; }
 
         /// <summary>
         /// Simulates Bot pressing key by given key code.

@@ -11,8 +11,12 @@
         IInputHandler InputHandler { get; }
 
         /// <summary>
-        /// Sends key input to current platform.
+        /// Sends key pressed to current platform.
         /// </summary>
-        void SendKey(int keyCode);
+        void SendKeyPressed(int keyCode);
+        /// <summary>
+        /// Sends key released to current platform.
+        /// </summary>
+        void SendKeyReleased(int keyCode);
     }
 }
