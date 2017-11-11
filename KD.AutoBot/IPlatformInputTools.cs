@@ -29,5 +29,9 @@ namespace KD.AutoBot
         /// Sends multiple key released to current platform.
         /// </summary>
         void SendKeyReleased(IntPtr processHandler, IEnumerable<int> keyCode);
+        /// <summary>
+        /// Simulates Bot inputing text.
+        /// </summary>
+        void SendTextInput(IntPtr processHandler, string text);
     }
 }

@@ -59,6 +59,11 @@
         /// </summary>
         RETURN = 0x0D,
 
+        /// <summary>
+        /// ENTER key
+        /// </summary>
+        ENTER = RETURN,
+
         // 0x0E - 0x0F : Undefined
 
         /// <summary>

@@ -18,6 +18,11 @@ namespace KD.AutoBot.Input.Windows
         {
         }
 
+        public override void InputText(IntPtr processHandler, string text)
+        {
+            this.PlatformInputTools.SendTextInput(processHandler, text);
+        }
+
         public override void PressKey(IntPtr processHandler, int keyCode)
         {
             this.PlatformInputTools.SendKeyPressed(processHandler, keyCode);

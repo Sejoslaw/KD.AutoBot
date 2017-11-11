@@ -25,5 +25,7 @@ namespace KD.AutoBot.Input
         public abstract void SendKeyPressed(IntPtr processHandler, IEnumerable<int> keyCode);
 
         public abstract void SendKeyReleased(IntPtr processHandler, IEnumerable<int> keyCode);
+
+        public abstract void SendTextInput(IntPtr processHandler, string text);
     }
 }

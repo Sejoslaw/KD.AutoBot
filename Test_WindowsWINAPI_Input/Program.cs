@@ -27,6 +27,9 @@ namespace Test_WindowsWINAPI_Input
             windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, (int)WindowsKeyCodes.VK_B);
             windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, (int)WindowsKeyCodes.VK_O);
             windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, (int)WindowsKeyCodes.VK_T);
+            windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, (int)WindowsKeyCodes.ENTER);
+            // Input text
+            windowsPlatformInputTools.SendTextInput(notepadProcess.MainWindowHandle, "AutoBot can input text !!!");
             // Supports multiple inputs
             windowsPlatformInputTools.SendKeyPressed(notepadProcess.MainWindowHandle, new int[] { (int)WindowsKeyCodes.LCONTROL, (int)WindowsKeyCodes.VK_S });
 

@@ -37,5 +37,9 @@ namespace KD.AutoBot
         /// Simulates Bot releasing multiple keys.
         /// </summary>
         void ReleaseKey(IntPtr processHandler, IEnumerable<int> keyCode);
+        /// <summary>
+        /// Simulates Bot inputing text.
+        /// </summary>
+        void InputText(IntPtr processHandler, string text);
     }
 }

@@ -16,6 +16,18 @@ namespace KD.AutoBot.Input.Windows
         {
         }
 
+        public override void SendTextInput(IntPtr processHandler, string text)
+        {
+            var inputs = new List<INPUT>();
+            text.ToList().ForEach(ch =>
+            {
+                var input = this.GetInputFromChar(ch);
+                inputs.Add(input);
+            });
+            var inputsArray = inputs.ToArray();
+            NativeMethods.SendInput((uint)inputsArray.Length, inputsArray, Marshal.SizeOf(typeof(INPUT)));
+        }
+
         public override void SendKeyPressed(IntPtr processHandler, int keyCode)
         {
             this.SendKeyPressed(processHandler, new int[] { keyCode });
@@ -78,6 +90,28 @@ namespace KD.AutoBot.Input.Windows
             {
                 return false;
             }
+        }
+
+        private INPUT GetInputFromChar(char ch)
+        {
+            UInt16 code = ch;
+
+            var input = new INPUT
+            {
+                Type = (UInt32)WindowsInputType.Keyboard,
+                Data = new MOUSEKEYBDHARDWAREINPUT
+                {
+                    Keyboard = new KEYBDINPUT
+                    {
+                        KeyCode = 0,
+                        Scan = code,
+                        Flags = (UInt32)WindowsKeyboardFlag.Unicode,
+                        Time = 0,
+                        ExtraInfo = IntPtr.Zero
+                    }
+                }
+            };
+            return input;
         }
 
         private INPUT GetPressedInputFromKeyCode(int keyCode)
