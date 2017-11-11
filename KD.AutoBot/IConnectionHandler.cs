@@ -15,7 +15,7 @@ namespace KD.AutoBot
         /// <summary>
         /// Platform-specific connection tools available for Bot.
         /// </summary>
-        ICollection<IPlatformConnectionTools> PlatformConnectionTools { get; }
+        IPlatformConnectionTools PlatformConnectionTools { get; }
         /// <summary>
         /// Processes to which the Bot is currently connected.
         /// </summary>
@@ -26,9 +26,5 @@ namespace KD.AutoBot
         /// If connection will be accepted than current process is added to ConnectedProcesses.
         /// </summary>
         bool AttachToProcess(Process process, IPlatformConnectionTools platformTools);
-        /// <summary>
-        /// Returns platform tools by given platform name.
-        /// </summary>
-        IPlatformConnectionTools GetToolsForPlatform(string platformName);
     }
 }

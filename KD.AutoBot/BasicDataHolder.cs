@@ -11,7 +11,7 @@ namespace KD.AutoBot
         /// <summary>
         /// Get and Set values in internal collection of keys and values.
         /// </summary>
-        public object this[string key]
+        public virtual object this[string key]
         {
             get
             {
@@ -33,7 +33,7 @@ namespace KD.AutoBot
             this.InternalData = new Dictionary<string, object>();
         }
 
-        public IEnumerator<KeyValuePair<string, object>> GetEnumerator()
+        public virtual IEnumerator<KeyValuePair<string, object>> GetEnumerator()
         {
             return this.InternalData.GetEnumerator();
         }

@@ -6,9 +6,9 @@
     public interface IKeyDescription : IDataHolder
     {
         /// <summary>
-        /// Connected Input Handler.
+        /// Connected Keyboard Handler.
         /// </summary>
-        IInputHandler InputHandler { get; }
+        IKeyboardHandler Keyboard { get; }
         /// <summary>
         /// Code of the key.
         /// </summary>

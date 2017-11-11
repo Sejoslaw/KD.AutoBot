@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace KD.AutoBot
+﻿namespace KD.AutoBot
 {
     /// <summary>
     /// Input Handler is used to allow Bot to send keys and mouse events to connected <see cref="System.Diagnostics.Process"/> using specified platform.
@@ -12,25 +10,12 @@ namespace KD.AutoBot
         /// </summary>
         IAutoBot Bot { get; }
         /// <summary>
-        /// Platform-specific input tools available for Bot.
+        /// Handler for Keyboard events.
         /// </summary>
-        ICollection<IPlatformInputTools> PlatformInputTools { get; }
-        /// <summary>
-        /// Collection of available keys for current Input Handler.
-        /// </summary>
-        ICollection<IKeyDescription> AvailableKeys { get; }
+        IKeyboardHandler Keyboard { get; }
         /// <summary>
         /// Handler for Mouse events.
         /// </summary>
         IMouseHandler Mouse { get; }
-
-        /// <summary>
-        /// Simulates Bot pressing key by given key code.
-        /// </summary>
-        void PressKey(int keyCode);
-        /// <summary>
-        /// Returns platform tools for given platform name.
-        /// </summary>
-        IPlatformInputTools GetPlatformInputTools(string platformName);
     }
 }

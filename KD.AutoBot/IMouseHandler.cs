@@ -1,9 +1,11 @@
-﻿namespace KD.AutoBot
+﻿using System;
+
+namespace KD.AutoBot
 {
     /// <summary>
     /// Handler for mouse events.
     /// </summary>
-    public interface IMouseHandler
+    public interface IMouseHandler : IDataHolder
     {
         /// <summary>
         /// Input Handler connected with this Mouse Handler.
@@ -14,10 +16,10 @@
         /// Describes the functionality for moving mouse.
         /// Where: dx and dy are values for how many mouse will move.
         /// </summary>
-        void Move(int dx, int dy);
+        void Move(IntPtr processHandler, int dx, int dy);
         /// <summary>
         /// Clicks specified button on mouse.
         /// </summary>
-        void ClickButton(int button);
+        void ClickButton(IntPtr processHandler, uint mouseButton);
     }
 }

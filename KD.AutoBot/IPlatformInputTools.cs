@@ -1,4 +1,6 @@
-﻿namespace KD.AutoBot
+﻿using System;
+
+namespace KD.AutoBot
 {
     /// <summary>
     /// Describes tools used to do input operations on single platform.
@@ -8,15 +10,15 @@
         /// <summary>
         /// Handler connected with this platform tools.
         /// </summary>
-        IInputHandler InputHandler { get; }
+        IKeyboardHandler KeyboardHandler { get; }
 
         /// <summary>
         /// Sends key pressed to current platform.
         /// </summary>
-        void SendKeyPressed(int keyCode);
+        void SendKeyPressed(IntPtr processHandler, int keyCode);
         /// <summary>
         /// Sends key released to current platform.
         /// </summary>
-        void SendKeyReleased(int keyCode);
+        void SendKeyReleased(IntPtr processHandler, int keyCode);
     }
 }
