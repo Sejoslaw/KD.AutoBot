@@ -18,14 +18,7 @@ namespace KD.AutoBot.Input.Windows
 
         public override void SendTextInput(IntPtr processHandler, string text)
         {
-            var inputs = new List<INPUT>();
-            text.ToList().ForEach(ch =>
-            {
-                var input = this.GetInputFromChar(ch);
-                inputs.Add(input);
-            });
-            var inputsArray = inputs.ToArray();
-            NativeMethods.SendInput((uint)inputsArray.Length, inputsArray, Marshal.SizeOf(typeof(INPUT)));
+            this.SendNative<char>(text, this.GetInputFromChar);
         }
 
         public override void SendKeyPressed(IntPtr processHandler, int keyCode)
@@ -40,22 +33,20 @@ namespace KD.AutoBot.Input.Windows
 
         public override void SendKeyPressed(IntPtr processHandler, IEnumerable<int> keyCode)
         {
-            var inputs = new List<INPUT>();
-            keyCode.ToList().ForEach(input =>
-            {
-                var pressed = this.GetPressedInputFromKeyCode(input);
-                inputs.Add(pressed);
-            });
-            var inputsArray = inputs.ToArray();
-            NativeMethods.SendInput((uint)inputsArray.Length, inputsArray, Marshal.SizeOf(typeof(INPUT)));
+            this.SendNative<int>(keyCode, this.GetPressedInputFromKeyCode);
         }
 
         public override void SendKeyReleased(IntPtr processHandler, IEnumerable<int> keyCode)
         {
+            this.SendNative<int>(keyCode, this.GetReleasedInputFromKeyCode);
+        }
+
+        private void SendNative<T>(IEnumerable<T> inputData, Func<T, INPUT> function)
+        {
             var inputs = new List<INPUT>();
-            keyCode.ToList().ForEach(input =>
+            inputData.ToList().ForEach(input =>
             {
-                var pressed = this.GetReleasedInputFromKeyCode(input);
+                var pressed = function(input);
                 inputs.Add(pressed);
             });
             var inputsArray = inputs.ToArray();
