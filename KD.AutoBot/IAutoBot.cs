@@ -16,6 +16,7 @@
         IInputHandler InputHandler { get; }
         /// <summary>
         /// Connection Handler which specifies how the Bot should connect to <see cref="System.Diagnostics.Process"/>.
+        /// Also holds information about connected processes.
         /// </summary>
         IConnectionHandler ConnectionHandler { get; }
         /// <summary>

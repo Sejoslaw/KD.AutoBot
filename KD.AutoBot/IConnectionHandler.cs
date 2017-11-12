@@ -22,9 +22,9 @@ namespace KD.AutoBot
         ICollection<IConnectedProcess> ConnectedProcesses { get; }
 
         /// <summary>
-        /// Tries to connect to specified <see cref="Process"/> using specified <see cref="IPlatformConnectionTools"/>.
+        /// Tries to connect to specified <see cref="Process"/>.
         /// If connection will be accepted than current process is added to ConnectedProcesses.
         /// </summary>
-        bool AttachToProcess(Process process, IPlatformConnectionTools platformTools);
+        bool AttachToProcess(Process process);
     }
 }

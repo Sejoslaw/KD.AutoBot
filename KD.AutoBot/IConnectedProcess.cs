@@ -15,9 +15,5 @@ namespace KD.AutoBot
         /// Process to which the Bot is connected.
         /// </summary>
         Process ConnectedProcess { get; }
-        /// <summary>
-        /// Platform tools used to connect to this <see cref="Process"/>.
-        /// </summary>
-        IPlatformConnectionTools PlatformConnectionTools { get; }
     }
 }
