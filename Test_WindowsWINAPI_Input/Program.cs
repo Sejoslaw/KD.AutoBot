@@ -39,12 +39,11 @@ namespace Test_WindowsWINAPI_Input
             // Test Mouse Win32 API
             var windowsMouseHandler = new WindowsMouseHandler(null);
 
-            windowsMouseHandler.Move(notepadProcess.MainWindowHandle, 10, 10);
-            windowsMouseHandler.Move(notepadProcess.MainWindowHandle, 10, 10);
-            windowsMouseHandler.Move(notepadProcess.MainWindowHandle, 10, 10);
-            windowsMouseHandler.Move(notepadProcess.MainWindowHandle, 10, 10);
-            windowsMouseHandler.Move(notepadProcess.MainWindowHandle, 10, 10);
-            windowsMouseHandler.Move(notepadProcess.MainWindowHandle, 10, 10);
+            for (int i = 0; i < 5; ++i)
+            {
+                windowsMouseHandler.Move(notepadProcess.MainWindowHandle, 100, 100);
+                Thread.Sleep(1000);
+            }
 
             // Mouse left-button click
 

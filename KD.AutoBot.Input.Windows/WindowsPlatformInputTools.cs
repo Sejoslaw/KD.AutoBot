@@ -85,47 +85,23 @@ namespace KD.AutoBot.Input.Windows
 
         private INPUT GetInputFromChar(char ch)
         {
-            UInt16 code = ch;
-
-            var input = new INPUT
-            {
-                Type = (UInt32)WindowsInputType.Keyboard,
-                Data = new MOUSEKEYBDHARDWAREINPUT
-                {
-                    Keyboard = new KEYBDINPUT
-                    {
-                        KeyCode = 0,
-                        Scan = code,
-                        Flags = (UInt32)WindowsKeyboardFlag.Unicode,
-                        Time = 0,
-                        ExtraInfo = IntPtr.Zero
-                    }
-                }
-            };
+            var input = this.GetInputFromKeyCode(0, (UInt16)ch, (UInt32)WindowsKeyboardFlag.Unicode);
             return input;
         }
 
         private INPUT GetPressedInputFromKeyCode(int keyCode)
         {
-            var key = new INPUT
-            {
-                Type = (UInt32)WindowsInputType.Keyboard,
-                Data = new MOUSEKEYBDHARDWAREINPUT
-                {
-                    Keyboard = new KEYBDINPUT
-                    {
-                        KeyCode = (UInt16)keyCode,
-                        Scan = 0,
-                        Flags = IsExtendedKey(keyCode) ? (UInt32)WindowsKeyboardFlag.ExtendedKey : 0,
-                        Time = 0,
-                        ExtraInfo = IntPtr.Zero
-                    }
-                }
-            };
-            return key;
+            var input = this.GetInputFromKeyCode((UInt16)keyCode, 0, IsExtendedKey(keyCode) ? (UInt32)WindowsKeyboardFlag.ExtendedKey : 0);
+            return input;
         }
 
         private INPUT GetReleasedInputFromKeyCode(int keyCode)
+        {
+            var input = this.GetInputFromKeyCode((UInt16)keyCode, 0, (UInt32)(IsExtendedKey(keyCode) ? WindowsKeyboardFlag.KeyUp | WindowsKeyboardFlag.ExtendedKey : WindowsKeyboardFlag.KeyUp));
+            return input;
+        }
+
+        private INPUT GetInputFromKeyCode(int keyCode, ushort scan, uint flags)
         {
             var key = new INPUT
             {
@@ -135,8 +111,8 @@ namespace KD.AutoBot.Input.Windows
                     Keyboard = new KEYBDINPUT
                     {
                         KeyCode = (UInt16)keyCode,
-                        Scan = 0,
-                        Flags = (UInt32)(IsExtendedKey(keyCode) ? WindowsKeyboardFlag.KeyUp | WindowsKeyboardFlag.ExtendedKey : WindowsKeyboardFlag.KeyUp),
+                        Scan = scan,
+                        Flags = flags,
                         Time = 0,
                         ExtraInfo = IntPtr.Zero
                     }
