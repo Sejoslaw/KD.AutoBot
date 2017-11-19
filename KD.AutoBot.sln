@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_WindowsWINAPI_Input", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KD.AutoBot.Files", "KD.AutoBot.Files\KD.AutoBot.Files.csproj", "{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KD.AutoBot.Connection", "KD.AutoBot.Connection\KD.AutoBot.Connection.csproj", "{D94A39CC-2997-4ECA-9C40-02FF5B55E6BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D94A39CC-2997-4ECA-9C40-02FF5B55E6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D94A39CC-2997-4ECA-9C40-02FF5B55E6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D94A39CC-2997-4ECA-9C40-02FF5B55E6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D94A39CC-2997-4ECA-9C40-02FF5B55E6BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

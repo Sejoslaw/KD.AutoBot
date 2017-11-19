@@ -14,6 +14,6 @@ namespace KD.AutoBot
         /// <summary>
         /// Process to which the Bot is connected.
         /// </summary>
-        Process ConnectedProcess { get; }
+        Process Process { get; }
     }
 }
