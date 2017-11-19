@@ -46,10 +46,10 @@ namespace KD.AutoBot.Input.Windows
             var inputs = new List<INPUT>();
             inputData.ToList().ForEach(input =>
             {
-                var pressed = function(input);
+                INPUT pressed = function(input);
                 inputs.Add(pressed);
             });
-            var inputsArray = inputs.ToArray();
+            INPUT[] inputsArray = inputs.ToArray();
             NativeMethods.SendInput((uint)inputsArray.Length, inputsArray, Marshal.SizeOf(typeof(INPUT)));
         }
 
@@ -85,25 +85,25 @@ namespace KD.AutoBot.Input.Windows
 
         private INPUT GetInputFromChar(char ch)
         {
-            var input = this.GetInputFromKeyCode(0, (UInt16)ch, (UInt32)WindowsKeyboardFlag.Unicode);
+            INPUT input = this.GetInputFromKeyCode(0, (UInt16)ch, (UInt32)WindowsKeyboardFlag.Unicode);
             return input;
         }
 
         private INPUT GetPressedInputFromKeyCode(int keyCode)
         {
-            var input = this.GetInputFromKeyCode((UInt16)keyCode, 0, IsExtendedKey(keyCode) ? (UInt32)WindowsKeyboardFlag.ExtendedKey : 0);
+            INPUT input = this.GetInputFromKeyCode((UInt16)keyCode, 0, IsExtendedKey(keyCode) ? (UInt32)WindowsKeyboardFlag.ExtendedKey : 0);
             return input;
         }
 
         private INPUT GetReleasedInputFromKeyCode(int keyCode)
         {
-            var input = this.GetInputFromKeyCode((UInt16)keyCode, 0, (UInt32)(IsExtendedKey(keyCode) ? WindowsKeyboardFlag.KeyUp | WindowsKeyboardFlag.ExtendedKey : WindowsKeyboardFlag.KeyUp));
+            INPUT input = this.GetInputFromKeyCode((UInt16)keyCode, 0, (UInt32)(IsExtendedKey(keyCode) ? WindowsKeyboardFlag.KeyUp | WindowsKeyboardFlag.ExtendedKey : WindowsKeyboardFlag.KeyUp));
             return input;
         }
 
         private INPUT GetInputFromKeyCode(int keyCode, ushort scan, uint flags)
         {
-            var key = new INPUT
+            INPUT key = new INPUT
             {
                 Type = (UInt32)WindowsInputType.Keyboard,
                 Data = new MOUSEKEYBDHARDWAREINPUT

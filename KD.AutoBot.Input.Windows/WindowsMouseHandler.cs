@@ -20,12 +20,12 @@ namespace KD.AutoBot.Input.Windows
 
         public override void Move(IntPtr processHandler, int dx, int dy)
         {
-            var point = new POINT();
+            POINT point = new POINT();
             if (NativeMethods.GetCursorPos(out point))
             {
                 NativeMethods.ClientToScreen(processHandler, ref point);
-                var movedX = point.X + dx;
-                var movedY = point.Y + dy;
+                int movedX = point.X + dx;
+                int movedY = point.Y + dy;
                 NativeMethods.SetCursorPos(movedX, movedY);
             }
         }

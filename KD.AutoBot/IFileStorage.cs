@@ -17,7 +17,7 @@ namespace KD.AutoBot
         /// </summary>
         DirectoryInfo Directory { get; }
         /// <summary>
-        /// All files in current Bot's working directory.
+        /// All files which Bot currently use.
         /// </summary>
         ICollection<FileInfo> Files { get; }
 

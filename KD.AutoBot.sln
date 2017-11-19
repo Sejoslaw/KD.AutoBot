@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KD.AutoBot.Input.Windows", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KD.AutoBot.Input", "KD.AutoBot.Input\KD.AutoBot.Input.csproj", "{333E6824-54B7-473E-8E1D-48BE5D50F76C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_WindowsWINAPI_Input", "Test_WindowsWINAPI_Input\Test_WindowsWINAPI_Input.csproj", "{204758B8-941E-4072-8C7D-DE979C92C147}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_WindowsWINAPI_Input", "Test_WindowsWINAPI_Input\Test_WindowsWINAPI_Input.csproj", "{204758B8-941E-4072-8C7D-DE979C92C147}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KD.AutoBot.Files", "KD.AutoBot.Files\KD.AutoBot.Files.csproj", "{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{204758B8-941E-4072-8C7D-DE979C92C147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{204758B8-941E-4072-8C7D-DE979C92C147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{204758B8-941E-4072-8C7D-DE979C92C147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA7490A-794F-432F-BB67-2F8FD29EA0B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
