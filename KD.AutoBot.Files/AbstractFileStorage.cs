@@ -8,11 +8,11 @@ namespace KD.AutoBot.Files
     /// </summary>
     public abstract class AbstractFileStorage : BasicDataHolder, IFileStorage
     {
-        public IAutoBot Bot { get; }
+        public IAutoBot Bot { get; set; }
 
-        public DirectoryInfo Directory { get; }
+        public DirectoryInfo Directory { get; set; }
 
-        public ICollection<FileInfo> Files { get; }
+        public ICollection<FileInfo> Files { get; set; }
 
         public AbstractFileStorage(IAutoBot bot, DirectoryInfo dirInfo, ICollection<FileInfo> files)
         {
