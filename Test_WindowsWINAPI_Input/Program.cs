@@ -12,10 +12,7 @@ namespace Test_WindowsWINAPI_Input
         {
             // Use Win32 API
 
-            var notepadProcess = StartNotepad();
-
-            // Sleep to let Notepad start
-            Thread.Sleep(100);
+            Process notepadProcess = StartNotepad();
 
             // Test Keyboard Win32 API
             var windowsPlatformInputTools = new WindowsPlatformInputTools(null);
@@ -62,6 +59,8 @@ namespace Test_WindowsWINAPI_Input
                 }
             };
             process.Start();
+            // Sleep to let Notepad start
+            Thread.Sleep(100);
             //process.WaitForExit();
             return process;
         }

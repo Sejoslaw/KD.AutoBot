@@ -8,7 +8,7 @@ namespace KD.AutoBot.Input
     /// </summary>
     public abstract class AbstractPlatformInputTools : AbstractPlatformTools, IPlatformInputTools
     {
-        public IKeyboardHandler KeyboardHandler { get; }
+        public IKeyboardHandler KeyboardHandler { get; set; }
 
         public AbstractPlatformInputTools(IKeyboardHandler keyboardHandler, string platformName) :
             base(platformName)

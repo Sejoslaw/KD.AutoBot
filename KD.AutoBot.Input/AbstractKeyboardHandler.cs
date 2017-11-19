@@ -8,11 +8,11 @@ namespace KD.AutoBot.Input
     /// </summary>
     public abstract class AbstractKeyboardHandler : BasicDataHolder, IKeyboardHandler
     {
-        public IInputHandler InputHandler { get; }
+        public IInputHandler InputHandler { get; set; }
 
-        public IPlatformInputTools PlatformInputTools { get; }
+        public IPlatformInputTools PlatformInputTools { get; set; }
 
-        public ICollection<IKeyDescription> AvailableKeys { get; }
+        public ICollection<IKeyDescription> AvailableKeys { get; set; }
 
         public AbstractKeyboardHandler(IInputHandler inputHandler, IPlatformInputTools platformInputTools) :
             this(inputHandler, platformInputTools, new HashSet<IKeyDescription>())

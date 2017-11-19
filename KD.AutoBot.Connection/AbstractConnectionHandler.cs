@@ -8,11 +8,11 @@ namespace KD.AutoBot.Connection
     /// </summary>
     public abstract class AbstractConnectionHandler : BasicDataHolder, IConnectionHandler
     {
-        public IAutoBot Bot { get; }
+        public IAutoBot Bot { get; set; }
 
-        public IPlatformConnectionTools PlatformConnectionTools { get; }
+        public IPlatformConnectionTools PlatformConnectionTools { get; set; }
 
-        public ICollection<IConnectedProcess> ConnectedProcesses { get; }
+        public ICollection<IConnectedProcess> ConnectedProcesses { get; set; }
 
         public AbstractConnectionHandler(IAutoBot bot, IPlatformConnectionTools platformConnectionTools, ICollection<IConnectedProcess> connectedProcesses)
         {

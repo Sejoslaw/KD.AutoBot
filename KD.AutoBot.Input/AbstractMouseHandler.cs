@@ -7,7 +7,7 @@ namespace KD.AutoBot.Input
     /// </summary>
     public abstract class AbstractMouseHandler : BasicDataHolder, IMouseHandler
     {
-        public IInputHandler InputHandler { get; }
+        public IInputHandler InputHandler { get; set; }
 
         public AbstractMouseHandler(IInputHandler inputHandler)
         {

@@ -5,11 +5,11 @@
     /// </summary>
     public abstract class AbstractInputHandler : BasicDataHolder, IInputHandler
     {
-        public IAutoBot Bot { get; }
+        public IAutoBot Bot { get; set; }
 
-        public IKeyboardHandler Keyboard { get; }
+        public IKeyboardHandler Keyboard { get; set; }
 
-        public IMouseHandler Mouse { get; }
+        public IMouseHandler Mouse { get; set; }
 
         public AbstractInputHandler(IAutoBot bot, IKeyboardHandler keyboard, IMouseHandler mouse)
         {
