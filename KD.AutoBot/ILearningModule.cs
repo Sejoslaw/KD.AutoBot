@@ -16,6 +16,14 @@ namespace KD.AutoBot
         /// Next move which Bot will make.
         /// </summary>
         Action NextMove { get; }
+        /// <summary>
+        /// Integer is used for more possibilities than enum.
+        /// 1 - Won
+        /// 0 - Working
+        /// -1 - Lose
+        /// When "Lose", restart Bot and start from beginning, also set state to "0".
+        /// </summary>
+        int State { get; }
 
         /// <summary>
         /// Starts learning process from given file.
