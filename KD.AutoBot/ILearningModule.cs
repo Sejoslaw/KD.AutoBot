@@ -13,9 +13,9 @@ namespace KD.AutoBot
         /// </summary>
         IAutoBot Bot { get; }
         /// <summary>
-        /// Next move which Bot will make.
+        /// Next <see cref="Action"/> which Bot will make.
         /// </summary>
-        Action NextMove { get; }
+        Action NextAction { get; }
         /// <summary>
         /// Integer is used for more possibilities than enum.
         /// 1 - Won
@@ -30,12 +30,13 @@ namespace KD.AutoBot
         /// </summary>
         void LearnFromFile(FileInfo file);
         /// <summary>
-        /// Prepares Bot's next move.
+        /// Prepares Bot's next <see cref="Action"/>.
         /// </summary>
-        void PrepareNextMove();
+        void PrepareNextAction();
         /// <summary>
-        /// Allowing Bot's to do perform next move.
+        /// Allows Bot's to perform next <see cref="Action"/>.
+        /// Returns true if the <see cref="Action"/> has been made; otherwise false.
         /// </summary>
-        void MakeNextMove();
+        bool MakeNextAction();
     }
 }
