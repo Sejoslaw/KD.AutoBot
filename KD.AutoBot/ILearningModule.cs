@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace KD.AutoBot
 {
@@ -26,9 +25,9 @@ namespace KD.AutoBot
         int State { get; }
 
         /// <summary>
-        /// Starts learning process from given file.
+        /// Starts learning process from given source.
         /// </summary>
-        void LearnFromFile(FileInfo file);
+        void LearnFromSource(object source);
         /// <summary>
         /// Prepares Bot's next <see cref="Action"/>.
         /// </summary>

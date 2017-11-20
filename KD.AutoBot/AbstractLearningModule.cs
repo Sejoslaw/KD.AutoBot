@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace KD.AutoBot
 {
@@ -21,7 +20,7 @@ namespace KD.AutoBot
             this.State = 0;
         }
 
-        public abstract void LearnFromFile(FileInfo file);
+        public abstract void LearnFromSource(object source);
 
         public abstract bool MakeNextAction();
 
