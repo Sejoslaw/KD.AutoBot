@@ -17,6 +17,8 @@ namespace KD.AutoBot
         public AbstractLearningModule(IAutoBot bot)
         {
             this.Bot = bot;
+            this.NextAction = null;
+            this.State = 0;
         }
 
         public abstract void LearnFromFile(FileInfo file);
