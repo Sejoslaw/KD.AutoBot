@@ -36,6 +36,6 @@ namespace KD.AutoBot
         /// Allows Bot's to perform next <see cref="Action"/>.
         /// Returns true if the <see cref="Action"/> has been made; otherwise false.
         /// </summary>
-        bool MakeNextAction();
+        bool PerformNextAction();
     }
 }

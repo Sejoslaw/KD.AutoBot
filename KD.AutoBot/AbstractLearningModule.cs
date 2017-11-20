@@ -22,7 +22,7 @@ namespace KD.AutoBot
 
         public abstract void LearnFromSource(object source);
 
-        public abstract bool MakeNextAction();
+        public abstract bool PerformNextAction();
 
         public abstract void PrepareNextAction();
     }
