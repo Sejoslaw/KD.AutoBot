@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Krzysztof Dobrzyński</Authors>
+    <Copyright>https://github.com/Sejoslaw/KD.AutoBot</Copyright>
+    <PackageLicenseUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sejoslaw/KD.AutoBot</RepositoryUrl>
+    <Company>Krzysztof Dobrzyński</Company>
   </PropertyGroup>
 
   <ItemGroup>
