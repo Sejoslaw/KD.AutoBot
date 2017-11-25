@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KD.AutoBot.Connection.Windows\KD.AutoBot.Connection.Windows.csproj" />
-    <ProjectReference Include="..\KD.AutoBot.Connection\KD.AutoBot.Connection.csproj" />
     <ProjectReference Include="..\KD.AutoBot\KD.AutoBot.csproj" />
   </ItemGroup>
 

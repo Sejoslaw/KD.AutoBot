@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.AI
 {
     /// <summary>
     /// Abstract implementation of <see cref="ILearningModule"/>.
