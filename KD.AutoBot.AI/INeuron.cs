@@ -1,4 +1,6 @@
-﻿namespace KD.AutoBot.AI
+﻿using System;
+
+namespace KD.AutoBot.AI
 {
     /// <summary>
     /// Represents single Neuron.
@@ -14,5 +16,13 @@
         /// Represents a learning error.
         /// </summary>
         TNeuronDataType Error { get; }
+        /// <summary>
+        /// Defines the Neuron output based on inputs.
+        /// </summary>
+        Func<INeuron<TNeuronDataType>, TNeuronDataType> ActivationFunction { get; }
+        /// <summary>
+        /// Optional-minimum value which is required to activate a Neuron.
+        /// </summary>
+        TNeuronDataType ThresholdValue { get; }
     }
 }
