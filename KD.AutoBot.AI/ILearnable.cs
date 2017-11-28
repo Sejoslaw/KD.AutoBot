@@ -1,7 +1,7 @@
 ﻿namespace KD.AutoBot.AI
 {
     /// <summary>
-    /// Describes object as a learnable.
+    /// Describes object which can learn from specified source.
     /// </summary>
     public interface ILearnable<TLearningSource>
     {
