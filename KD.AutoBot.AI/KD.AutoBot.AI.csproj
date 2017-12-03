@@ -8,6 +8,9 @@
     <PackageLicenseUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Sejoslaw/KD.AutoBot</RepositoryUrl>
+    <PackageId>KD.AutoBot.AI</PackageId>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>KD.AutoBot.AI.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
