@@ -5,7 +5,7 @@ namespace KD.AutoBot.AI.Abstract
     /// </summary>
     public abstract class AbstractDendrite<TNeuronDataType> : IDendrite<TNeuronDataType>
     {
-        public INeuronSignal<TNeuronDataType> Input { get; protected set; }
-        public INeuronWeight<TNeuronDataType> DendriteWeight { get; protected set; }
+        public INeuronSignal<TNeuronDataType> Input { get; set; }
+        public INeuronWeight<TNeuronDataType> DendriteWeight { get; set; }
     }
 }
