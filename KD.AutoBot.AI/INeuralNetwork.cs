@@ -6,7 +6,7 @@ namespace KD.AutoBot.AI
     /// Describes the core of the Neural Network.
     /// Network is learnable just to start the learning process.
     /// </summary>
-    public interface INeuralNetwork<TNeuronDataType> : ILearnable<INeuralNetwork<TNeuronDataType>>
+    public interface INeuralNetwork<TNeuronDataType> : ILearnable<object>
     {
         /// <summary>
         /// Represents an input layer into current network.
