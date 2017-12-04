@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 
 namespace KD.AutoBot
 {
@@ -12,9 +11,5 @@ namespace KD.AutoBot
         /// Directory where Bot stores all it's files.
         /// </summary>
         DirectoryInfo Directory { get; }
-        /// <summary>
-        /// All files which Bot currently use.
-        /// </summary>
-        ICollection<FileInfo> Files { get; }
     }
 }

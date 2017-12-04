@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KD.AutoBot.Input.Windows", "KD.AutoBot.Input.Windows\KD.AutoBot.Input.Windows.csproj", "{9FA016F9-372C-4D7D-ABF7-48A873BFC305}"
 EndProject
@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Windows_ConnectionHand
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KD.AutoBot.AI", "KD.AutoBot.AI\KD.AutoBot.AI.csproj", "{6A50F383-C164-4A28-9F76-6F5BB54A9B2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KD.AutoBot", "KD.AutoBot\KD.AutoBot.csproj", "{14567636-A21A-4F79-A591-44D7A39074C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KD.AutoBot", "KD.AutoBot\KD.AutoBot.csproj", "{14567636-A21A-4F79-A591-44D7A39074C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Windows_FileStorage", "Test_Windows_FileStorage\Test_Windows_FileStorage.csproj", "{F9C49025-8515-4196-A959-ACB1E017E8FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{14567636-A21A-4F79-A591-44D7A39074C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14567636-A21A-4F79-A591-44D7A39074C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14567636-A21A-4F79-A591-44D7A39074C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C49025-8515-4196-A959-ACB1E017E8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C49025-8515-4196-A959-ACB1E017E8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C49025-8515-4196-A959-ACB1E017E8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C49025-8515-4196-A959-ACB1E017E8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
