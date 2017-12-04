@@ -1,17 +1,12 @@
 ﻿using System;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.Input
 {
     /// <summary>
     /// Handler for mouse events.
     /// </summary>
-    public interface IMouseHandler : IDataHolder
+    public interface IMouseHandler : IDevice
     {
-        /// <summary>
-        /// Input Handler connected with this Mouse Handler.
-        /// </summary>
-        IInputHandler InputHandler { get; }
-
         /// <summary>
         /// Describes the functionality for moving mouse.
         /// Where: dx and dy are values for how many mouse will move.

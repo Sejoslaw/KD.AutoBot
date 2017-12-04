@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.Input
 {
     /// <summary>
     /// Describes tools used to do input operations on single platform.

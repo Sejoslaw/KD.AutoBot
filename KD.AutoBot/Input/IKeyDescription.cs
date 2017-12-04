@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot
+﻿namespace KD.AutoBot.Input
 {
     /// <summary>
     /// Describes single key available for Bot to press.

@@ -5,13 +5,15 @@ namespace KD.AutoBot.Input
     /// <summary>
     /// Abstract implementation of <see cref="IMouseHandler"/>.
     /// </summary>
-    public abstract class AbstractMouseHandler : BasicDataHolder, IMouseHandler
+    public abstract class AbstractMouseHandler : AbstractDevice, IMouseHandler
     {
-        public IInputHandler InputHandler { get; set; }
-
-        public AbstractMouseHandler(IInputHandler inputHandler)
+        public AbstractMouseHandler(IInputHandler inputHandler) :
+            base(inputHandler)
         {
-            this.InputHandler = inputHandler;
+        }
+
+        public override void Initialize()
+        {
         }
 
         public abstract void ClickButton(IntPtr processHandler, uint mouseButton);

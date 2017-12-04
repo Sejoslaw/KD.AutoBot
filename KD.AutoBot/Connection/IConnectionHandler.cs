@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.Connection
 {
     /// <summary>
     /// Determines how Bot connectes to specified element on specified operating system.

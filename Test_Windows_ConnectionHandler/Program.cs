@@ -1,4 +1,4 @@
-﻿using KD.AutoBot;
+﻿using KD.AutoBot.Connection;
 using KD.AutoBot.Connection.Windows;
 using System;
 using System.Diagnostics;

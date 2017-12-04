@@ -6,12 +6,9 @@ namespace KD.AutoBot.Input
     /// <summary>
     /// Abstract implementation of <see cref="IKeyboardHandler"/>.
     /// </summary>
-    public abstract class AbstractKeyboardHandler : BasicDataHolder, IKeyboardHandler
+    public abstract class AbstractKeyboardHandler : AbstractDevice, IKeyboardHandler
     {
-        public IInputHandler InputHandler { get; set; }
-
         public IPlatformInputTools PlatformInputTools { get; set; }
-
         public ICollection<IKeyDescription> AvailableKeys { get; set; }
 
         public AbstractKeyboardHandler(IInputHandler inputHandler, IPlatformInputTools platformInputTools) :
@@ -19,11 +16,15 @@ namespace KD.AutoBot.Input
         {
         }
 
-        public AbstractKeyboardHandler(IInputHandler inputHandler, IPlatformInputTools platformInputTools, ICollection<IKeyDescription> availableKeys)
+        public AbstractKeyboardHandler(IInputHandler inputHandler, IPlatformInputTools platformInputTools, ICollection<IKeyDescription> availableKeys) :
+            base(inputHandler)
         {
-            this.InputHandler = inputHandler;
             this.PlatformInputTools = platformInputTools;
             this.AvailableKeys = availableKeys;
+        }
+
+        public override void Initialize()
+        {
         }
 
         public abstract void PressKey(IntPtr processHandler, int keyCode);

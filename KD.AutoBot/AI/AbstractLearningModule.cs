@@ -8,7 +8,6 @@ namespace KD.AutoBot.AI
     public abstract class AbstractLearningModule : AbstractModule, ILearningModule
     {
         public Action NextAction { get; set; }
-
         public int State { get; set; }
 
         public AbstractLearningModule(IAutoBot bot) :

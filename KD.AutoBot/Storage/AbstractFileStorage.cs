@@ -1,7 +1,6 @@
-﻿using KD.AutoBot.Data;
-using System.IO;
+﻿using System.IO;
 
-namespace KD.AutoBot.Files
+namespace KD.AutoBot.Storage
 {
     /// <summary>
     /// Abstract implementation of <see cref="IFileStorage"/>.

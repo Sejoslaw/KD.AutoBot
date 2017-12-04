@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.Connection
 {
     /// <summary>
     /// Describes tools used to connect to single platform.

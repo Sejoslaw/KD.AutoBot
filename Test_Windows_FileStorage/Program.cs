@@ -1,4 +1,4 @@
-﻿using KD.AutoBot;
+﻿using KD.AutoBot.Storage;
 using System;
 using System.IO;
 

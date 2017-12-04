@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.Input
 {
     /// <summary>
     /// Handler for keyboard events.
     /// </summary>
-    public interface IKeyboardHandler : IDataHolder
+    public interface IKeyboardHandler : IDevice
     {
-        /// <summary>
-        /// Input Handler connected with this Keyboard Handler.
-        /// </summary>
-        IInputHandler InputHandler { get; }
         /// <summary>
         /// Platform-specific input tools available for Bot.
         /// </summary>

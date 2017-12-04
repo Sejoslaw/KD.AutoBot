@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.Connection
 {
     /// <summary>
     /// Describes single process to which the Bot did connect using specified tools.

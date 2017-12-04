@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot.Data
+﻿namespace KD.AutoBot.Storage
 {
     /// <summary>
     /// Abstract implementation of <see cref="IDataStorage"/>.

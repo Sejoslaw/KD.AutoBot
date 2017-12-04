@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using KD.AutoBot.Storage;
+using System.IO;
 
 namespace KD.AutoBot.Files
 {

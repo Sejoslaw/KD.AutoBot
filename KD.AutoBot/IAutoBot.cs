@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using KD.AutoBot.AI;
+using KD.AutoBot.Connection;
+using KD.AutoBot.Input;
+using KD.AutoBot.Storage;
+using System.Collections.Generic;
 
 namespace KD.AutoBot
 {

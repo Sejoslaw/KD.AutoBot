@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot
+﻿namespace KD.AutoBot.Storage
 {
     /// <summary>
     /// Storage for AutoBot internal data.

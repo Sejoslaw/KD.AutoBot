@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.Storage
 {
     /// <summary>
     /// Storage for all files connected with current <see cref="IAutoBot"/>'s <see cref="System.Diagnostics.Process"/>.

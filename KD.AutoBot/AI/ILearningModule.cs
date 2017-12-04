@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KD.AutoBot
+namespace KD.AutoBot.AI
 {
     /// <summary>
     /// Main module which is responsible for Bot learning.
