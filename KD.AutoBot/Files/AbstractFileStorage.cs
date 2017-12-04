@@ -5,7 +5,7 @@ using System.IO;
 namespace KD.AutoBot.Files
 {
     /// <summary>
-    /// Abstract implementation of <see cref="IFileStorage{FileInfo}"/>.
+    /// Abstract implementation of <see cref="IFileStorage"/>.
     /// </summary>
     public abstract class AbstractFileStorage : AbstractDataStorage, IFileStorage
     {
