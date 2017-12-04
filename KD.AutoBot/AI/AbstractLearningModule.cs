@@ -5,19 +5,21 @@ namespace KD.AutoBot.AI
     /// <summary>
     /// Abstract implementation of <see cref="ILearningModule"/>.
     /// </summary>
-    public abstract class AbstractLearningModule : BasicDataHolder, ILearningModule
+    public abstract class AbstractLearningModule : AbstractModule, ILearningModule
     {
-        public IAutoBot Bot { get; set; }
-
         public Action NextAction { get; set; }
 
         public int State { get; set; }
 
-        public AbstractLearningModule(IAutoBot bot)
+        public AbstractLearningModule(IAutoBot bot) :
+            base(bot)
         {
-            this.Bot = bot;
             this.NextAction = null;
             this.State = 0;
+        }
+
+        public override void Initialize()
+        {
         }
 
         public abstract void LearnFromSource(object source);

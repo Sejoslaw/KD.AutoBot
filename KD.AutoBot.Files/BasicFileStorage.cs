@@ -18,36 +18,39 @@ namespace KD.AutoBot.Files
         {
         }
 
-        public override void ReadFile(FileInfo file)
+        public override void Initialize()
         {
-            // For now on, only add selected File to Bot's collection.
-            this.Files.Add(file);
         }
 
-        public override void ReadFiles()
+        public override void ReadData<TStorageType>(TStorageType file)
         {
-            IEnumerable<FileInfo> files = this.Directory.EnumerateFiles();
-            foreach (FileInfo file in files)
+            // For now on, only add selected File to Bot's collection.
+            if (file is FileInfo)
             {
-                this.ReadFile(file);
+                FileInfo fileInfo = file as FileInfo;
+                this.Files.Add(fileInfo);
             }
         }
 
-        public override void WriteToFile(FileInfo file, object[] data)
+        public override void WriteData<TStorageType, TDataType>(TStorageType file, TDataType[] data)
         {
-            foreach (object dataObj in data)
+            if (file is FileInfo)
             {
-                if (dataObj is string)
+                FileInfo fileInfo = file as FileInfo;
+                foreach (object dataObj in data)
                 {
-                    File.AppendAllText(file.FullName, dataObj.ToString());
-                }
-                else if (dataObj is byte[])
-                {
-                    byte[] bytes = dataObj as byte[];
-                    FileStream stream = File.OpenWrite(file.FullName);
-                    stream.Write(bytes, 0, bytes.Length);
-                    stream.Flush();
-                    stream.Close();
+                    if (dataObj is string)
+                    {
+                        File.AppendAllText(fileInfo.FullName, dataObj.ToString());
+                    }
+                    else if (dataObj is byte[])
+                    {
+                        byte[] bytes = dataObj as byte[];
+                        FileStream stream = File.OpenWrite(fileInfo.FullName);
+                        stream.Write(bytes, 0, bytes.Length);
+                        stream.Flush();
+                        stream.Close();
+                    }
                 }
             }
         }

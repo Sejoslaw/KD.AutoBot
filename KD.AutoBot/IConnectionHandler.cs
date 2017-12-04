@@ -6,12 +6,8 @@ namespace KD.AutoBot
     /// <summary>
     /// Determines how Bot connectes to specified element on specified operating system.
     /// </summary>
-    public interface IConnectionHandler : IDataHolder
+    public interface IConnectionHandler : IModule
     {
-        /// <summary>
-        /// Bot connected with this Handler.
-        /// </summary>
-        IAutoBot Bot { get; }
         /// <summary>
         /// Platform-specific connection tools available for Bot.
         /// </summary>

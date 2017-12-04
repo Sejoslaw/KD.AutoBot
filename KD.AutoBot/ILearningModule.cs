@@ -5,12 +5,8 @@ namespace KD.AutoBot
     /// <summary>
     /// Main module which is responsible for Bot learning.
     /// </summary>
-    public interface ILearningModule : IDataHolder
+    public interface ILearningModule : IModule
     {
-        /// <summary>
-        /// Bot connected with this Module.
-        /// </summary>
-        IAutoBot Bot { get; }
         /// <summary>
         /// Next <see cref="Action"/> which Bot will make.
         /// </summary>

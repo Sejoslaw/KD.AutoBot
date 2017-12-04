@@ -1,4 +1,6 @@
-﻿namespace KD.AutoBot
+﻿using System.Collections.Generic;
+
+namespace KD.AutoBot
 {
     /// <summary>
     /// AutoBot which can connect to specific <see cref="System.Diagnostics.Process"/> and perform specified operations on it.
@@ -7,9 +9,9 @@
     public interface IAutoBot : IDataHolder
     {
         /// <summary>
-        /// File Storage in which Bot will store it's files.
+        /// Data Storage in which Bot will store it's data.
         /// </summary>
-        IFileStorage FileStorage { get; }
+        IDataStorage Storage { get; }
         /// <summary>
         /// Input Handler which is used by the Bot to send keys and mouse input to connected <see cref="System.Diagnostics.Process"/>.
         /// </summary>
@@ -23,6 +25,10 @@
         /// The most important module, which specifies how the Bot learns.
         /// </summary>
         ILearningModule LearningModule { get; }
+        /// <summary>
+        /// AutoBot's additional modules.
+        /// </summary>
+        ICollection<IModule> Modules { get; }
 
         /// <summary>
         /// Method used to start the Bot.
