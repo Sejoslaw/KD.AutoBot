@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot.AI
+﻿namespace KD.AutoBot.AI.NeuralNetwork
 {
     /// <summary>
     /// <see cref="ILearningModule"/> which uses <see cref="INeuralNetwork{TNeuronDataType}"/> as a base of learning.

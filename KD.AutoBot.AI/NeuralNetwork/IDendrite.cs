@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot.AI
+﻿namespace KD.AutoBot.AI.NeuralNetwork
 {
     /// <summary>
     /// Represents single dendrite (single input into Neuron).

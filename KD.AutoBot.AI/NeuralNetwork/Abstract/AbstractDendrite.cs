@@ -1,4 +1,4 @@
-namespace KD.AutoBot.AI.Abstract
+namespace KD.AutoBot.AI.NeuralNetwork
 {
     /// <summary>
     /// Abstract implementation of <see cref="IDendrite{TNeuronDataType}" />

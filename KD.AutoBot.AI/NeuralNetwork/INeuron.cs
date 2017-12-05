@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KD.AutoBot.AI
+namespace KD.AutoBot.AI.NeuralNetwork
 {
     /// <summary>
     /// Represents single Neuron.
