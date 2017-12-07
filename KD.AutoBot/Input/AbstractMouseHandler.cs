@@ -7,7 +7,7 @@ namespace KD.AutoBot.Input
     /// </summary>
     public abstract class AbstractMouseHandler : AbstractDevice, IMouseHandler
     {
-        public AbstractMouseHandler(IInputHandler inputHandler) :
+        protected AbstractMouseHandler(IInputHandler inputHandler) :
             base(inputHandler)
         {
         }

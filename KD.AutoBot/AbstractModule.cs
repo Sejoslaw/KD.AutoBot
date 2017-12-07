@@ -7,7 +7,7 @@
     {
         public IAutoBot Bot { get; }
 
-        public AbstractModule(IAutoBot bot)
+        protected AbstractModule(IAutoBot bot)
         {
             this.Bot = bot;
         }

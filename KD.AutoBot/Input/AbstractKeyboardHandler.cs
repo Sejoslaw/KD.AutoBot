@@ -11,12 +11,12 @@ namespace KD.AutoBot.Input
         public IPlatformInputTools PlatformInputTools { get; set; }
         public ICollection<IKeyDescription> AvailableKeys { get; set; }
 
-        public AbstractKeyboardHandler(IInputHandler inputHandler, IPlatformInputTools platformInputTools) :
+        protected AbstractKeyboardHandler(IInputHandler inputHandler, IPlatformInputTools platformInputTools) :
             this(inputHandler, platformInputTools, new HashSet<IKeyDescription>())
         {
         }
 
-        public AbstractKeyboardHandler(IInputHandler inputHandler, IPlatformInputTools platformInputTools, ICollection<IKeyDescription> availableKeys) :
+        protected AbstractKeyboardHandler(IInputHandler inputHandler, IPlatformInputTools platformInputTools, ICollection<IKeyDescription> availableKeys) :
             base(inputHandler)
         {
             this.PlatformInputTools = platformInputTools;

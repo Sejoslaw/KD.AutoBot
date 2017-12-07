@@ -9,7 +9,7 @@ namespace KD.AutoBot.AI.Abstract
     {
         public ICollection<INeuron<TNeuronDataType>> Neurons { get; set; }
 
-        public AbstractNeuralLayer(ICollection<INeuron<TNeuronDataType>> neurons)
+        protected AbstractNeuralLayer(ICollection<INeuron<TNeuronDataType>> neurons)
         {
             this.Neurons = neurons;
         }

@@ -9,7 +9,7 @@ namespace KD.AutoBot.Storage
     {
         public DirectoryInfo Directory { get; set; }
 
-        public AbstractFileStorage(IAutoBot bot, DirectoryInfo dirInfo) :
+        protected AbstractFileStorage(IAutoBot bot, DirectoryInfo dirInfo) :
             base(bot)
         {
             this.Directory = dirInfo;

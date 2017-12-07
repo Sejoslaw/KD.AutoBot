@@ -11,7 +11,7 @@ namespace KD.AutoBot.Connection
         public IPlatformConnectionTools PlatformConnectionTools { get; set; }
         public ICollection<IConnectedProcess> ConnectedProcesses { get; set; }
 
-        public AbstractConnectionHandler(IAutoBot bot, IPlatformConnectionTools platformConnectionTools, ICollection<IConnectedProcess> connectedProcesses) :
+        protected AbstractConnectionHandler(IAutoBot bot, IPlatformConnectionTools platformConnectionTools, ICollection<IConnectedProcess> connectedProcesses) :
             base(bot)
         {
             this.PlatformConnectionTools = platformConnectionTools;

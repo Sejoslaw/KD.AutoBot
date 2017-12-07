@@ -11,7 +11,7 @@ namespace KD.AutoBot.Input
         public IMouseHandler Mouse { get; set; }
         public ICollection<IDevice> Devices { get; set; }
 
-        public AbstractInputHandler(IAutoBot bot, IKeyboardHandler keyboard, IMouseHandler mouse, ICollection<IDevice> devices) :
+        protected AbstractInputHandler(IAutoBot bot, IKeyboardHandler keyboard, IMouseHandler mouse, ICollection<IDevice> devices) :
             base(bot)
         {
             this.Keyboard = keyboard;

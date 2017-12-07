@@ -10,7 +10,7 @@ namespace KD.AutoBot.Input
     {
         public IKeyboardHandler KeyboardHandler { get; set; }
 
-        public AbstractPlatformInputTools(IKeyboardHandler keyboardHandler, string platformName) :
+        protected AbstractPlatformInputTools(IKeyboardHandler keyboardHandler, string platformName) :
             base(platformName)
         {
             this.KeyboardHandler = keyboardHandler;

@@ -8,7 +8,7 @@ namespace KD.AutoBot.Files
     /// </summary>
     public abstract class BasicFileStorage : AbstractFileStorage
     {
-        public BasicFileStorage(IAutoBot bot, DirectoryInfo dirInfo) :
+        protected BasicFileStorage(IAutoBot bot, DirectoryInfo dirInfo) :
             base(bot, dirInfo)
         {
             if (this.Directory == null)

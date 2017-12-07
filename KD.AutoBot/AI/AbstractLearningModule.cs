@@ -10,7 +10,7 @@ namespace KD.AutoBot.AI
         public Action NextAction { get; set; }
         public int State { get; set; }
 
-        public AbstractLearningModule(IAutoBot bot) :
+        protected AbstractLearningModule(IAutoBot bot) :
             base(bot)
         {
             this.NextAction = null;

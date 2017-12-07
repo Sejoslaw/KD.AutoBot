@@ -8,7 +8,7 @@ namespace KD.AutoBot.AI.Abstract
         public TNeuronDataType Delta { get; set; }
         public TNeuronDataType Weight { get; set; }
 
-        public AbstractNeuronWeight(TNeuronDataType startDelta, TNeuronDataType weight)
+        protected AbstractNeuronWeight(TNeuronDataType startDelta, TNeuronDataType weight)
         {
             this.Delta = startDelta;
             this.Weight = weight;

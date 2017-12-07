@@ -9,7 +9,7 @@ namespace KD.AutoBot.AI.Abstract
     {
         public ICollection<IDendrite<TNeuronDataType>> Inputs { get; set; }
 
-        public AbstractNeuronInput(ICollection<IDendrite<TNeuronDataType>> inputs)
+        protected AbstractNeuronInput(ICollection<IDendrite<TNeuronDataType>> inputs)
         {
             this.Inputs = inputs;
         }

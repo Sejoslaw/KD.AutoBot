@@ -5,7 +5,7 @@
     /// </summary>
     public abstract class AbstractDataStorage : AbstractModule, IDataStorage
     {
-        public AbstractDataStorage(IAutoBot bot) :
+        protected AbstractDataStorage(IAutoBot bot) :
             base(bot)
         {
         }

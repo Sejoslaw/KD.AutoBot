@@ -9,7 +9,7 @@ namespace KD.AutoBot.Connection
     {
         public IConnectionHandler ConnectionHandler { get; set; }
 
-        public AbstractPlatformConnectionTools(IConnectionHandler connectionHandler, string platformName) :
+        protected AbstractPlatformConnectionTools(IConnectionHandler connectionHandler, string platformName) :
             base(platformName)
         {
             this.ConnectionHandler = connectionHandler;

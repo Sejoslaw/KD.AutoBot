@@ -7,7 +7,7 @@ namespace KD.AutoBot.AI.Abstract
     {
         public INeuralNetwork<TNeuronDataType> NeuralNetwork { get; set; }
 
-        public AbstractNeuralNetworkLearningModule(IAutoBot bot, INeuralNetwork<TNeuronDataType> neuralNetwork) :
+        protected AbstractNeuralNetworkLearningModule(IAutoBot bot, INeuralNetwork<TNeuronDataType> neuralNetwork) :
             base(bot)
         {
             this.NeuralNetwork = neuralNetwork;

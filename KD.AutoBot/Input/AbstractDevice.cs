@@ -7,7 +7,7 @@
     {
         public IInputHandler InputHandler { get; }
 
-        public AbstractDevice(IInputHandler inputHandler)
+        protected AbstractDevice(IInputHandler inputHandler)
         {
             this.InputHandler = inputHandler;
         }
