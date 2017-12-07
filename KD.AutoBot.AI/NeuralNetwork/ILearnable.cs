@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot.AI
+﻿namespace KD.AutoBot.AI.NeuralNetwork
 {
     /// <summary>
     /// Describes object which can learn from specified source.

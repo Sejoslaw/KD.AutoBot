@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot.AI
+﻿namespace KD.AutoBot.AI.NeuralNetwork
 {
     /// <summary>
     /// Represents a single signal send from / to Neuron.

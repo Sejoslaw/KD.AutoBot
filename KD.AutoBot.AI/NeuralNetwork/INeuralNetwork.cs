@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KD.AutoBot.AI
+namespace KD.AutoBot.AI.NeuralNetwork
 {
     /// <summary>
     /// Describes the core of the Neural Network.

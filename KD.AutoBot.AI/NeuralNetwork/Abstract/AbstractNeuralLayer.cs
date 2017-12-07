@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace KD.AutoBot.AI.Abstract
+namespace KD.AutoBot.AI.NeuralNetwork
 {
     /// <summary>
     /// Abstract implementation of <see cref="INeuralLayer{TNeuronDataType}" />
