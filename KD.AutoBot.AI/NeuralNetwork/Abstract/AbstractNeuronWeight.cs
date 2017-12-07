@@ -7,13 +7,5 @@ namespace KD.AutoBot.AI.NeuralNetwork
     {
         public TNeuronDataType Delta { get; set; }
         public TNeuronDataType Weight { get; set; }
-
-        protected AbstractNeuronWeight(TNeuronDataType startDelta, TNeuronDataType weight)
-        {
-            this.Delta = startDelta;
-            this.Weight = weight;
-        }
-
-        public abstract void ModifyWeight(TNeuronDataType delta);
     }
 }

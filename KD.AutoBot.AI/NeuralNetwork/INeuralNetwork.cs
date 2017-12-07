@@ -20,5 +20,18 @@ namespace KD.AutoBot.AI.NeuralNetwork
         /// REpresents an output layer from current network.
         /// </summary>
         INeuralLayer<TNeuronDataType> Output { get; }
+        /// <summary>
+        /// Rate on which Network learns.
+        /// </summary>
+        TNeuronDataType LearningRate { get; }
+
+        /// <summary>
+        /// Initializes current Network.
+        /// </summary>
+        void Initialize(INeuralLayer<TNeuronDataType> input, ICollection<INeuralLayer<TNeuronDataType>> hiddenLayers, INeuralLayer<TNeuronDataType> output);
+        /// <summary>
+        /// Applies input, pulses the Neural Network and performs additional learning.
+        /// </summary>
+        void Train(TNeuronDataType[] input, TNeuronDataType[] wantedResults);
     }
 }

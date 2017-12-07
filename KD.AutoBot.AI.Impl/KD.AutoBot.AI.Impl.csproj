@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>KD.AutoBot.AI.Impl.snk</AssemblyOriginatorKeyFile>
+    <Authors>Krzysztof Dobrzyński</Authors>
+    <Company>Krzysztof Dobrzyński</Company>
+    <Copyright>https://github.com/Sejoslaw/KD.AutoBot</Copyright>
+    <PackageLicenseUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sejoslaw/KD.AutoBot</RepositoryUrl>
+    <RootNamespace>KD.AutoBot.AI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KD.AutoBot.AI\KD.AutoBot.AI.csproj" />
+    <ProjectReference Include="..\KD.AutoBot\KD.AutoBot.csproj" />
+  </ItemGroup>
+
+</Project>

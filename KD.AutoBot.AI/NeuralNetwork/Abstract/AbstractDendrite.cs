@@ -5,12 +5,12 @@ namespace KD.AutoBot.AI.NeuralNetwork
     /// </summary>
     public abstract class AbstractDendrite<TNeuronDataType> : IDendrite<TNeuronDataType>
     {
-        public INeuronSignal<TNeuronDataType> Input { get; set; }
+        public INeuronSignal<TNeuronDataType> Output { get; set; }
         public INeuronWeight<TNeuronDataType> DendriteWeight { get; set; }
 
-        protected AbstractDendrite(INeuronSignal<TNeuronDataType> input, INeuronWeight<TNeuronDataType> weight)
+        protected AbstractDendrite(INeuronSignal<TNeuronDataType> output, INeuronWeight<TNeuronDataType> weight)
         {
-            this.Input = input;
+            this.Output = output;
             this.DendriteWeight = weight;
         }
     }
