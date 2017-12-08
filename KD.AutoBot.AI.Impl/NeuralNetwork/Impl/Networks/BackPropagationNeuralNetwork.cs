@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KD.AutoBot.AI.NeuralNetwork.Networks
+namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
 {
     /// <summary>
     /// Implementation of <see cref="INeuralNetwork{TNeuronDataType}"/> based on <see cref="double"/> values.

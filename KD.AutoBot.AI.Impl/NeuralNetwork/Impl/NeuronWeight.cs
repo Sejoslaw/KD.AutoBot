@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot.AI.NeuralNetwork
+﻿namespace KD.AutoBot.AI.NeuralNetwork.Impl
 {
     /// <summary>
     /// Implementation of <see cref="INeuronWeight{TNeuronDataType}"/> based on <see cref="double"/> values.

@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot.AI.NeuralNetwork.Neurons
+﻿namespace KD.AutoBot.AI.NeuralNetwork.Impl.Neurons
 {
     /// <summary>
     /// <see cref="INeuron{TNeuronDataType}"/> implemented using Sigmoid function.
