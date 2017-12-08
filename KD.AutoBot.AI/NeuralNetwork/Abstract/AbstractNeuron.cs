@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KD.AutoBot.AI.NeuralNetwork
 {
@@ -14,5 +15,13 @@ namespace KD.AutoBot.AI.NeuralNetwork
         public TNeuronDataType ThresholdValue { get; set; }
         public ICollection<IDendrite<TNeuronDataType>> Inputs { get; set; }
         public TNeuronDataType Value { get; set; }
+
+        public IDendrite<TNeuronDataType> this[int index]
+        {
+            get
+            {
+                return this.Inputs.ElementAt(index);
+            }
+        }
     }
 }

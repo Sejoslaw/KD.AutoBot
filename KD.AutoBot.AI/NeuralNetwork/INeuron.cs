@@ -24,5 +24,10 @@ namespace KD.AutoBot.AI.NeuralNetwork
         /// Optional-minimum value which is required to activate a Neuron.
         /// </summary>
         TNeuronDataType ThresholdValue { get; set; }
+
+        /// <summary>
+        /// Returns input <see cref="IDendrite{TNeuronDataType}"/> of this Neuron.
+        /// </summary>
+        IDendrite<TNeuronDataType> this[int index] { get; }
     }
 }

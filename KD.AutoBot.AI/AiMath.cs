@@ -12,7 +12,7 @@ namespace KD.AutoBot.AI
         /// </summary>
         public static double Sigmoid(double value)
         {
-            double sig = 1 / (1 + Math.Exp(-value));
+            double sig = 1.0D / (1.0D + Math.Exp(-value));
             return sig;
         }
     }
