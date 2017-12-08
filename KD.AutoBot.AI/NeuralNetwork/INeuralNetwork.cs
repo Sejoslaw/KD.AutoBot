@@ -33,5 +33,9 @@ namespace KD.AutoBot.AI.NeuralNetwork
         /// Applies input, pulses the Neural Network and performs additional learning.
         /// </summary>
         void Train(TNeuronDataType[] input, TNeuronDataType[] wantedResults);
+        /// <summary>
+        /// Applies input, pulses the Neural Network and performs additional learning.
+        /// </summary>
+        void Train(TNeuronDataType[][] input, TNeuronDataType[][] wantedResults);
     }
 }
