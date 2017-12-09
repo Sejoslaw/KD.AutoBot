@@ -11,7 +11,6 @@ namespace KD.AutoBot.AI.NeuralNetwork
         /// Represents all Neurons in current layer.
         /// </summary>
         ICollection<INeuron<TNeuronDataType>> Neurons { get; }
-
         /// <summary>
         /// Returns the number of Neurons in current layer.
         /// </summary>
