@@ -2,6 +2,8 @@
 {
     /// <summary>
     /// Describes single I/O device.
+    /// By "Device" we can understand any Keyboard, Mouse, Joystick, Controller, etc.
+    /// But also it can be a Device that can take data from for example: window controls.
     /// </summary>
     public interface IDevice : IDataHolder
     {
