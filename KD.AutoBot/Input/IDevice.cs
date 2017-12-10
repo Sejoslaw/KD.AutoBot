@@ -1,7 +1,7 @@
 ﻿namespace KD.AutoBot.Input
 {
     /// <summary>
-    /// Describes single I/O computer device.
+    /// Describes single I/O device.
     /// </summary>
     public interface IDevice : IDataHolder
     {
