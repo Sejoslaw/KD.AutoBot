@@ -5,7 +5,7 @@ namespace KD.AutoBot.Storage
     /// <summary>
     /// Abstract implementation of <see cref="IFileStorage"/>.
     /// </summary>
-    public abstract class AbstractFileStorage : AbstractDataStorage<FileInfo>, IFileStorage
+    public abstract class AbstractFileStorage : AbstractDataStorage, IFileStorage
     {
         public DirectoryInfo Directory { get; set; }
 

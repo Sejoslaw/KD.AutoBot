@@ -5,7 +5,7 @@ namespace KD.AutoBot.Storage
     /// <summary>
     /// Storage for all files connected with current <see cref="IAutoBot"/>'s <see cref="System.Diagnostics.Process"/>.
     /// </summary>
-    public interface IFileStorage : IDataStorage<FileInfo>
+    public interface IFileStorage : IDataStorage
     {
         /// <summary>
         /// Directory where Bot stores all it's files.

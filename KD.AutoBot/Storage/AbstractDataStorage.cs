@@ -3,7 +3,7 @@
     /// <summary>
     /// Abstract implementation of <see cref="IDataStorage"/>.
     /// </summary>
-    public abstract class AbstractDataStorage<TStorageType> : AbstractModule, IDataStorage<TStorageType>
+    public abstract class AbstractDataStorage : AbstractModule, IDataStorage
     {
         protected AbstractDataStorage(IAutoBot bot) :
             base(bot)
@@ -14,7 +14,7 @@
         {
         }
 
-        public abstract void ReadData(TStorageType source);
-        public abstract void WriteData<TDataType>(TStorageType destination, TDataType[] data);
+        public abstract void ReadData<TStorageType>(TStorageType source);
+        public abstract void WriteData<TStorageType, TDataType>(TStorageType destination, TDataType[] data);
     }
 }

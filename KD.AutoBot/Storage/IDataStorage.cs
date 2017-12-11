@@ -3,15 +3,15 @@
     /// <summary>
     /// Storage for AutoBot internal data.
     /// </summary>
-    public interface IDataStorage<TStorageType> : IModule
+    public interface IDataStorage : IModule
     {
         /// <summary>
         /// Reads data from specified source.
         /// </summary>
-        void ReadData(TStorageType source);
+        void ReadData<TStorageType>(TStorageType source);
         /// <summary>
         /// Writes given data to specified destination.
         /// </summary>
-        void WriteData<TDataType>(TStorageType destination, TDataType[] data);
+        void WriteData<TStorageType, TDataType>(TStorageType destination, TDataType[] data);
     }
 }
