@@ -15,9 +15,7 @@ namespace Test_Windows_ConnectionHandler
             Process notepadProcess2 = StartNotepad();
 
             // Create connection handler and connection tools for Windows with double-side binding.
-            var windowsConnectionTools = new WindowsPlatformConnectionTools(null);
-            var connectionHandler = new WindowsConnectionHandler(null, windowsConnectionTools);
-            windowsConnectionTools.ConnectionHandler = connectionHandler;
+            var connectionHandler = new WindowsConnectionHandler(null);
 
             connectionHandler.AttachToProcess(notepadProcess1);
             connectionHandler.AttachToProcess(notepadProcess2);

@@ -8,14 +8,15 @@ namespace KD.AutoBot.Connection.Windows
     /// </summary>
     public class WindowsConnectionHandler : AbstractConnectionHandler
     {
-        public WindowsConnectionHandler(IAutoBot bot, IPlatformConnectionTools platformConnectionTools) :
-            base(bot, platformConnectionTools, new HashSet<IConnectedProcess>())
+        public WindowsConnectionHandler(IAutoBot bot) :
+            this(bot, new HashSet<IConnectedProcess>())
         {
         }
 
-        public WindowsConnectionHandler(IAutoBot bot, IPlatformConnectionTools platformConnectionTools, ICollection<IConnectedProcess> connectedProcesses) :
-            base(bot, platformConnectionTools, connectedProcesses)
+        public WindowsConnectionHandler(IAutoBot bot, ICollection<IConnectedProcess> connectedProcesses) :
+            base(bot, connectedProcesses)
         {
+            this.PlatformConnectionTools = new WindowsPlatformConnectionTools(this);
         }
 
         public override bool AttachToProcess(Process process)
