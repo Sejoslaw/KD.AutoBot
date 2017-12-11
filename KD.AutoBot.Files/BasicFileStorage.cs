@@ -26,31 +26,27 @@ namespace KD.AutoBot.Files
         {
         }
 
-        public override void WriteData<TStorageType, TDataType>(TStorageType file, TDataType[] data)
+        public override void WriteData<TDataType>(FileInfo file, TDataType[] data)
         {
-            if (file is FileInfo)
+            if (!file.Exists)
             {
-                FileInfo fileInfo = file as FileInfo;
-                if (!fileInfo.Exists)
-                {
-                    FileStream stream = fileInfo.Create();
-                    stream.Close();
-                }
+                FileStream stream = file.Create();
+                stream.Close();
+            }
 
-                foreach (object dataObj in data)
+            foreach (object dataObj in data)
+            {
+                if (dataObj is string)
                 {
-                    if (dataObj is string)
-                    {
-                        File.AppendAllText(fileInfo.FullName, dataObj.ToString());
-                    }
-                    else if (dataObj is byte[])
-                    {
-                        byte[] bytes = dataObj as byte[];
-                        FileStream stream = File.OpenWrite(fileInfo.FullName);
-                        stream.Write(bytes, 0, bytes.Length);
-                        stream.Flush();
-                        stream.Close();
-                    }
+                    File.AppendAllText(file.FullName, dataObj.ToString());
+                }
+                else if (dataObj is byte[])
+                {
+                    byte[] bytes = dataObj as byte[];
+                    FileStream stream = File.OpenWrite(file.FullName);
+                    stream.Write(bytes, 0, bytes.Length);
+                    stream.Flush();
+                    stream.Close();
                 }
             }
         }

@@ -12,7 +12,7 @@ namespace Test_Windows_FileStorage
         {
         }
 
-        public override void ReadData<TStorageType>(TStorageType file)
+        public override void ReadData(FileInfo file)
         {
             Console.WriteLine($"Readed file: { file.ToString() }");
         }

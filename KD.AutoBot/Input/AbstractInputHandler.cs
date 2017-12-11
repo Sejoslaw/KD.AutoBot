@@ -21,6 +21,10 @@ namespace KD.AutoBot.Input
 
         public override void Initialize()
         {
+            foreach (IDevice device in this.Devices)
+            {
+                device.Initialize();
+            }
         }
     }
 }
