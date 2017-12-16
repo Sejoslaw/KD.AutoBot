@@ -3,7 +3,7 @@
     /// <summary>
     /// Single extension which will allow bot to get value from some system object.
     /// </summary>
-    public interface IPlatformConnectionExtension
+    public interface IPlatformConnectionExtension : IDataHolder
     {
         /// <summary>
         /// Connected <see cref="IPlatformConnectionTools"/>.
