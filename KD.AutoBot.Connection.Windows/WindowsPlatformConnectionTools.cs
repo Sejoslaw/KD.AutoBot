@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace KD.AutoBot.Connection.Windows
 {
@@ -10,6 +11,7 @@ namespace KD.AutoBot.Connection.Windows
         public WindowsPlatformConnectionTools(IConnectionHandler connectionHandler) :
             base(connectionHandler, "Windows")
         {
+            this.Extensions = new HashSet<IPlatformConnectionExtension>();
         }
 
         public override bool AttachToProcess(Process process)
