@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace KD.AutoBot.AI
 {
@@ -8,17 +8,13 @@ namespace KD.AutoBot.AI
     public interface ILearningModule : IModule
     {
         /// <summary>
-        /// Next <see cref="Action"/> which Bot will make.
+        /// Bots current state.
         /// </summary>
-        Action NextAction { get; }
+        IState CurrentState { get; }
         /// <summary>
-        /// Integer is used for more possibilities than enum.
-        /// 1 - Won
-        /// 0 - Working
-        /// -1 - Lose
-        /// When "Lose", restart Bot and start from beginning, also set state to "0".
+        /// All states in which Bot can be.
         /// </summary>
-        int State { get; }
+        ICollection<IState> States { get; }
 
         /// <summary>
         /// Starts learning process from given source.

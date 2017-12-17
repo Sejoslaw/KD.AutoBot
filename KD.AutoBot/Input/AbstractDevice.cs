@@ -5,7 +5,7 @@
     /// </summary>
     public abstract class AbstractDevice : BasicDataHolder, IDevice
     {
-        public IInputHandler InputHandler { get; }
+        public IInputHandler InputHandler { get; set; }
 
         protected AbstractDevice(IInputHandler inputHandler)
         {
