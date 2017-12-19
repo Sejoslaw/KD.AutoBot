@@ -17,6 +17,10 @@ namespace KD.AutoBot.AI
         /// Next <see cref="Action"/> which Bot will make.
         /// </summary>
         Action NextAction { get; }
+        /// <summary>
+        /// Value of current state.
+        /// </summary>
+        object Value { get; }
 
         /// <summary>
         /// Prepares Bot's next <see cref="Action"/>.
