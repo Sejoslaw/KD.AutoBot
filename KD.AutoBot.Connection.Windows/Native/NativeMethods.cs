@@ -38,5 +38,11 @@ namespace KD.AutoBot.Connection.Windows.Native
         /// </summary>
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         public static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
+
+        /// <summary>
+        /// Used for getting value from control.
+        /// </summary>
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern int SendMessage(IntPtr hWnd, int msg, int Param, StringBuilder text);
     }
 }

@@ -60,7 +60,7 @@ namespace KD.AutoBot.Connection.Windows.Extensions
                 string value = buffer.ToString();
                 return value;
             }
-            else // For child window
+            else // For child window / control
             {
                 hDlg = this.ParentControl.ControlHandler;
                 nIDDlgItem = NativeMethods.GetDlgCtrlID(this.ControlHandler);
