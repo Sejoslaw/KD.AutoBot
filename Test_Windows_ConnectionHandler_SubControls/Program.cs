@@ -28,6 +28,12 @@ namespace Test_Windows_ConnectionHandler_SubControls
                 object childControlValue = childs.ElementAt(i).GetControlValue();
                 Console.WriteLine($"{ i } - { childControlValue }");
             }
+
+            for (int i = 0; i < childs.Count(); ++i)
+            {
+                IEnumerable<IWindowsControl> childChilds = childs.ElementAt(i).GetChildControls();
+                Console.WriteLine("");
+            }
         }
 
         private static Process GetProcess()
