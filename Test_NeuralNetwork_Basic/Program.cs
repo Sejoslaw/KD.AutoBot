@@ -1,5 +1,6 @@
 ﻿using KD.AutoBot.AI.NeuralNetwork;
-using KD.AutoBot.AI.NeuralNetwork.Impl;
+using KD.AutoBot.AI.NeuralNetwork.Impl.Builders;
+using KD.AutoBot.AI.NeuralNetwork.Impl.Networks;
 using System;
 
 namespace Test_NeuralNetwork_Basic
@@ -19,7 +20,7 @@ namespace Test_NeuralNetwork_Basic
              * 
              */
 
-            INeuralNetworkBuilder<double> builder = new NeuralNetworkBuilder();
+            INeuralNetworkBuilder<double> builder = new SigmoidNeuralNetworkBuilder<BackPropagationNeuralNetwork>();
             INeuralNetwork<double> network = builder.BuildNetwork(2, new int[] { 2 }, 1);
 
             // Signal values

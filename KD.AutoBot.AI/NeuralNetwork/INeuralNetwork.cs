@@ -23,7 +23,7 @@ namespace KD.AutoBot.AI.NeuralNetwork
         /// <summary>
         /// Rate on which Network learns.
         /// </summary>
-        TNeuronDataType LearningRate { get; }
+        TNeuronDataType LearningRate { get; set; }
 
         /// <summary>
         /// Initializes current Network.

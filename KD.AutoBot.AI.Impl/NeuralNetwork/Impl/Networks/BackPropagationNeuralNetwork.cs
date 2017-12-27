@@ -98,7 +98,7 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
             {
                 foreach (INeuron<double> inputNeuron in input.Neurons)
                 {
-                    outputNeuron.Inputs.Add(new Dendrite(inputNeuron, new NeuronWeight()));
+                    outputNeuron.Inputs.Add(new Dendrite(inputNeuron, new NeuronWeight() { Weight = 0.5 }));
                 }
             }
         }

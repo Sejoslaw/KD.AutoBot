@@ -8,13 +8,24 @@ namespace KD.AutoBot.AI.NeuralNetwork
     public interface INeuralNetworkBuilder<TNeuronDataType>
     {
         /// <summary>
-        /// Returns new <see cref="INeuralNetwork{TNeuronDataType}"/>.
+        /// Builds internal Neural Network.
         /// Optional arguments can be passed.
         /// </summary>
-        INeuralNetwork<TNeuronDataType> BuildNetwork(object[] args);
+        void BuildNetwork(object[] args);
         /// <summary>
-        /// Returns new <see cref="INeuralNetwork{TNeuronDataType}"/>.
+        /// Builds internal Neural Network.
         /// </summary>
-        INeuralNetwork<TNeuronDataType> BuildNetwork(int inputNeurons, ICollection<int> hiddenLayersNeurons, int outputNeurons);
+        void BuildNetwork(int inputNeurons, ICollection<int> hiddenLayersNeurons, int outputNeurons);
+        /// <summary>
+        /// Initializes Neural Network with given data.
+        /// Where on index:
+        /// 0 - Input layer values,
+        /// 1 - Hidden layers values,
+        /// 2 - Output layer values
+        /// </summary>
+        INeuralNetwork<TNeuronDataType> InitializeNeuralNetworkWithData(
+            TNeuronDataType[] inputLayerValues, 
+            TNeuronDataType[][] hiddenLayersValues, 
+            TNeuronDataType[] outputLayerValues);
     }
 }

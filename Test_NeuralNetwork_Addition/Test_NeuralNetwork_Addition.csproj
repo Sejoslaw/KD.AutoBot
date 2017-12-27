@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KD.AutoBot.AI.Impl\KD.AutoBot.AI.Impl.csproj" />
+    <ProjectReference Include="..\KD.AutoBot.AI\KD.AutoBot.AI.csproj" />
+    <ProjectReference Include="..\KD.AutoBot\KD.AutoBot.csproj" />
+  </ItemGroup>
+
+</Project>
