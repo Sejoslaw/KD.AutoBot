@@ -6,16 +6,14 @@ namespace KD.AutoBot.Connection.Windows.Extensions
     /// <summary>
     /// Implementation of <see cref="IWindowsControlHandler"/>.
     /// </summary>
-    public class WindowsControlHandler : BasicDataHolder, IWindowsControlHandler
+    public class WindowsControlHandler : AbstractWindowsControlHandler
     {
-        public IPlatformConnectionTools PlatformConnectionTools { get; }
-
-        public WindowsControlHandler(IPlatformConnectionTools platformConnectionTools)
+        public WindowsControlHandler(IPlatformConnectionTools platformConnectionTools) :
+            base(platformConnectionTools)
         {
-            this.PlatformConnectionTools = platformConnectionTools;
         }
 
-        public IWindowsControl GetWindowsControl(IntPtr process)
+        public override IWindowsControl GetWindowsControl(IntPtr process)
         {
             int control = NativeMethods.GetDlgCtrlID(process);
             if (control != 0)

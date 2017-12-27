@@ -7,7 +7,7 @@ namespace KD.AutoBot.Connection.Windows.Native
     /// <summary>
     /// Holds native Win32 API calls.
     /// </summary>
-    internal static class NativeMethods
+    public static class NativeMethods
     {
         public delegate bool EnumWindowsProc(IntPtr hwnd, IntPtr lParam);
 
@@ -44,5 +44,23 @@ namespace KD.AutoBot.Connection.Windows.Native
         /// </summary>
         [DllImport("user32.dll", SetLastError = true)]
         public static extern int SendMessage(IntPtr hWnd, int msg, int Param, StringBuilder text);
+
+        /// <summary>
+        /// Retrieves a handle to the top-level window whose class name and window name match the specified strings. 
+        /// This function does not search child windows. 
+        /// This function does not perform a case-sensitive search.
+        /// 
+        /// To search child windows, beginning with a specified child window, use the FindWindowEx function.
+        /// </summary>
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr FindWindow(string className,  string windowTitle);
+
+        /// <summary>
+        /// Retrieves a handle to a window whose class name and window name match the specified strings. 
+        /// The function searches child windows, beginning with the one following the specified child window. 
+        /// This function does not perform a case-sensitive search.
+        /// </summary>
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string className,  string windowTitle);
     }
 }

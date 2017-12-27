@@ -3,25 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
-using static KD.AutoBot.Connection.Windows.Native.NativeMethods;
 
 namespace KD.AutoBot.Connection.Windows.Extensions
 {
     /// <summary>
     /// Implementation of <see cref="IWindowsControl"/>.
     /// </summary>
-    public class WindowsControl : IWindowsControl
+    public class WindowsControl : AbstractWindowsControl
     {
-        public IntPtr ControlHandler { get; }
-        public IWindowsControl ParentControl { get; }
-
-        public WindowsControl(IntPtr controlHandler, IWindowsControl parentControl)
+        public WindowsControl(IntPtr controlHandler, IWindowsControl parentControl) :
+            base(controlHandler, parentControl)
         {
-            this.ControlHandler = controlHandler;
-            this.ParentControl = parentControl;
         }
 
-        public IEnumerable<IWindowsControl> GetChildControls()
+        public override IEnumerable<IWindowsControl> GetChildControls()
         {
             List<IntPtr> childs = new List<IntPtr>();
 
@@ -30,7 +25,7 @@ namespace KD.AutoBot.Connection.Windows.Extensions
 
             try
             {
-                EnumWindowsProc childProc = new EnumWindowsProc(this.EnumChild);
+                NativeMethods.EnumWindowsProc childProc = new NativeMethods.EnumWindowsProc(this.EnumChild);
                 NativeMethods.EnumChildWindows(this.ControlHandler, childProc, pointerHandleList);
             }
             finally
@@ -48,7 +43,7 @@ namespace KD.AutoBot.Connection.Windows.Extensions
             return childWindows;
         }
 
-        public object GetControlValue()
+        public override object GetControlValue()
         {
             IntPtr hDlg = IntPtr.Zero;
             int nIDDlgItem = -1;

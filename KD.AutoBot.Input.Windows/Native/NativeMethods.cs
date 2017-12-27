@@ -6,7 +6,7 @@ namespace KD.AutoBot.Input.Windows.Native
     /// <summary>
     /// Holds native Win32 API calls.
     /// </summary>
-    internal static class NativeMethods
+    public static class NativeMethods
     {
         /// <summary>
         /// Simulates mouse buttons and wheel event to Screen.
