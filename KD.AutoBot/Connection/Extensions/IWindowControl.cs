@@ -10,7 +10,6 @@ namespace KD.AutoBot.Connection.Extensions
     {
         /// <summary>
         /// Current control handler.
-        /// This a process pointer, it still needs to be parsed to control id.
         /// </summary>
         IntPtr ControlHandler { get; }
         /// <summary>
