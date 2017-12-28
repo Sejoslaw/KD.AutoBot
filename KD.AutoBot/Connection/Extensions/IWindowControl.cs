@@ -25,7 +25,12 @@ namespace KD.AutoBot.Connection.Extensions
         /// <summary>
         /// Returns value of current control.
         /// For window it will return the title of the window.
+        /// For most controls it will return the text value of that control.
         /// </summary>
         object GetControlValue();
+        /// <summary>
+        /// Simulates clicking current control.
+        /// </summary>
+        object Click();
     }
 }

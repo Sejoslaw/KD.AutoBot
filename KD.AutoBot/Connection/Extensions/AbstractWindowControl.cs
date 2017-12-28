@@ -19,5 +19,6 @@ namespace KD.AutoBot.Connection.Extensions
 
         public abstract IEnumerable<IWindowControl> GetChildControls();
         public abstract object GetControlValue();
+        public abstract object Click();
     }
 }

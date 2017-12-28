@@ -26,8 +26,15 @@ namespace Test_Windows_ConnectionHandler_SubControls
             Console.WriteLine($"Child controls values:");
             for (int i = 0; i < childs.Count(); ++i)
             {
-                object childControlValue = childs.ElementAt(i).GetControlValue();
+                IWindowControl child = childs.ElementAt(i);
+                object childControlValue = child.GetControlValue();
                 Console.WriteLine($"{ i } - { childControlValue }");
+
+                // Test button clicking.
+                if (childControlValue.Equals("Test Button Text"))
+                {
+                    child.Click();
+                }
             }
 
             for (int i = 0; i < childs.Count(); ++i)

@@ -49,6 +49,13 @@ namespace KD.AutoBot.Connection.Windows.Extensions
             return controlText;
         }
 
+        public override object Click()
+        {
+            // Click Button
+            int returned = NativeMethods.SendMessage(this.ControlHandler, NativeConstants.BN_CLICKED, 0, IntPtr.Zero);
+            return returned;
+        }
+
         private bool EnumChild(IntPtr hWnd, IntPtr lParam)
         {
             GCHandle handleList = GCHandle.FromIntPtr(lParam);
