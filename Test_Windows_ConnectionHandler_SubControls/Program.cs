@@ -17,7 +17,7 @@ namespace Test_Windows_ConnectionHandler_SubControls
              * Test sub-controls of a window.
              */
             IWindowControlHandler windowsControlHandler = new WindowControlHandler(null);
-            IWindowControl window = windowsControlHandler.GetWindowsControl(windowHandle);
+            IWindowControl window = windowsControlHandler.GetWindowControl(windowHandle);
             IEnumerable<IWindowControl> childs = window.GetChildControls();
 
             object windowTitle = window.GetControlValue();

@@ -10,6 +10,6 @@ namespace KD.AutoBot.Connection.Extensions
         /// <summary>
         /// Returns control from connected process.
         /// </summary>
-        IWindowControl GetWindowsControl(IntPtr process);
+        IWindowControl GetWindowControl(IntPtr process);
     }
 }

@@ -14,6 +14,6 @@ namespace KD.AutoBot.Connection.Extensions
             this.PlatformConnectionTools = platformConnectionTools;
         }
 
-        public abstract IWindowControl GetWindowsControl(IntPtr process);
+        public abstract IWindowControl GetWindowControl(IntPtr process);
     }
 }

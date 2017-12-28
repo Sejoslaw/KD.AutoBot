@@ -13,7 +13,7 @@ namespace KD.AutoBot.Connection.Windows.Extensions
         {
         }
 
-        public override IWindowControl GetWindowsControl(IntPtr process)
+        public override IWindowControl GetWindowControl(IntPtr process)
         {
             IWindowControl windowsControl = new WindowControl(process, null);
             return windowsControl;

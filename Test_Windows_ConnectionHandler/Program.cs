@@ -37,7 +37,7 @@ namespace Test_Windows_ConnectionHandler
             //
             IWindowControlHandler windowsControlHandler = new WindowControlHandler(connectionHandler.PlatformConnectionTools);
             IConnectedProcess notepad1 = windowsControlHandler.PlatformConnectionTools.ConnectionHandler.ConnectedProcesses.ElementAt(0);
-            IWindowControl windowsControl = windowsControlHandler.GetWindowsControl(notepad1.Process.MainWindowHandle);
+            IWindowControl windowsControl = windowsControlHandler.GetWindowControl(notepad1.Process.MainWindowHandle);
             IEnumerable<IWindowControl> childs = windowsControl.GetChildControls();
 
             object controlValue = windowsControl.GetControlValue();
