@@ -53,7 +53,7 @@ namespace KD.AutoBot.Connection.Windows.Native
         /// To search child windows, beginning with a specified child window, use the FindWindowEx function.
         /// </summary>
         [DllImport("user32.dll", SetLastError = true)]
-        public static extern IntPtr FindWindow(string className,  string windowTitle);
+        public static extern IntPtr FindWindow(string className, string windowTitle);
 
         /// <summary>
         /// Retrieves a handle to a window whose class name and window name match the specified strings. 
@@ -61,6 +61,12 @@ namespace KD.AutoBot.Connection.Windows.Native
         /// This function does not perform a case-sensitive search.
         /// </summary>
         [DllImport("user32.dll", SetLastError = true)]
-        public static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string className,  string windowTitle);
+        public static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string className, string windowTitle);
+
+        /// <summary>
+        /// Returns main window handle by specified window title.
+        /// </summary>
+        [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
+        public static extern IntPtr FindWindowByCaption(IntPtr zeroOnly, string lpWindowName);
     }
 }

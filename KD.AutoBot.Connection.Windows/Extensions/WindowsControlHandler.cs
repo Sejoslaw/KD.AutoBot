@@ -1,5 +1,4 @@
-﻿using KD.AutoBot.Connection.Windows.Native;
-using System;
+﻿using System;
 
 namespace KD.AutoBot.Connection.Windows.Extensions
 {
@@ -15,16 +14,8 @@ namespace KD.AutoBot.Connection.Windows.Extensions
 
         public override IWindowsControl GetWindowsControl(IntPtr process)
         {
-            int control = NativeMethods.GetDlgCtrlID(process);
-            if (control != 0)
-            {
-                IWindowsControl windowsControl = new WindowsControl(process, null);
-                return windowsControl;
-            }
-            else
-            {
-                return null;
-            }
+            IWindowsControl windowsControl = new WindowsControl(process, null);
+            return windowsControl;
         }
     }
 }

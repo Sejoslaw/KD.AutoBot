@@ -46,6 +46,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Windows_Forms_TestForm", "Test_Windows_Forms_TestForm\Test_Windows_Forms_TestForm.csproj", "{9A32BC10-FAE7-42FD-AE34-F64FC26860B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{47617D0F-6142-45A6-9374-194CF153DC4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47617D0F-6142-45A6-9374-194CF153DC4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47617D0F-6142-45A6-9374-194CF153DC4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A32BC10-FAE7-42FD-AE34-F64FC26860B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A32BC10-FAE7-42FD-AE34-F64FC26860B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A32BC10-FAE7-42FD-AE34-F64FC26860B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A32BC10-FAE7-42FD-AE34-F64FC26860B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +130,7 @@ Global
 		{9373882C-0132-4233-AA2A-635A9F3B01AE} = {FFFEF4FD-E617-41C9-BFB7-D62FD60B1636}
 		{CD09B200-F0CC-478C-BAB9-C66C58949FCA} = {2A9C44E2-5A24-49A3-9972-A65BCD737214}
 		{47617D0F-6142-45A6-9374-194CF153DC4D} = {B57AF87B-C8E8-445C-BFF9-98D1CF9D2F82}
+		{9A32BC10-FAE7-42FD-AE34-F64FC26860B8} = {B57AF87B-C8E8-445C-BFF9-98D1CF9D2F82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {130DE857-F2F1-4108-BBE6-0BBB0DF7C3D3}

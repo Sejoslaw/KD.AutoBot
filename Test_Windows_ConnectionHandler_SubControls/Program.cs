@@ -1,7 +1,7 @@
 ﻿using KD.AutoBot.Connection.Windows.Extensions;
+using KD.AutoBot.Connection.Windows.Native;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Test_Windows_ConnectionHandler_SubControls
@@ -10,13 +10,13 @@ namespace Test_Windows_ConnectionHandler_SubControls
     {
         static void Main(string[] args)
         {
-            Process process = GetProcess();
+            IntPtr windowHandle = NativeMethodsHelper.GetWindowByTitle("Test Form");
 
             /*
              * Test sub-controls of a window.
              */
             IWindowsControlHandler windowsControlHandler = new WindowsControlHandler(null);
-            IWindowsControl window = windowsControlHandler.GetWindowsControl(process.MainWindowHandle);
+            IWindowsControl window = windowsControlHandler.GetWindowsControl(windowHandle);
             IEnumerable<IWindowsControl> childs = window.GetChildControls();
 
             object windowTitle = window.GetControlValue();
@@ -34,12 +34,6 @@ namespace Test_Windows_ConnectionHandler_SubControls
                 IEnumerable<IWindowsControl> childChilds = childs.ElementAt(i).GetChildControls();
                 Console.WriteLine("");
             }
-        }
-
-        private static Process GetProcess()
-        {
-            Process p = Process.Start("notepad");
-            return p;
         }
     }
 }
