@@ -1,4 +1,5 @@
 ﻿using KD.AutoBot.Connection;
+using KD.AutoBot.Connection.Extensions;
 using KD.AutoBot.Connection.Windows;
 using KD.AutoBot.Connection.Windows.Extensions;
 using System;
@@ -34,10 +35,10 @@ namespace Test_Windows_ConnectionHandler
             //
             // Test - Return value from specified control. Use only in-AutoBot relations.
             //
-            IWindowsControlHandler windowsControlHandler = new WindowsControlHandler(connectionHandler.PlatformConnectionTools);
+            IWindowControlHandler windowsControlHandler = new WindowControlHandler(connectionHandler.PlatformConnectionTools);
             IConnectedProcess notepad1 = windowsControlHandler.PlatformConnectionTools.ConnectionHandler.ConnectedProcesses.ElementAt(0);
-            IWindowsControl windowsControl = windowsControlHandler.GetWindowsControl(notepad1.Process.MainWindowHandle);
-            IEnumerable<IWindowsControl> childs = windowsControl.GetChildControls();
+            IWindowControl windowsControl = windowsControlHandler.GetWindowsControl(notepad1.Process.MainWindowHandle);
+            IEnumerable<IWindowControl> childs = windowsControl.GetChildControls();
 
             object controlValue = windowsControl.GetControlValue();
             Console.WriteLine($"Control value: { controlValue }");

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KD.AutoBot.Connection.Windows.Extensions
+namespace KD.AutoBot.Connection.Extensions
 {
     /// <summary>
     /// Describes single window control.
     /// </summary>
-    public interface IWindowsControl
+    public interface IWindowControl
     {
         /// <summary>
         /// Current control handler.
@@ -17,12 +17,12 @@ namespace KD.AutoBot.Connection.Windows.Extensions
         /// Parent control of this window.
         /// Null if the window has no parent.
         /// </summary>
-        IWindowsControl ParentControl { get; }
+        IWindowControl ParentControl { get; }
 
         /// <summary>
         /// Returns a collection of child controls.
         /// </summary>
-        IEnumerable<IWindowsControl> GetChildControls();
+        IEnumerable<IWindowControl> GetChildControls();
         /// <summary>
         /// Returns value of current control.
         /// For window it will return the title of the window.

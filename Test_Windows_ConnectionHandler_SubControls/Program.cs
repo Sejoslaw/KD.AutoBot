@@ -1,4 +1,5 @@
-﻿using KD.AutoBot.Connection.Windows.Extensions;
+﻿using KD.AutoBot.Connection.Extensions;
+using KD.AutoBot.Connection.Windows.Extensions;
 using KD.AutoBot.Connection.Windows.Native;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,9 @@ namespace Test_Windows_ConnectionHandler_SubControls
             /*
              * Test sub-controls of a window.
              */
-            IWindowsControlHandler windowsControlHandler = new WindowsControlHandler(null);
-            IWindowsControl window = windowsControlHandler.GetWindowsControl(windowHandle);
-            IEnumerable<IWindowsControl> childs = window.GetChildControls();
+            IWindowControlHandler windowsControlHandler = new WindowControlHandler(null);
+            IWindowControl window = windowsControlHandler.GetWindowsControl(windowHandle);
+            IEnumerable<IWindowControl> childs = window.GetChildControls();
 
             object windowTitle = window.GetControlValue();
             Console.WriteLine($"Window title: { windowTitle }");
@@ -31,7 +32,7 @@ namespace Test_Windows_ConnectionHandler_SubControls
 
             for (int i = 0; i < childs.Count(); ++i)
             {
-                IEnumerable<IWindowsControl> childChilds = childs.ElementAt(i).GetChildControls();
+                IEnumerable<IWindowControl> childChilds = childs.ElementAt(i).GetChildControls();
                 Console.WriteLine("");
             }
         }

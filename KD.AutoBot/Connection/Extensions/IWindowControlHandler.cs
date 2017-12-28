@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace KD.AutoBot.Connection.Windows.Extensions
+namespace KD.AutoBot.Connection.Extensions
 {
     /// <summary>
     /// Used to get single window control from connected process.
     /// </summary>
-    public interface IWindowsControlHandler : IPlatformConnectionExtension
+    public interface IWindowControlHandler : IPlatformConnectionExtension
     {
         /// <summary>
         /// Returns control from connected process.
         /// </summary>
-        IWindowsControl GetWindowsControl(IntPtr process);
+        IWindowControl GetWindowsControl(IntPtr process);
     }
 }

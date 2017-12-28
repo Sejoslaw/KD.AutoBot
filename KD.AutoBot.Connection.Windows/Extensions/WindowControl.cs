@@ -1,4 +1,5 @@
-﻿using KD.AutoBot.Connection.Windows.Native;
+﻿using KD.AutoBot.Connection.Extensions;
+using KD.AutoBot.Connection.Windows.Native;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -6,16 +7,16 @@ using System.Runtime.InteropServices;
 namespace KD.AutoBot.Connection.Windows.Extensions
 {
     /// <summary>
-    /// Implementation of <see cref="IWindowsControl"/>.
+    /// Windows specific implementation of <see cref="IWindowControl"/>.
     /// </summary>
-    public class WindowsControl : AbstractWindowsControl
+    public class WindowControl : AbstractWindowControl
     {
-        public WindowsControl(IntPtr controlHandler, IWindowsControl parentControl) :
+        public WindowControl(IntPtr controlHandler, IWindowControl parentControl) :
             base(controlHandler, parentControl)
         {
         }
 
-        public override IEnumerable<IWindowsControl> GetChildControls()
+        public override IEnumerable<IWindowControl> GetChildControls()
         {
             ISet<IntPtr> childs = new HashSet<IntPtr>();
 
@@ -32,10 +33,10 @@ namespace KD.AutoBot.Connection.Windows.Extensions
                 handleList.Free();
             }
 
-            ISet<IWindowsControl> childWindows = new HashSet<IWindowsControl>();
+            ISet<IWindowControl> childWindows = new HashSet<IWindowControl>();
             foreach (IntPtr child in childs)
             {
-                IWindowsControl windowsControl = new WindowsControl(child, this);
+                IWindowControl windowsControl = new WindowControl(child, this);
                 childWindows.Add(windowsControl);
             }
 
