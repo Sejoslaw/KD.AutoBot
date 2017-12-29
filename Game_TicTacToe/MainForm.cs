@@ -8,5 +8,10 @@ namespace Game_TicTacToe
         {
             InitializeComponent();
         }
+
+        private void TSMI_Exit_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -29,47 +29,47 @@
         private void InitializeComponent()
         {
             this.GB_Buttons = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.B_8 = new System.Windows.Forms.Button();
+            this.B_7 = new System.Windows.Forms.Button();
+            this.B_6 = new System.Windows.Forms.Button();
+            this.B_5 = new System.Windows.Forms.Button();
+            this.B_4 = new System.Windows.Forms.Button();
+            this.B_3 = new System.Windows.Forms.Button();
+            this.B_2 = new System.Windows.Forms.Button();
+            this.B_1 = new System.Windows.Forms.Button();
+            this.B_0 = new System.Windows.Forms.Button();
             this.GB_CurrentPlayerTurn = new System.Windows.Forms.GroupBox();
             this.TB_CurrentPlayerTurn = new System.Windows.Forms.TextBox();
             this.GB_Players = new System.Windows.Forms.GroupBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.L_PLayers_Player2 = new System.Windows.Forms.Label();
+            this.L_Players_Player1 = new System.Windows.Forms.Label();
+            this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_NewGame = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.L_Players_Player1 = new System.Windows.Forms.Label();
-            this.L_PLayers_Player2 = new System.Windows.Forms.Label();
             this.GB_Score = new System.Windows.Forms.GroupBox();
+            this.TB_Score_Player2 = new System.Windows.Forms.TextBox();
+            this.TB_Score_Player1 = new System.Windows.Forms.TextBox();
             this.L_Score_Player2 = new System.Windows.Forms.Label();
             this.L_Score_Player1 = new System.Windows.Forms.Label();
-            this.TB_Score_Player1 = new System.Windows.Forms.TextBox();
-            this.TB_Score_Player2 = new System.Windows.Forms.TextBox();
             this.GB_Buttons.SuspendLayout();
             this.GB_CurrentPlayerTurn.SuspendLayout();
             this.GB_Players.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.MainMenu.SuspendLayout();
             this.GB_Score.SuspendLayout();
             this.SuspendLayout();
             // 
             // GB_Buttons
             // 
-            this.GB_Buttons.Controls.Add(this.button8);
-            this.GB_Buttons.Controls.Add(this.button9);
-            this.GB_Buttons.Controls.Add(this.button10);
-            this.GB_Buttons.Controls.Add(this.button5);
-            this.GB_Buttons.Controls.Add(this.button6);
-            this.GB_Buttons.Controls.Add(this.button7);
-            this.GB_Buttons.Controls.Add(this.button3);
-            this.GB_Buttons.Controls.Add(this.button2);
-            this.GB_Buttons.Controls.Add(this.button1);
+            this.GB_Buttons.Controls.Add(this.B_8);
+            this.GB_Buttons.Controls.Add(this.B_7);
+            this.GB_Buttons.Controls.Add(this.B_6);
+            this.GB_Buttons.Controls.Add(this.B_5);
+            this.GB_Buttons.Controls.Add(this.B_4);
+            this.GB_Buttons.Controls.Add(this.B_3);
+            this.GB_Buttons.Controls.Add(this.B_2);
+            this.GB_Buttons.Controls.Add(this.B_1);
+            this.GB_Buttons.Controls.Add(this.B_0);
             this.GB_Buttons.Location = new System.Drawing.Point(12, 27);
             this.GB_Buttons.Name = "GB_Buttons";
             this.GB_Buttons.Size = new System.Drawing.Size(178, 194);
@@ -77,77 +77,77 @@
             this.GB_Buttons.TabStop = false;
             this.GB_Buttons.Text = "Buttons";
             // 
-            // button1
+            // B_8
             // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.B_8.Location = new System.Drawing.Point(118, 131);
+            this.B_8.Name = "B_8";
+            this.B_8.Size = new System.Drawing.Size(50, 50);
+            this.B_8.TabIndex = 8;
+            this.B_8.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // B_7
             // 
-            this.button2.Location = new System.Drawing.Point(62, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
+            this.B_7.Location = new System.Drawing.Point(62, 131);
+            this.B_7.Name = "B_7";
+            this.B_7.Size = new System.Drawing.Size(50, 50);
+            this.B_7.TabIndex = 7;
+            this.B_7.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // B_6
             // 
-            this.button3.Location = new System.Drawing.Point(118, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 50);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
+            this.B_6.Location = new System.Drawing.Point(6, 131);
+            this.B_6.Name = "B_6";
+            this.B_6.Size = new System.Drawing.Size(50, 50);
+            this.B_6.TabIndex = 6;
+            this.B_6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // B_5
             // 
-            this.button5.Location = new System.Drawing.Point(118, 75);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 50);
-            this.button5.TabIndex = 5;
-            this.button5.UseVisualStyleBackColor = true;
+            this.B_5.Location = new System.Drawing.Point(118, 75);
+            this.B_5.Name = "B_5";
+            this.B_5.Size = new System.Drawing.Size(50, 50);
+            this.B_5.TabIndex = 5;
+            this.B_5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // B_4
             // 
-            this.button6.Location = new System.Drawing.Point(62, 75);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(50, 50);
-            this.button6.TabIndex = 4;
-            this.button6.UseVisualStyleBackColor = true;
+            this.B_4.Location = new System.Drawing.Point(62, 75);
+            this.B_4.Name = "B_4";
+            this.B_4.Size = new System.Drawing.Size(50, 50);
+            this.B_4.TabIndex = 4;
+            this.B_4.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // B_3
             // 
-            this.button7.Location = new System.Drawing.Point(6, 75);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(50, 50);
-            this.button7.TabIndex = 3;
-            this.button7.UseVisualStyleBackColor = true;
+            this.B_3.Location = new System.Drawing.Point(6, 75);
+            this.B_3.Name = "B_3";
+            this.B_3.Size = new System.Drawing.Size(50, 50);
+            this.B_3.TabIndex = 3;
+            this.B_3.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // B_2
             // 
-            this.button8.Location = new System.Drawing.Point(118, 131);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(50, 50);
-            this.button8.TabIndex = 8;
-            this.button8.UseVisualStyleBackColor = true;
+            this.B_2.Location = new System.Drawing.Point(118, 19);
+            this.B_2.Name = "B_2";
+            this.B_2.Size = new System.Drawing.Size(50, 50);
+            this.B_2.TabIndex = 2;
+            this.B_2.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // B_1
             // 
-            this.button9.Location = new System.Drawing.Point(62, 131);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(50, 50);
-            this.button9.TabIndex = 7;
-            this.button9.UseVisualStyleBackColor = true;
+            this.B_1.Location = new System.Drawing.Point(62, 19);
+            this.B_1.Name = "B_1";
+            this.B_1.Size = new System.Drawing.Size(50, 50);
+            this.B_1.TabIndex = 1;
+            this.B_1.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // B_0
             // 
-            this.button10.Location = new System.Drawing.Point(6, 131);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(50, 50);
-            this.button10.TabIndex = 6;
-            this.button10.UseVisualStyleBackColor = true;
+            this.B_0.Location = new System.Drawing.Point(6, 19);
+            this.B_0.Name = "B_0";
+            this.B_0.Size = new System.Drawing.Size(50, 50);
+            this.B_0.TabIndex = 0;
+            this.B_0.UseVisualStyleBackColor = true;
             // 
             // GB_CurrentPlayerTurn
             // 
@@ -178,15 +178,33 @@
             this.GB_Players.TabStop = false;
             this.GB_Players.Text = "Players";
             // 
-            // menuStrip1
+            // L_PLayers_Player2
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.L_PLayers_Player2.AutoSize = true;
+            this.L_PLayers_Player2.Location = new System.Drawing.Point(7, 38);
+            this.L_PLayers_Player2.Name = "L_PLayers_Player2";
+            this.L_PLayers_Player2.Size = new System.Drawing.Size(59, 13);
+            this.L_PLayers_Player2.TabIndex = 1;
+            this.L_PLayers_Player2.Text = "Player 2: O";
+            // 
+            // L_Players_Player1
+            // 
+            this.L_Players_Player1.AutoSize = true;
+            this.L_Players_Player1.Location = new System.Drawing.Point(7, 20);
+            this.L_Players_Player1.Name = "L_Players_Player1";
+            this.L_Players_Player1.Size = new System.Drawing.Size(58, 13);
+            this.L_Players_Player1.TabIndex = 0;
+            this.L_Players_Player1.Text = "Player 1: X";
+            // 
+            // MainMenu
+            // 
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(343, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Size = new System.Drawing.Size(343, 24);
+            this.MainMenu.TabIndex = 3;
+            this.MainMenu.Text = "MainMenu";
             // 
             // fileToolStripMenuItem
             // 
@@ -208,24 +226,7 @@
             this.TSMI_Exit.Name = "TSMI_Exit";
             this.TSMI_Exit.Size = new System.Drawing.Size(152, 22);
             this.TSMI_Exit.Text = "Exit";
-            // 
-            // L_Players_Player1
-            // 
-            this.L_Players_Player1.AutoSize = true;
-            this.L_Players_Player1.Location = new System.Drawing.Point(7, 20);
-            this.L_Players_Player1.Name = "L_Players_Player1";
-            this.L_Players_Player1.Size = new System.Drawing.Size(58, 13);
-            this.L_Players_Player1.TabIndex = 0;
-            this.L_Players_Player1.Text = "Player 1: X";
-            // 
-            // L_PLayers_Player2
-            // 
-            this.L_PLayers_Player2.AutoSize = true;
-            this.L_PLayers_Player2.Location = new System.Drawing.Point(7, 38);
-            this.L_PLayers_Player2.Name = "L_PLayers_Player2";
-            this.L_PLayers_Player2.Size = new System.Drawing.Size(59, 13);
-            this.L_PLayers_Player2.TabIndex = 1;
-            this.L_PLayers_Player2.Text = "Player 2: O";
+            this.TSMI_Exit.Click += new System.EventHandler(this.TSMI_Exit_Click);
             // 
             // GB_Score
             // 
@@ -239,6 +240,22 @@
             this.GB_Score.TabIndex = 4;
             this.GB_Score.TabStop = false;
             this.GB_Score.Text = "Score";
+            // 
+            // TB_Score_Player2
+            // 
+            this.TB_Score_Player2.Location = new System.Drawing.Point(66, 39);
+            this.TB_Score_Player2.Name = "TB_Score_Player2";
+            this.TB_Score_Player2.ReadOnly = true;
+            this.TB_Score_Player2.Size = new System.Drawing.Size(56, 20);
+            this.TB_Score_Player2.TabIndex = 5;
+            // 
+            // TB_Score_Player1
+            // 
+            this.TB_Score_Player1.Location = new System.Drawing.Point(66, 13);
+            this.TB_Score_Player1.Name = "TB_Score_Player1";
+            this.TB_Score_Player1.ReadOnly = true;
+            this.TB_Score_Player1.Size = new System.Drawing.Size(56, 20);
+            this.TB_Score_Player1.TabIndex = 4;
             // 
             // L_Score_Player2
             // 
@@ -258,22 +275,6 @@
             this.L_Score_Player1.TabIndex = 2;
             this.L_Score_Player1.Text = "Player 1: ";
             // 
-            // TB_Score_Player1
-            // 
-            this.TB_Score_Player1.Location = new System.Drawing.Point(66, 13);
-            this.TB_Score_Player1.Name = "TB_Score_Player1";
-            this.TB_Score_Player1.ReadOnly = true;
-            this.TB_Score_Player1.Size = new System.Drawing.Size(56, 20);
-            this.TB_Score_Player1.TabIndex = 4;
-            // 
-            // TB_Score_Player2
-            // 
-            this.TB_Score_Player2.Location = new System.Drawing.Point(66, 39);
-            this.TB_Score_Player2.Name = "TB_Score_Player2";
-            this.TB_Score_Player2.ReadOnly = true;
-            this.TB_Score_Player2.Size = new System.Drawing.Size(56, 20);
-            this.TB_Score_Player2.TabIndex = 5;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,9 +284,9 @@
             this.Controls.Add(this.GB_Players);
             this.Controls.Add(this.GB_CurrentPlayerTurn);
             this.Controls.Add(this.GB_Buttons);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.MainMenu;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -295,8 +296,8 @@
             this.GB_CurrentPlayerTurn.PerformLayout();
             this.GB_Players.ResumeLayout(false);
             this.GB_Players.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MainMenu.ResumeLayout(false);
+            this.MainMenu.PerformLayout();
             this.GB_Score.ResumeLayout(false);
             this.GB_Score.PerformLayout();
             this.ResumeLayout(false);
@@ -305,31 +306,30 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox GB_Buttons;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox GB_CurrentPlayerTurn;
-        private System.Windows.Forms.TextBox TB_CurrentPlayerTurn;
-        private System.Windows.Forms.GroupBox GB_Players;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TSMI_NewGame;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Exit;
         private System.Windows.Forms.Label L_PLayers_Player2;
         private System.Windows.Forms.Label L_Players_Player1;
-        private System.Windows.Forms.GroupBox GB_Score;
         private System.Windows.Forms.Label L_Score_Player2;
         private System.Windows.Forms.Label L_Score_Player1;
-        private System.Windows.Forms.TextBox TB_Score_Player1;
-        private System.Windows.Forms.TextBox TB_Score_Player2;
+        public System.Windows.Forms.Button B_0;
+        public System.Windows.Forms.GroupBox GB_Buttons;
+        public System.Windows.Forms.Button B_8;
+        public System.Windows.Forms.Button B_7;
+        public System.Windows.Forms.Button B_6;
+        public System.Windows.Forms.Button B_5;
+        public System.Windows.Forms.Button B_4;
+        public System.Windows.Forms.Button B_3;
+        public System.Windows.Forms.Button B_2;
+        public System.Windows.Forms.Button B_1;
+        public System.Windows.Forms.GroupBox GB_CurrentPlayerTurn;
+        public System.Windows.Forms.TextBox TB_CurrentPlayerTurn;
+        public System.Windows.Forms.GroupBox GB_Players;
+        public System.Windows.Forms.GroupBox GB_Score;
+        public System.Windows.Forms.TextBox TB_Score_Player1;
+        public System.Windows.Forms.TextBox TB_Score_Player2;
     }
 }
 
