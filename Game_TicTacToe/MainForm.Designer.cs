@@ -40,9 +40,6 @@
             this.B_0 = new System.Windows.Forms.Button();
             this.GB_CurrentPlayerTurn = new System.Windows.Forms.GroupBox();
             this.TB_CurrentPlayerTurn = new System.Windows.Forms.TextBox();
-            this.GB_Players = new System.Windows.Forms.GroupBox();
-            this.L_PLayers_Player2 = new System.Windows.Forms.Label();
-            this.L_Players_Player1 = new System.Windows.Forms.Label();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_NewGame = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +51,6 @@
             this.L_Score_Player1 = new System.Windows.Forms.Label();
             this.GB_Buttons.SuspendLayout();
             this.GB_CurrentPlayerTurn.SuspendLayout();
-            this.GB_Players.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.GB_Score.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +80,7 @@
             this.B_8.Size = new System.Drawing.Size(50, 50);
             this.B_8.TabIndex = 8;
             this.B_8.UseVisualStyleBackColor = true;
+            this.B_8.Click += new System.EventHandler(this.B_8_Click);
             // 
             // B_7
             // 
@@ -92,6 +89,7 @@
             this.B_7.Size = new System.Drawing.Size(50, 50);
             this.B_7.TabIndex = 7;
             this.B_7.UseVisualStyleBackColor = true;
+            this.B_7.Click += new System.EventHandler(this.B_7_Click);
             // 
             // B_6
             // 
@@ -100,6 +98,7 @@
             this.B_6.Size = new System.Drawing.Size(50, 50);
             this.B_6.TabIndex = 6;
             this.B_6.UseVisualStyleBackColor = true;
+            this.B_6.Click += new System.EventHandler(this.B_6_Click);
             // 
             // B_5
             // 
@@ -108,6 +107,7 @@
             this.B_5.Size = new System.Drawing.Size(50, 50);
             this.B_5.TabIndex = 5;
             this.B_5.UseVisualStyleBackColor = true;
+            this.B_5.Click += new System.EventHandler(this.B_5_Click);
             // 
             // B_4
             // 
@@ -116,6 +116,7 @@
             this.B_4.Size = new System.Drawing.Size(50, 50);
             this.B_4.TabIndex = 4;
             this.B_4.UseVisualStyleBackColor = true;
+            this.B_4.Click += new System.EventHandler(this.B_4_Click);
             // 
             // B_3
             // 
@@ -124,6 +125,7 @@
             this.B_3.Size = new System.Drawing.Size(50, 50);
             this.B_3.TabIndex = 3;
             this.B_3.UseVisualStyleBackColor = true;
+            this.B_3.Click += new System.EventHandler(this.B_3_Click);
             // 
             // B_2
             // 
@@ -132,6 +134,7 @@
             this.B_2.Size = new System.Drawing.Size(50, 50);
             this.B_2.TabIndex = 2;
             this.B_2.UseVisualStyleBackColor = true;
+            this.B_2.Click += new System.EventHandler(this.B_2_Click);
             // 
             // B_1
             // 
@@ -140,6 +143,7 @@
             this.B_1.Size = new System.Drawing.Size(50, 50);
             this.B_1.TabIndex = 1;
             this.B_1.UseVisualStyleBackColor = true;
+            this.B_1.Click += new System.EventHandler(this.B_1_Click);
             // 
             // B_0
             // 
@@ -148,13 +152,14 @@
             this.B_0.Size = new System.Drawing.Size(50, 50);
             this.B_0.TabIndex = 0;
             this.B_0.UseVisualStyleBackColor = true;
+            this.B_0.Click += new System.EventHandler(this.B_0_Click);
             // 
             // GB_CurrentPlayerTurn
             // 
             this.GB_CurrentPlayerTurn.Controls.Add(this.TB_CurrentPlayerTurn);
             this.GB_CurrentPlayerTurn.Location = new System.Drawing.Point(197, 27);
             this.GB_CurrentPlayerTurn.Name = "GB_CurrentPlayerTurn";
-            this.GB_CurrentPlayerTurn.Size = new System.Drawing.Size(132, 49);
+            this.GB_CurrentPlayerTurn.Size = new System.Drawing.Size(131, 49);
             this.GB_CurrentPlayerTurn.TabIndex = 1;
             this.GB_CurrentPlayerTurn.TabStop = false;
             this.GB_CurrentPlayerTurn.Text = "Current Player Turn";
@@ -164,37 +169,8 @@
             this.TB_CurrentPlayerTurn.Location = new System.Drawing.Point(6, 19);
             this.TB_CurrentPlayerTurn.Name = "TB_CurrentPlayerTurn";
             this.TB_CurrentPlayerTurn.ReadOnly = true;
-            this.TB_CurrentPlayerTurn.Size = new System.Drawing.Size(116, 20);
+            this.TB_CurrentPlayerTurn.Size = new System.Drawing.Size(115, 20);
             this.TB_CurrentPlayerTurn.TabIndex = 0;
-            // 
-            // GB_Players
-            // 
-            this.GB_Players.Controls.Add(this.L_PLayers_Player2);
-            this.GB_Players.Controls.Add(this.L_Players_Player1);
-            this.GB_Players.Location = new System.Drawing.Point(197, 83);
-            this.GB_Players.Name = "GB_Players";
-            this.GB_Players.Size = new System.Drawing.Size(132, 65);
-            this.GB_Players.TabIndex = 2;
-            this.GB_Players.TabStop = false;
-            this.GB_Players.Text = "Players";
-            // 
-            // L_PLayers_Player2
-            // 
-            this.L_PLayers_Player2.AutoSize = true;
-            this.L_PLayers_Player2.Location = new System.Drawing.Point(7, 38);
-            this.L_PLayers_Player2.Name = "L_PLayers_Player2";
-            this.L_PLayers_Player2.Size = new System.Drawing.Size(59, 13);
-            this.L_PLayers_Player2.TabIndex = 1;
-            this.L_PLayers_Player2.Text = "Player 2: O";
-            // 
-            // L_Players_Player1
-            // 
-            this.L_Players_Player1.AutoSize = true;
-            this.L_Players_Player1.Location = new System.Drawing.Point(7, 20);
-            this.L_Players_Player1.Name = "L_Players_Player1";
-            this.L_Players_Player1.Size = new System.Drawing.Size(58, 13);
-            this.L_Players_Player1.TabIndex = 0;
-            this.L_Players_Player1.Text = "Player 1: X";
             // 
             // MainMenu
             // 
@@ -218,13 +194,14 @@
             // TSMI_NewGame
             // 
             this.TSMI_NewGame.Name = "TSMI_NewGame";
-            this.TSMI_NewGame.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_NewGame.Size = new System.Drawing.Size(132, 22);
             this.TSMI_NewGame.Text = "New Game";
+            this.TSMI_NewGame.Click += new System.EventHandler(this.TSMI_NewGame_Click);
             // 
             // TSMI_Exit
             // 
             this.TSMI_Exit.Name = "TSMI_Exit";
-            this.TSMI_Exit.Size = new System.Drawing.Size(152, 22);
+            this.TSMI_Exit.Size = new System.Drawing.Size(132, 22);
             this.TSMI_Exit.Text = "Exit";
             this.TSMI_Exit.Click += new System.EventHandler(this.TSMI_Exit_Click);
             // 
@@ -234,7 +211,7 @@
             this.GB_Score.Controls.Add(this.TB_Score_Player1);
             this.GB_Score.Controls.Add(this.L_Score_Player2);
             this.GB_Score.Controls.Add(this.L_Score_Player1);
-            this.GB_Score.Location = new System.Drawing.Point(197, 154);
+            this.GB_Score.Location = new System.Drawing.Point(196, 82);
             this.GB_Score.Name = "GB_Score";
             this.GB_Score.Size = new System.Drawing.Size(132, 67);
             this.GB_Score.TabIndex = 4;
@@ -243,37 +220,39 @@
             // 
             // TB_Score_Player2
             // 
-            this.TB_Score_Player2.Location = new System.Drawing.Point(66, 39);
+            this.TB_Score_Player2.Location = new System.Drawing.Point(32, 39);
             this.TB_Score_Player2.Name = "TB_Score_Player2";
             this.TB_Score_Player2.ReadOnly = true;
-            this.TB_Score_Player2.Size = new System.Drawing.Size(56, 20);
+            this.TB_Score_Player2.Size = new System.Drawing.Size(90, 20);
             this.TB_Score_Player2.TabIndex = 5;
+            this.TB_Score_Player2.Text = "0";
             // 
             // TB_Score_Player1
             // 
-            this.TB_Score_Player1.Location = new System.Drawing.Point(66, 13);
+            this.TB_Score_Player1.Location = new System.Drawing.Point(31, 13);
             this.TB_Score_Player1.Name = "TB_Score_Player1";
             this.TB_Score_Player1.ReadOnly = true;
-            this.TB_Score_Player1.Size = new System.Drawing.Size(56, 20);
+            this.TB_Score_Player1.Size = new System.Drawing.Size(91, 20);
             this.TB_Score_Player1.TabIndex = 4;
+            this.TB_Score_Player1.Text = "0";
             // 
             // L_Score_Player2
             // 
             this.L_Score_Player2.AutoSize = true;
             this.L_Score_Player2.Location = new System.Drawing.Point(8, 42);
             this.L_Score_Player2.Name = "L_Score_Player2";
-            this.L_Score_Player2.Size = new System.Drawing.Size(51, 13);
+            this.L_Score_Player2.Size = new System.Drawing.Size(18, 13);
             this.L_Score_Player2.TabIndex = 3;
-            this.L_Score_Player2.Text = "Player 2: ";
+            this.L_Score_Player2.Text = "O:";
             // 
             // L_Score_Player1
             // 
             this.L_Score_Player1.AutoSize = true;
             this.L_Score_Player1.Location = new System.Drawing.Point(8, 16);
             this.L_Score_Player1.Name = "L_Score_Player1";
-            this.L_Score_Player1.Size = new System.Drawing.Size(51, 13);
+            this.L_Score_Player1.Size = new System.Drawing.Size(17, 13);
             this.L_Score_Player1.TabIndex = 2;
-            this.L_Score_Player1.Text = "Player 1: ";
+            this.L_Score_Player1.Text = "X:";
             // 
             // MainForm
             // 
@@ -281,7 +260,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 233);
             this.Controls.Add(this.GB_Score);
-            this.Controls.Add(this.GB_Players);
             this.Controls.Add(this.GB_CurrentPlayerTurn);
             this.Controls.Add(this.GB_Buttons);
             this.Controls.Add(this.MainMenu);
@@ -294,8 +272,6 @@
             this.GB_Buttons.ResumeLayout(false);
             this.GB_CurrentPlayerTurn.ResumeLayout(false);
             this.GB_CurrentPlayerTurn.PerformLayout();
-            this.GB_Players.ResumeLayout(false);
-            this.GB_Players.PerformLayout();
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.GB_Score.ResumeLayout(false);
@@ -310,8 +286,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TSMI_NewGame;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Exit;
-        private System.Windows.Forms.Label L_PLayers_Player2;
-        private System.Windows.Forms.Label L_Players_Player1;
         private System.Windows.Forms.Label L_Score_Player2;
         private System.Windows.Forms.Label L_Score_Player1;
         public System.Windows.Forms.Button B_0;
@@ -326,7 +300,6 @@
         public System.Windows.Forms.Button B_1;
         public System.Windows.Forms.GroupBox GB_CurrentPlayerTurn;
         public System.Windows.Forms.TextBox TB_CurrentPlayerTurn;
-        public System.Windows.Forms.GroupBox GB_Players;
         public System.Windows.Forms.GroupBox GB_Score;
         public System.Windows.Forms.TextBox TB_Score_Player1;
         public System.Windows.Forms.TextBox TB_Score_Player2;

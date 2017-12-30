@@ -16,11 +16,16 @@ namespace Game_TicTacToe
         /// Color used for coloring the button.
         /// </summary>
         public Color Color { get; }
+        /// <summary>
+        /// Player's points.
+        /// </summary>
+        public int Points { get; set; }
 
         public Player(string usedChar, Color color)
         {
             this.UsedChar = usedChar;
             this.Color = color;
+            this.Points = 0;
         }
     }
 }
