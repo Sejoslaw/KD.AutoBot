@@ -8,17 +8,13 @@
     <PackageLicenseUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Sejoslaw/KD.AutoBot</RepositoryUrl>
-    <PackageId>KD.AutoBot.Connection.Windows</PackageId>
+    <PackageId>KD.AutoBot.Input.Windows</PackageId>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>KD.AutoBot.Connection.Windows.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>KD.AutoBot.Input.Windows.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Native\NativeFunctions.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\KD.AutoBot\KD.AutoBot.csproj" />
+    <ProjectReference Include="..\..\..\Core\KD.AutoBot\KD.AutoBot.csproj" />
   </ItemGroup>
 
 </Project>

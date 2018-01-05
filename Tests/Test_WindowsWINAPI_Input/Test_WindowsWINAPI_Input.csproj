@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KD.AutoBot.Input.Windows\KD.AutoBot.Input.Windows.csproj" />
-    <ProjectReference Include="..\KD.AutoBot\KD.AutoBot.csproj" />
+    <ProjectReference Include="..\..\Core\KD.AutoBot\KD.AutoBot.csproj" />
+    <ProjectReference Include="..\..\PlatformSpecific\Windows\KD.AutoBot.Input.Windows\KD.AutoBot.Input.Windows.csproj" />
   </ItemGroup>
 
 </Project>
