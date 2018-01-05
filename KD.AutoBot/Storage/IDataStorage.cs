@@ -8,10 +8,10 @@
         /// <summary>
         /// Reads data from specified source.
         /// </summary>
-        void ReadData<TStorageType>(TStorageType source);
+        void ReadData(object source);
         /// <summary>
         /// Writes given data to specified destination.
         /// </summary>
-        void WriteData<TStorageType, TDataType>(TStorageType destination, TDataType[] data);
+        void WriteData(object destination, object data);
     }
 }

@@ -14,7 +14,7 @@
         {
         }
 
-        public abstract void ReadData<TStorageType>(TStorageType source);
-        public abstract void WriteData<TStorageType, TDataType>(TStorageType destination, TDataType[] data);
+        public abstract void ReadData(object source);
+        public abstract void WriteData(object destination, object data);
     }
 }
