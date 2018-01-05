@@ -2,6 +2,8 @@
 using KD.AutoBot.Connection;
 using KD.AutoBot.Input;
 using KD.AutoBot.Storage;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace KD.AutoBot
@@ -10,8 +12,13 @@ namespace KD.AutoBot
     /// AutoBot which can connect to specific <see cref="System.Diagnostics.Process"/> and perform specified operations on it.
     /// Also it learns during working.
     /// </summary>
-    public interface IAutoBot : IDataHolder
+    public interface IAutoBot : IDataHolder,
+        IComparer, IComparer<IAutoBot>, IEquatable<IAutoBot>
     {
+        /// <summary>
+        /// Returns the unique identificator for this <see cref="IAutoBot"/>.
+        /// </summary>
+        Guid Id { get; }
         /// <summary>
         /// Data Storage in which Bot will store it's data.
         /// </summary>
