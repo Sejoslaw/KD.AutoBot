@@ -20,6 +20,7 @@ TODO:
 - [ ] Add predefined logging options in additional library.
 - [ ] Extend [IAutoBot](https://github.com/Sejoslaw/KD.AutoBot/blob/master/KD.AutoBot/IAutoBot.cs) and [IModule](https://github.com/Sejoslaw/KD.AutoBot/blob/master/KD.AutoBot/IModule.cs) with events.
 - [ ] Finish porting to TicTacToe game.
+- [ ] Clean everything from TODO.txt file.
 
 Solution overview:
 ---
