@@ -31,5 +31,5 @@ Logical folder | Project title | .NET Platform | Description
 [PlatformSpecific\Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/PlatformSpecific/Windows) | [KD.AutoBot.Connection.Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.Connection.Windows) | .NET Standard 2.0 | Contains calls to Win32Api related to connecting to Windows processes.
 [PlatformSpecific\Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/PlatformSpecific/Windows) | [KD.AutoBot.Input.Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.Input.Windows) | .NET Standard 2.0 | Contains calls to Win32Api related to sending / simulating User input.
 [Game](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Game) | | | Contains various games and KD.AutoBot implementations for them.
-[Game\TicTacToe](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Game/TicTacToe) | | .NET Framework 4.6.1 | Contains all projects for TicTacToe game.
+[Game\TicTacToe](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Game/TicTacToe) | | .NET Framework 4.6.1 | Contains all projects for TicTacToe game and AutoBot implementation.
 [Tests](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Tests) | | | Contains all tests - projects which starts with prefix "Test_".
