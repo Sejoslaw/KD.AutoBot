@@ -25,10 +25,11 @@ Solution overview:
 ---
 Logical folder | Project title | .NET Platform | Description
 ---------------|---------------|---------------|-------------
-Core | [KD.AutoBot](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot) | .NET Standard 2.0 | Contains core interfaces with abstract implementation.
-Core | [KD.AutoBot.AI](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.AI) | .NET Standard 2.0 | Contains abstract layer for Robot learning.
-Core | [KD.AutoBot.AI.Impl](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.AI.Impl) | .NET Standard 2.0 | [W.I.P.] Contains implementations for Robot learning.
-PlatformSpecific\Windows | [KD.AutoBot.Connection.Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.Connection.Windows) | .NET Standard 2.0 | Contains calls to Win32Api related to connecting to Windows processes.
-PlatformSpecific\Windows | [KD.AutoBot.Input.Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.Input.Windows) | .NET Standard 2.0 | Contains calls to Win32Api related to sending / simulating User input.
-Game | | | Contains various games and KD.AutoBot implementations for them.
-Tests | | | Contains all tests - projects which starts with prefix "Test_".
+[Core](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Core) | [KD.AutoBot](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot) | .NET Standard 2.0 | Contains core interfaces with abstract implementation.
+[Core](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Core) | [KD.AutoBot.AI](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.AI) | .NET Standard 2.0 | Contains abstract layer for Robot learning.
+[Core](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Core) | [KD.AutoBot.AI.Impl](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.AI.Impl) | .NET Standard 2.0 | [W.I.P.] Contains implementations for Robot learning.
+[PlatformSpecific\Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/PlatformSpecific/Windows) | [KD.AutoBot.Connection.Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.Connection.Windows) | .NET Standard 2.0 | Contains calls to Win32Api related to connecting to Windows processes.
+[PlatformSpecific\Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/PlatformSpecific/Windows) | [KD.AutoBot.Input.Windows](https://github.com/Sejoslaw/KD.AutoBot/tree/master/KD.AutoBot.Input.Windows) | .NET Standard 2.0 | Contains calls to Win32Api related to sending / simulating User input.
+[Game](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Game) | | | Contains various games and KD.AutoBot implementations for them.
+[Game\TicTacToe](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Game/TicTacToe) | | | Contains all projects for TicTacToe game.
+[Tests](https://github.com/Sejoslaw/KD.AutoBot/tree/master/Tests) | | | Contains all tests - projects which starts with prefix "Test_".
