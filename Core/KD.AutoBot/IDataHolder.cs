@@ -11,6 +11,6 @@ namespace KD.AutoBot
         /// <summary>
         /// Returns value by given key; null if key is wrong or value is empty.
         /// </summary>
-        object this[string key] { get; }
+        object this[string key] { get; set; }
     }
 }

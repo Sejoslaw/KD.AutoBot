@@ -26,7 +26,7 @@ namespace KD.AutoBot
         /// <summary>
         /// <see cref="Dictionary{TKey, TValue}"/> which stores internal data of an <see cref="IDataHolder"/>.
         /// </summary>
-        private Dictionary<string, object> InternalData { get; set; }
+        private IDictionary<string, object> InternalData { get; set; }
 
         public BasicDataHolder()
         {
