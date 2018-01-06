@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22DD5F09-59B0-4F47-B9DC-371D53805E27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KD.AutoBot.TicTacToe</RootNamespace>
+    <AssemblyName>KD.AutoBot.TicTacToe</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicTacToeAutoBot.cs" />
+    <Compile Include="TicTacToeAutoBotBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\KD.AutoBot\KD.AutoBot.csproj">
+      <Project>{4d0a7c4c-ba46-49d0-a176-2c487f4ba17a}</Project>
+      <Name>KD.AutoBot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PlatformSpecific\Windows\KD.AutoBot.Connection.Windows\KD.AutoBot.Connection.Windows.csproj">
+      <Project>{77a2613f-3c30-4a9b-b8a5-c3d281b0c0e6}</Project>
+      <Name>KD.AutoBot.Connection.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PlatformSpecific\Windows\KD.AutoBot.Input.Windows\KD.AutoBot.Input.Windows.csproj">
+      <Project>{af3441d5-3587-4672-a1d1-833df2573c24}</Project>
+      <Name>KD.AutoBot.Input.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KD.AutoBot.Game.TicTacToe.GeneticSharp\KD.AutoBot.Game.TicTacToe.GeneticSharp.csproj">
+      <Project>{f99517d0-f154-40d4-b5fd-24d918c93e94}</Project>
+      <Name>KD.AutoBot.Game.TicTacToe.GeneticSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

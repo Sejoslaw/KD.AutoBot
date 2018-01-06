@@ -19,6 +19,15 @@ namespace KD.AutoBot
         public ILearningModule LearningModule { get; protected set; }
         public ICollection<IModule> Modules { get; protected set; }
 
+        /// <summary>
+        /// Describes if an AutoBot is paused.
+        /// </summary>
+        protected bool IsPaused { get; set; }
+        /// <summary>
+        /// Describes if an AutoBot is stopped.
+        /// </summary>
+        protected bool IsStopped { get; set; }
+
         public AbstractAutoBot()
         {
             this.Id = Guid.NewGuid();

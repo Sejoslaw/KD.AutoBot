@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Game_TicTacToe
@@ -86,7 +87,30 @@ namespace Game_TicTacToe
                 this.RestartGame();
             }
 
+            if (this.CheckDraw(gameGrid))
+            {
+                this.RestartGame();
+            }
+
             this.NextTurn();
+        }
+
+        private bool CheckDraw(string[][] gameGrid)
+        {
+            bool draw = true;
+
+            for (int i = 0; i < gameGrid.Length; ++i)
+            {
+                for (int j = 0; j < gameGrid[0].Length; ++j)
+                {
+                    if (gameGrid[i][j].Equals(""))
+                    {
+                        draw = false;
+                    }
+                }
+            }
+
+            return draw;
         }
 
         private string[][] BuildGameGrid()

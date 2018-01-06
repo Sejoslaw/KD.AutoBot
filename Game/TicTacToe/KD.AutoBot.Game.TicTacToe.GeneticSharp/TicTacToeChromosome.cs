@@ -1,5 +1,4 @@
 ﻿using GeneticSharp.Domain.Chromosomes;
-using System;
 
 namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
 {
@@ -7,7 +6,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
     /// Chromosome which holds board data.
     /// This chromosome will be used to calculate new best move.
     /// </summary>
-    public class TicTacToeChromosome : ChromosomeBase
+    internal class TicTacToeChromosome : ChromosomeBase
     {
         /// <summary>
         /// Values from each cell of game board.

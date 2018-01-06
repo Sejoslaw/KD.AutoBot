@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GeneticSharp.Domain, Version=1.1.6378.25009, Culture=neutral, PublicKeyToken=d63d2a65268366c6, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\GeneticSharp.1.1.19\lib\net35\GeneticSharp.Domain.dll</HintPath>
@@ -53,10 +56,13 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="States\MakingMoveState.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\WaitingState.cs" />
     <Compile Include="TicTacToeChromosome.cs" />
     <Compile Include="TicTacToeFitness.cs" />
+    <Compile Include="TicTacToeLearningModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

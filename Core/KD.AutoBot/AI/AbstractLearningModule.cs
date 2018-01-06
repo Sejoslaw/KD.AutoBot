@@ -30,6 +30,8 @@ namespace KD.AutoBot.AI
             return actionResult;
         }
 
-        public abstract void LearnFromSource(object source);
+        public virtual void LearnFromSource(object source)
+        {
+        }
     }
 }

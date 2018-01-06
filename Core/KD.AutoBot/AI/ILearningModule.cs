@@ -10,7 +10,7 @@ namespace KD.AutoBot.AI
         /// <summary>
         /// Bots current state.
         /// </summary>
-        IState CurrentState { get; }
+        IState CurrentState { get; set; }
         /// <summary>
         /// All states in which Bot can be.
         /// </summary>

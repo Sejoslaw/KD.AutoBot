@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace KD.AutoBot.Connection.Windows
@@ -6,6 +7,7 @@ namespace KD.AutoBot.Connection.Windows
     /// <summary>
     /// Windows implementation of <see cref="IConnectionHandler"/>.
     /// </summary>
+    [Serializable]
     public class WindowsConnectionHandler : AbstractConnectionHandler
     {
         public WindowsConnectionHandler(IAutoBot bot) :

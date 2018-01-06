@@ -47,6 +47,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_BasicDataHolder", "Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Game_TicTacToe_FitnessFunction", "Tests\Test_Game_TicTacToe_FitnessFunction\Test_Game_TicTacToe_FitnessFunction.csproj", "{7BF32EC9-CAF6-4FC6-B727-967085DC36F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KD.AutoBot.TicTacToe", "Game\TicTacToe\KD.AutoBot.TicTacToe\KD.AutoBot.TicTacToe.csproj", "{22DD5F09-59B0-4F47-B9DC-371D53805E27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{7BF32EC9-CAF6-4FC6-B727-967085DC36F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BF32EC9-CAF6-4FC6-B727-967085DC36F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BF32EC9-CAF6-4FC6-B727-967085DC36F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22DD5F09-59B0-4F47-B9DC-371D53805E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22DD5F09-59B0-4F47-B9DC-371D53805E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22DD5F09-59B0-4F47-B9DC-371D53805E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22DD5F09-59B0-4F47-B9DC-371D53805E27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +146,7 @@ Global
 		{F99517D0-F154-40D4-B5FD-24D918C93E94} = {CD09B200-F0CC-478C-BAB9-C66C58949FCA}
 		{7F10896F-637A-479E-A556-5DC01EB3153D} = {B57AF87B-C8E8-445C-BFF9-98D1CF9D2F82}
 		{7BF32EC9-CAF6-4FC6-B727-967085DC36F9} = {B57AF87B-C8E8-445C-BFF9-98D1CF9D2F82}
+		{22DD5F09-59B0-4F47-B9DC-371D53805E27} = {CD09B200-F0CC-478C-BAB9-C66C58949FCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {130DE857-F2F1-4108-BBE6-0BBB0DF7C3D3}

@@ -9,6 +9,7 @@ namespace KD.AutoBot.Connection.Windows.Extensions
     /// <summary>
     /// Windows specific implementation of <see cref="IWindowControl"/>.
     /// </summary>
+    [Serializable]
     public class WindowControl : AbstractWindowControl
     {
         public WindowControl(IntPtr controlHandler, IWindowControl parentControl) :

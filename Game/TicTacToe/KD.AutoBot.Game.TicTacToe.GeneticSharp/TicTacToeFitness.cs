@@ -7,7 +7,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
     /// <summary>
     /// Used to calculate fitness - place on the board where to place char.
     /// </summary>
-    public class TicTacToeFitness : IFitness
+    internal class TicTacToeFitness : IFitness
     {
         /// <summary>
         /// Number of minimum same chars in single row or column.

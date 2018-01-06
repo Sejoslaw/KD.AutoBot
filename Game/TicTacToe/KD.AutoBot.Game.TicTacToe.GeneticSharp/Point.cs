@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents 2D point.
     /// </summary>
-    public class Point
+    internal class Point
     {
         public int X { get; set; }
         public int Y { get; set; }

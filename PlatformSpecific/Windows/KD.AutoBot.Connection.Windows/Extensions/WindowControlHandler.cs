@@ -6,6 +6,7 @@ namespace KD.AutoBot.Connection.Windows.Extensions
     /// <summary>
     /// Windows specific implementation of <see cref="IWindowControlHandler"/>.
     /// </summary>
+    [Serializable]
     public class WindowControlHandler : AbstractWindowControlHandler
     {
         public WindowControlHandler(IPlatformConnectionTools platformConnectionTools) :
