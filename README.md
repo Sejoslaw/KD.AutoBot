@@ -1,12 +1,12 @@
 # KD.AutoBot
 
-KD.AutoBot is a library which give User a possibility to create a self-learning Robot for specified application / game which can simulate
-a User behavior. Robot can simulate everything that User can do.
+KD.AutoBot is a library which give User a possibility to create a self-learning Robot for specified application / game which can simulate a User behavior. Robot can simulate everything that User can do.
 
 Library has been written in .NET Standard (components written for specific libraries / systems may be written in .NET Core or .NET Framework).
 
 KD.AutoBot:
 ---
+- [X] Don't need to have a reference to a project / process it should connect to !!!
 - [X] Should always be assemble using predefined [IAutoBotBuilder](https://github.com/Sejoslaw/KD.AutoBot/blob/master/KD.AutoBot/IAutoBotBuilder.cs)
 - [X] Can save / load data to / from specified source.
 - [X] Can connect to running process (through platform native API).
