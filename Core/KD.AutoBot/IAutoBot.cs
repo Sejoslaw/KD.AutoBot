@@ -3,7 +3,6 @@ using KD.AutoBot.Connection;
 using KD.AutoBot.Input;
 using KD.AutoBot.Storage;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace KD.AutoBot
@@ -13,7 +12,7 @@ namespace KD.AutoBot
     /// Also it learns during working.
     /// </summary>
     public interface IAutoBot : IDataHolder,
-        IComparer, IComparer<IAutoBot>, IEquatable<IAutoBot>
+        IEquatable<IAutoBot>
     {
         /// <summary>
         /// Returns the unique identificator for this <see cref="IAutoBot"/>.
