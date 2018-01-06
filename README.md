@@ -9,7 +9,7 @@ KD.AutoBot:
 ---
 - [X] Should always be assemble using predefined [IAutoBotBuilder](https://github.com/Sejoslaw/KD.AutoBot/blob/master/KD.AutoBot/IAutoBotBuilder.cs)
 - [X] Can save / load data to / from specified source.
-- [X] Can connect to running process.
+- [X] Can connect to running process (through platform native API).
 - [X] Can read data from process controls (TextBoxes, Buttons, etc.) and their childs.
 - [X] Can click buttons !!!
 - [X] Can simulate User input (Keyboard, Mouse, new specially prepared device) using system native API.
