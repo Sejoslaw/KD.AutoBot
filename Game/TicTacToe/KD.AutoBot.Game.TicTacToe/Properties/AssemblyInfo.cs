@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KD.AutoBot.TicTacToe")]
+[assembly: AssemblyTitle("KD.AutoBot.Game.TicTacToe")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KD.AutoBot.TicTacToe")]
+[assembly: AssemblyCompany("KD.AutoBot")]
+[assembly: AssemblyProduct("KD.AutoBot.Game.TicTacToe")]
 [assembly: AssemblyCopyright("Copyright © KD.AutoBot since 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("22dd5f09-59b0-4f47-b9dc-371d53805e27")]
+[assembly: Guid("a67f7ccd-d184-40b6-aa15-d4ee60529b6d")]
 
 // Version information for an assembly consists of the following four values:
 //

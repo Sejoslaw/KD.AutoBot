@@ -30,7 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>KD.AutoBot.Game.TicTacToe.GeneticSharp.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GeneticSharp.Domain, Version=1.1.6378.25009, Culture=neutral, PublicKeyToken=d63d2a65268366c6, processorArchitecture=MSIL">
@@ -65,6 +68,7 @@
     <Compile Include="TicTacToeLearningModule.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="KD.AutoBot.Game.TicTacToe.GeneticSharp.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

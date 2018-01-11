@@ -1,4 +1,4 @@
-﻿namespace KD.AutoBot.TicTacToe
+﻿namespace KD.AutoBot.Game.TicTacToe
 {
     /// <summary>
     /// TicTacToe-specific implementation of <see cref="IAutoBotBuilder"/>.

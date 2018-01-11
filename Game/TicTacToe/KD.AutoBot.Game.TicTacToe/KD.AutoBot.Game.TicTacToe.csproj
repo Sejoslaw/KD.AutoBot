@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{22DD5F09-59B0-4F47-B9DC-371D53805E27}</ProjectGuid>
+    <ProjectGuid>{A67F7CCD-D184-40B6-AA15-D4EE60529B6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KD.AutoBot.TicTacToe</RootNamespace>
-    <AssemblyName>KD.AutoBot.TicTacToe</AssemblyName>
+    <RootNamespace>KD.AutoBot.Game.TicTacToe</RootNamespace>
+    <AssemblyName>KD.AutoBot.Game.TicTacToe</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,6 +28,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>KD.AutoBot.Game.TicTacToe.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -56,6 +62,9 @@
       <Project>{f99517d0-f154-40d4-b5fd-24d918c93e94}</Project>
       <Name>KD.AutoBot.Game.TicTacToe.GeneticSharp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="KD.AutoBot.Game.TicTacToe.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

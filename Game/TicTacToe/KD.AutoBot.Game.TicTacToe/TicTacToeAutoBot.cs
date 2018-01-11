@@ -3,7 +3,7 @@ using KD.AutoBot.Game.TicTacToe.GeneticSharp;
 using KD.AutoBot.Input.Windows;
 using System;
 
-namespace KD.AutoBot.TicTacToe
+namespace KD.AutoBot.Game.TicTacToe
 {
     /// <summary>
     /// TicTacToe-specific implementation of <see cref="IAutoBot"/>.
