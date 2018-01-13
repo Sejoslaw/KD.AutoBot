@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 
 namespace KD.AutoBot.Connection.Windows.Native
@@ -27,6 +28,17 @@ namespace KD.AutoBot.Connection.Windows.Native
         {
             IntPtr window = NativeMethods.FindWindowByCaption(IntPtr.Zero, windowTitle);
             return window;
+        }
+
+        /// <summary>
+        /// Returns the <see cref="Process"/> using given window handler.
+        /// </summary>
+        public static Process GetProcessByWindowHandler(IntPtr windowHandler)
+        {
+            uint processId;
+            uint threadThatCreatedWindow = NativeMethods.GetWindowThreadProcessId(windowHandler, out processId);
+            Process windowProcess = Process.GetProcessById((int)processId);
+            return windowProcess;
         }
     }
 }

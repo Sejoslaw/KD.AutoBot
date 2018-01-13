@@ -7,7 +7,7 @@ namespace KD.AutoBot.Connection.Windows.Native
     /// <summary>
     /// Holds native Win32 API calls.
     /// </summary>
-    public static class NativeMethods
+    internal static class NativeMethods
     {
         public delegate bool EnumWindowsProc(IntPtr hwnd, IntPtr lParam);
 
@@ -74,5 +74,17 @@ namespace KD.AutoBot.Connection.Windows.Native
         /// </summary>
         [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
         public static extern IntPtr FindWindowByCaption(IntPtr zeroOnly, string lpWindowName);
+
+        /// <summary>
+        /// Retrieves the identifier of the thread that created the specified window and, optionally, the identifier of the process that created the window.
+        /// </summary>
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+
+        /// <summary>
+        /// When you don't want the ProcessId, use this overload and pass IntPtr.Zero for the second parameter
+        /// </summary>
+        [DllImport("user32.dll")]
+        public static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr ProcessId);
     }
 }

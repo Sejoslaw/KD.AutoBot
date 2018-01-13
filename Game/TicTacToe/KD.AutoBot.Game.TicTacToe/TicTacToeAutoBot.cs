@@ -87,7 +87,7 @@ namespace KD.AutoBot.Game.TicTacToe
         private void ConnectToGame()
         {
             this.WindowPtr = NativeMethodsHelper.GetWindowByTitle("TicTacToe");
-            Process windowProcess = Process.GetProcessById(this.WindowPtr.ToInt32());
+            Process windowProcess = NativeMethodsHelper.GetProcessByWindowHandler(this.WindowPtr);
             this.ConnectionHandler.AttachToProcess(windowProcess);
         }
 
