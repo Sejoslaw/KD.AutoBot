@@ -1,9 +1,12 @@
-﻿using KD.AutoBot.Connection.Windows;
+﻿using KD.AutoBot.Connection.Extensions;
+using KD.AutoBot.Connection.Windows;
+using KD.AutoBot.Connection.Windows.Extensions;
 using KD.AutoBot.Connection.Windows.Native;
 using KD.AutoBot.Game.TicTacToe.GeneticSharp;
 using KD.AutoBot.Input.Windows;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace KD.AutoBot.Game.TicTacToe
 {
@@ -13,6 +16,8 @@ namespace KD.AutoBot.Game.TicTacToe
     [Serializable]
     internal class TicTacToeAutoBot : AbstractAutoBot
     {
+        public const string TICTACTOE = "TicTacToe";
+
         /// <summary>
         /// Handler for TicTacToe window.
         /// </summary>
@@ -51,8 +56,8 @@ namespace KD.AutoBot.Game.TicTacToe
             this.LearningModule = new TicTacToeLearningModule(this);
             this.Storage = null; // Currently nothing is saved anywhere.
 
-            this.ConnectToGame();
-            this.FindCurrentPlayerChar();
+            this.ConnectAutoBotToProcess();
+            this.SetCurrentPlayerChar();
         }
 
         public override void PauseBot()
@@ -84,18 +89,32 @@ namespace KD.AutoBot.Game.TicTacToe
             }
         }
 
-        private void ConnectToGame()
+        private void ConnectAutoBotToProcess()
         {
-            this.WindowPtr = NativeMethodsHelper.GetWindowByTitle("TicTacToe");
-            Process windowProcess = NativeMethodsHelper.GetProcessByWindowHandler(this.WindowPtr);
-            this.ConnectionHandler.AttachToProcess(windowProcess);
+            Tuple<IntPtr, Process> process = NativeMethodsHelper.ConnectAutoBotToProcess(this, TICTACTOE);
+            this.WindowPtr = process.Item1;
         }
 
-        private void FindCurrentPlayerChar()
+        private void SetCurrentPlayerChar()
         {
-            // TODO: Add logic for getting char from window.
-            // Check if Bot is connected to game.
-            // Find TetBox with current player char and set it.
+            if (this.IsBotConnectedToGame())
+            {
+                this.TttChar = this.FindCurrentPlayerChar();
+            }
+        }
+
+        private bool IsBotConnectedToGame()
+        {
+            return this.ConnectionHandler.ConnectedProcesses.Where(connectedProcess => connectedProcess.Process.ProcessName.Contains(TICTACTOE)).Count() > 0;
+        }
+
+        private string FindCurrentPlayerChar()
+        {
+            IWindowControl mainControl = new WindowControl(this.WindowPtr, null);
+            IWindowControl playerCharGroupBox = NativeMethodsHelper.GetWindowControlByText(mainControl, "Current Player Turn");
+            IWindowControl charControl = playerCharGroupBox.GetChildControls().FirstOrDefault();
+            string tttChar = charControl.GetControlValue().ToString();
+            return tttChar;
         }
     }
 }

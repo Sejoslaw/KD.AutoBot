@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KD.AutoBot.Connection.Extensions;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
@@ -39,6 +41,56 @@ namespace KD.AutoBot.Connection.Windows.Native
             uint threadThatCreatedWindow = NativeMethods.GetWindowThreadProcessId(windowHandler, out processId);
             Process windowProcess = Process.GetProcessById((int)processId);
             return windowProcess;
+        }
+
+        /// <summary>
+        /// Connects specified <see cref="IAutoBot"/> to <see cref="Process"/> using window title.
+        /// </summary>
+        public static Tuple<IntPtr, Process> ConnectAutoBotToProcess(IAutoBot autoBot, string windowTitle)
+        {
+            IntPtr windowHandler = GetWindowByTitle(windowTitle);
+            Process windowProcess = GetProcessByWindowHandler(windowHandler);
+
+            if ((autoBot != null) && (autoBot.ConnectionHandler != null))
+            {
+                autoBot.ConnectionHandler.AttachToProcess(windowProcess);
+            }
+
+            return new Tuple<IntPtr, Process>(windowHandler, windowProcess);
+        }
+
+        /// <summary>
+        /// Finds any child window from specified that has a text value equals to specified.
+        /// </summary>
+        public static IWindowControl GetWindowControlByText(IWindowControl mainControl, string controlText)
+        {
+            object controlValue = mainControl.GetControlValue();
+            string text = controlValue.ToString();
+
+            if (text.Equals(controlText))
+            {
+                return mainControl;
+            }
+
+            IWindowControl foundControl = null;
+            IEnumerable<IWindowControl> childs = mainControl.GetChildControls();
+            foreach (IWindowControl child in childs)
+            {
+                foundControl = GetWindowControlByText(child, controlText);
+
+                if (foundControl != null)
+                {
+                    controlValue = foundControl.GetControlValue();
+                    text = controlValue.ToString();
+
+                    if (text.Equals(controlText))
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return foundControl;
         }
     }
 }

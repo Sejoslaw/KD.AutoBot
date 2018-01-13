@@ -1,5 +1,4 @@
-﻿using KD.AutoBot.Connection.Windows;
-using KD.AutoBot.Connection.Windows.Native;
+﻿using KD.AutoBot.Connection.Windows.Native;
 using System;
 using System.Diagnostics;
 
@@ -9,11 +8,11 @@ namespace Test_Game_TicTacToe_ConnectToGame
     {
         static void Main(string[] args)
         {
-            IntPtr windowPtr = NativeMethodsHelper.GetWindowByTitle("TicTacToe");
-            Process windowProcess = NativeMethodsHelper.GetProcessByWindowHandler(windowPtr);
+            Tuple<IntPtr, Process> gameProcess = NativeMethodsHelper.ConnectAutoBotToProcess(null, "TicTacToe");
 
-            WindowsConnectionHandler connectionHandler = new WindowsConnectionHandler(null);
-            connectionHandler.AttachToProcess(windowProcess);
+            Console.WriteLine($"Native Process Id = { gameProcess.Item1.ToInt32() }");
+            Console.WriteLine($"Process Id = { gameProcess.Item2.Id }");
+            Console.WriteLine($"Process Name = { gameProcess.Item2.ProcessName }");
 
             Console.ReadKey();
         }
