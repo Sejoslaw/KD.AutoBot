@@ -1,4 +1,5 @@
 ﻿using KD.AutoBot.AI;
+using System;
 using System.Linq;
 using System.Threading;
 
@@ -16,13 +17,14 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
 
         public override bool PerformNextAction()
         {
+            Thread.Sleep(1000);
+            this.LearningModule.CurrentState = this.LearningModule.States.ElementAt(1);
             return true;
         }
 
         public override void PrepareNextAction()
         {
-            Thread.Sleep(2000);
-            this.LearningModule.CurrentState = this.LearningModule.States.ElementAt(1);
+            this.NextAction = new Action(() => { });
         }
     }
 }

@@ -53,11 +53,12 @@ namespace KD.AutoBot.Game.TicTacToe
         {
             this.ConnectionHandler = new WindowsConnectionHandler(this);
             this.InputHandler = new WindowsInputHandler(this, null, new WindowsMouseHandler(this.InputHandler), null);
-            this.LearningModule = new TicTacToeLearningModule(this);
             this.Storage = null; // Currently nothing is saved anywhere.
 
             this.ConnectAutoBotToProcess();
             this.SetCurrentPlayerChar();
+
+            this.LearningModule = new TicTacToeLearningModule(this);
         }
 
         public override void PauseBot()

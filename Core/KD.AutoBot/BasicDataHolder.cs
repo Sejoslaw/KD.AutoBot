@@ -15,7 +15,11 @@ namespace KD.AutoBot
         {
             get
             {
-                return this.InternalData[key];
+                if (this.InternalData.ContainsKey(key))
+                {
+                    return this.InternalData[key];
+                }
+                return null;
             }
             set
             {
