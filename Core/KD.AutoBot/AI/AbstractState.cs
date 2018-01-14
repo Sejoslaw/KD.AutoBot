@@ -9,8 +9,14 @@ namespace KD.AutoBot.AI
     {
         public Action NextAction { get; set; }
         public object Value { get; set; }
+        public ILearningModule LearningModule { get; private set; }
 
-        public abstract bool PerformNextAction(ILearningModule learningModule);
-        public abstract void PrepareNextAction(ILearningModule learningModule);
+        public AbstractState(ILearningModule learningModule)
+        {
+            this.LearningModule = learningModule;
+        }
+
+        public abstract bool PerformNextAction();
+        public abstract void PrepareNextAction();
     }
 }

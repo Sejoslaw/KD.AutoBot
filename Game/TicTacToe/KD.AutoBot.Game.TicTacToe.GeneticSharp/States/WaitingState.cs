@@ -9,15 +9,20 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
     /// </summary>
     internal class WaitingState : AbstractState
     {
-        public override bool PerformNextAction(ILearningModule learningModule)
+        public WaitingState(ILearningModule learningModule) :
+            base(learningModule)
+        {
+        }
+
+        public override bool PerformNextAction()
         {
             return true;
         }
 
-        public override void PrepareNextAction(ILearningModule learningModule)
+        public override void PrepareNextAction()
         {
             Thread.Sleep(2000);
-            learningModule.CurrentState = learningModule.States.ElementAt(1);
+            this.LearningModule.CurrentState = this.LearningModule.States.ElementAt(1);
         }
     }
 }

@@ -5,7 +5,12 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
 {
     internal class MakingMoveState : AbstractState
     {
-        public override bool PerformNextAction(ILearningModule learningModule)
+        public MakingMoveState(ILearningModule learningModule) :
+            base(learningModule)
+        {
+        }
+
+        public override bool PerformNextAction()
         {
             if (this.NextAction != null)
             {
@@ -18,7 +23,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
         /// <summary>
         /// Main method which takes all the required data and components and plays TicTacToe.
         /// </summary>
-        public override void PrepareNextAction(ILearningModule learningModule)
+        public override void PrepareNextAction()
         {
             // TODO: Add logic
             // Check if Bot is connected to game.
@@ -27,7 +32,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
             // When GA decide which button to press, press it.
 
             // At the end set waiting module as current.
-            learningModule.CurrentState = learningModule.States.ElementAt(0);
+            this.LearningModule.CurrentState = this.LearningModule.States.ElementAt(0);
         }
     }
 }

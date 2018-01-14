@@ -9,8 +9,8 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
         public TicTacToeLearningModule(IAutoBot bot) :
             base(bot)
         {
-            this.States.Add(new WaitingState());
-            this.States.Add(new MakingMoveState());
+            this.States.Add(new WaitingState(this));
+            this.States.Add(new MakingMoveState(this));
 
             this.CurrentState = this.States.ElementAt(0);
         }

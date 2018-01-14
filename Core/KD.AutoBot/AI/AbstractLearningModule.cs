@@ -21,12 +21,12 @@ namespace KD.AutoBot.AI
 
         public virtual void PrepareNextAction()
         {
-            this.CurrentState.PrepareNextAction(this);
+            this.CurrentState.PrepareNextAction();
         }
 
         public virtual bool PerformNextAction()
         {
-            bool actionResult = this.CurrentState.PerformNextAction(this);
+            bool actionResult = this.CurrentState.PerformNextAction();
             return actionResult;
         }
 

@@ -21,15 +21,19 @@ namespace KD.AutoBot.AI
         /// Value of current state.
         /// </summary>
         object Value { get; }
+        /// <summary>
+        /// Learning module which is described by current state.
+        /// </summary>
+        ILearningModule LearningModule { get; }
 
         /// <summary>
         /// Prepares Bot's next <see cref="Action"/>.
         /// </summary>
-        void PrepareNextAction(ILearningModule learningModule);
+        void PrepareNextAction();
         /// <summary>
         /// Allows Bot's to perform next <see cref="Action"/>.
         /// Returns true if the <see cref="Action"/> has been made; otherwise false.
         /// </summary>
-        bool PerformNextAction(ILearningModule learningModule);
+        bool PerformNextAction();
     }
 }
