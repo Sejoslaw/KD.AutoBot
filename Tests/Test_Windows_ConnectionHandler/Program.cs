@@ -20,8 +20,8 @@ namespace Test_Windows_ConnectionHandler
             // Create connection handler and connection tools for Windows with double-side binding.
             var connectionHandler = new WindowsConnectionHandler(null);
 
-            connectionHandler.AttachToProcess(notepadProcess1);
-            connectionHandler.AttachToProcess(notepadProcess2);
+            connectionHandler.AttachToProcess(notepadProcess1, IntPtr.Zero);
+            connectionHandler.AttachToProcess(notepadProcess2, IntPtr.Zero);
 
             // Print all connected processes
             for (int i = 0; i < connectionHandler.ConnectedProcesses.Count; ++i)

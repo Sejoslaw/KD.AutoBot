@@ -16,14 +16,14 @@ namespace KD.AutoBot.Connection.Windows
             this.Extensions = new HashSet<IPlatformConnectionExtension>();
         }
 
-        public override bool AttachToProcess(Process process)
+        public override bool AttachToProcess(Process process, IntPtr windowHandler)
         {
             if (process == null)
             {
                 return false;
             }
 
-            IConnectedProcess connectedProcess = new BasicConnectedProcess(this.ConnectionHandler, process);
+            IConnectedProcess connectedProcess = new BasicConnectedProcess(this.ConnectionHandler, process, windowHandler);
             this.ConnectionHandler.ConnectedProcesses.Add(connectedProcess);
             return true;
         }

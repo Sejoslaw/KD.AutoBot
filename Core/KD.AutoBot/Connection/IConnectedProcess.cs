@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace KD.AutoBot.Connection
 {
@@ -15,5 +16,9 @@ namespace KD.AutoBot.Connection
         /// Process to which the Bot is connected.
         /// </summary>
         Process Process { get; }
+        /// <summary>
+        /// Handler for native Window. May be different than <see cref="Process.MainWindowHandle"/>.
+        /// </summary>
+        IntPtr WindowHandle { get; }
     }
 }

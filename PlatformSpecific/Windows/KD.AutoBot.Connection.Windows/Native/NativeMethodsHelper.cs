@@ -53,7 +53,7 @@ namespace KD.AutoBot.Connection.Windows.Native
 
             if ((autoBot != null) && (autoBot.ConnectionHandler != null))
             {
-                autoBot.ConnectionHandler.AttachToProcess(windowProcess);
+                autoBot.ConnectionHandler.AttachToProcess(windowProcess, windowHandler);
             }
 
             return new Tuple<IntPtr, Process>(windowHandler, windowProcess);

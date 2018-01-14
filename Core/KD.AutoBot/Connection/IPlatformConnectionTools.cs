@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace KD.AutoBot.Connection
@@ -19,8 +20,9 @@ namespace KD.AutoBot.Connection
         ICollection<IPlatformConnectionExtension> Extensions { get; }
 
         /// <summary>
-        /// Tries to connect to platform using this tools.
+        /// Tries to connect to platform using current tools.
+        /// It window handler is unknown, use <see cref="Process.MainWindowHandle"/>.
         /// </summary>
-        bool AttachToProcess(Process process);
+        bool AttachToProcess(Process process, IntPtr windowHandler);
     }
 }

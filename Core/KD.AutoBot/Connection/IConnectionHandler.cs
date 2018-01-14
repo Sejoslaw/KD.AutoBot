@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace KD.AutoBot.Connection
@@ -18,9 +19,9 @@ namespace KD.AutoBot.Connection
         ICollection<IConnectedProcess> ConnectedProcesses { get; }
 
         /// <summary>
-        /// Tries to connect to specified <see cref="Process"/>.
-        /// If connection will be accepted than current process is added to ConnectedProcesses.
+        /// Tries to connect to specified <see cref="Process"/> and window handler.
+        /// If connection will be accepted than current process is added to <see cref="ConnectedProcesses"/>.
         /// </summary>
-        bool AttachToProcess(Process process);
+        bool AttachToProcess(Process process, IntPtr windowHandler);
     }
 }

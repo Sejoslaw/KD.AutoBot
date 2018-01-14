@@ -21,9 +21,9 @@ namespace KD.AutoBot.Connection.Windows
             this.PlatformConnectionTools = new WindowsPlatformConnectionTools(this);
         }
 
-        public override bool AttachToProcess(Process process)
+        public override bool AttachToProcess(Process process, IntPtr windowHandler)
         {
-            bool value = this.PlatformConnectionTools.AttachToProcess(process);
+            bool value = this.PlatformConnectionTools.AttachToProcess(process, windowHandler);
             return value;
         }
     }

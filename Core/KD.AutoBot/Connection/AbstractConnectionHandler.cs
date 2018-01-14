@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace KD.AutoBot.Connection
@@ -21,6 +22,6 @@ namespace KD.AutoBot.Connection
         {
         }
 
-        public abstract bool AttachToProcess(Process process);
+        public abstract bool AttachToProcess(Process process, IntPtr windowHandler);
     }
 }
