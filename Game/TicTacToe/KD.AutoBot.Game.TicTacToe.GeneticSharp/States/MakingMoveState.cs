@@ -26,7 +26,13 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
         public MakingMoveState(ILearningModule learningModule) :
             base(learningModule)
         {
-            this.TttChar = this.LearningModule.Bot[TTT_CHAR].ToString();
+            object genericChar = this.LearningModule.Bot[TTT_CHAR];
+            if (genericChar == null)
+            {
+                throw new NullReferenceException("Unknown AutoBot's char.");
+            }
+
+            this.TttChar = genericChar.ToString();
             if (this.TttChar == null)
             {
                 throw new IndexOutOfRangeException($"Player char should be stored in AutoBot with key equals. \"{ TTT_CHAR }\"");

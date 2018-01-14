@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Game_TicTacToe
@@ -11,7 +10,9 @@ namespace Game_TicTacToe
         /// </summary>
         private TicTacToeGame Game { get; }
 
-        private Button[] Buttons;
+        private Button[] Buttons { get; set; }
+
+        private object key = new object();
 
         public MainForm()
         {
@@ -75,24 +76,27 @@ namespace Game_TicTacToe
         /// </summary>
         private void CheckButton(Button clicked)
         {
-            clicked.Enabled = false;
-            clicked.BackColor = this.Game.CurrentPlayer.Color;
-            clicked.Text = this.Game.CurrentPlayer.UsedChar;
-
-            string[][] gameGrid = this.BuildGameGrid();
-            bool won = this.Game.CheckWinCondition(gameGrid);
-            if (won)
+            lock (key)
             {
-                this.Game.CurrentPlayer.Points++;
-                this.RestartGame();
-            }
+                clicked.Enabled = false;
+                clicked.BackColor = this.Game.CurrentPlayer.Color;
+                clicked.Text = this.Game.CurrentPlayer.UsedChar;
 
-            if (this.CheckDraw(gameGrid))
-            {
-                this.RestartGame();
-            }
+                string[][] gameGrid = this.BuildGameGrid();
+                bool won = this.Game.CheckWinCondition(gameGrid);
+                if (won)
+                {
+                    this.Game.CurrentPlayer.Points++;
+                    this.RestartGame();
+                }
 
-            this.NextTurn();
+                if (this.CheckDraw(gameGrid))
+                {
+                    this.RestartGame();
+                }
+
+                this.NextTurn();
+            }
         }
 
         private bool CheckDraw(string[][] gameGrid)
