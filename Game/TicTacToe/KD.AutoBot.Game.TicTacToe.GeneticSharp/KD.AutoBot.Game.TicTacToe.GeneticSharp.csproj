@@ -76,6 +76,10 @@
       <Project>{4d0a7c4c-ba46-49d0-a176-2c487f4ba17a}</Project>
       <Name>KD.AutoBot</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\PlatformSpecific\Windows\KD.AutoBot.Connection.Windows\KD.AutoBot.Connection.Windows.csproj">
+      <Project>{77A2613F-3C30-4A9B-B8A5-C3D281B0C0E6}</Project>
+      <Name>KD.AutoBot.Connection.Windows</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

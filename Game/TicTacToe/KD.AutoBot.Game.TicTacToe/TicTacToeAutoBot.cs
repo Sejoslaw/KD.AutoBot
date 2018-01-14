@@ -105,7 +105,8 @@ namespace KD.AutoBot.Game.TicTacToe
 
         private bool IsBotConnectedToGame()
         {
-            return this.ConnectionHandler.ConnectedProcesses.Where(connectedProcess => connectedProcess.Process.ProcessName.Contains(TICTACTOE)).Count() > 0;
+            return this.ConnectionHandler.ConnectedProcesses.
+                Where(connectedProcess => connectedProcess.Process.ProcessName.Contains(TICTACTOE)).Count() > 0;
         }
 
         private string FindCurrentPlayerChar()
