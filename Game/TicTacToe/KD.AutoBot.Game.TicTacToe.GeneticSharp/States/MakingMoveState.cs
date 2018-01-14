@@ -19,7 +19,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
     {
         public const string TTT_CHAR = "tttChar";
         public const string TICTACTOE = "TicTacToe";
-        public const int BOARD_SIZE = 3;
+        public static readonly int BOARD_SIZE = Settings.BoardSize;
 
         private string TttChar { get; set; }
 
