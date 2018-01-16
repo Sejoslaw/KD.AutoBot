@@ -3,7 +3,7 @@
     /// <summary>
     /// Describes single module for <see cref="IAutoBot"/>.
     /// </summary>
-    public interface IModule : IDataHolder
+    public interface IModule : IDataHolder, IInitializationEventHandler
     {
         /// <summary>
         /// AutoBot with which this module is connected.

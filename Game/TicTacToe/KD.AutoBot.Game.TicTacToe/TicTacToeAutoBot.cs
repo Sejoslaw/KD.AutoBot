@@ -48,7 +48,8 @@ namespace KD.AutoBot.Game.TicTacToe
             }
         }
 
-        public TicTacToeAutoBot()
+        public TicTacToeAutoBot() :
+            base()
         {
             this.ConnectionHandler = new WindowsConnectionHandler(this);
             this.InputHandler = new WindowsInputHandler(this, null, new WindowsMouseHandler(this.InputHandler), null);
@@ -58,27 +59,36 @@ namespace KD.AutoBot.Game.TicTacToe
             this.SetCurrentPlayerChar();
 
             this.LearningModule = new TicTacToeLearningModule(this);
+
+            this.OnPostInitializationEvent(this, EventArgs.Empty);
         }
 
         public override void PauseBot()
         {
+            this.OnPrePauseEvent(this, EventArgs.Empty);
             this.IsPaused = true;
+            this.OnPostPauseEvent(this, EventArgs.Empty);
         }
 
         public override void StopBot()
         {
+            this.OnPreStopEvent(this, EventArgs.Empty);
             this.IsStopped = true;
+            this.OnPostStopEvent(this, EventArgs.Empty);
         }
 
         public override void StartBot()
         {
+            this.OnPreStartEvent(this, EventArgs.Empty);
             this.IsPaused = false;
             this.IsStopped = false;
             this.RestartBot();
+            this.OnPostStartEvent(this, EventArgs.Empty);
         }
 
         public override void RestartBot()
         {
+            this.OnPreRestartEvent(this, EventArgs.Empty);
             while (!this.IsStopped)
             {
                 while (!this.IsPaused)
@@ -87,6 +97,7 @@ namespace KD.AutoBot.Game.TicTacToe
                     this.LearningModule.PerformNextAction();
                 }
             }
+            this.OnPostRestartEvent(this, EventArgs.Empty);
         }
 
         private void ConnectAutoBotToProcess()

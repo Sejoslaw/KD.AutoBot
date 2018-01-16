@@ -1,5 +1,6 @@
 ﻿using KD.AutoBot;
 using KD.AutoBot.Game.TicTacToe;
+using System;
 
 namespace Test_Game_TicTacToe_TestAutoBot
 {
@@ -9,6 +10,10 @@ namespace Test_Game_TicTacToe_TestAutoBot
         {
             IAutoBotBuilder builder = TicTacToeAutoBotBuilder.NewBuilder();
             IAutoBot autoBot = builder.NewBot(null);
+            autoBot.OnPreStart += (sender, eventArgs) =>
+            {
+                Console.WriteLine("AutoBot starting...");
+            };
             autoBot.StartBot();
         }
     }

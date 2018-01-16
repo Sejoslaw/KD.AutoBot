@@ -11,7 +11,7 @@ namespace KD.AutoBot
     /// AutoBot which can connect to specific <see cref="System.Diagnostics.Process"/> and perform specified operations on it.
     /// Also it learns during working.
     /// </summary>
-    public interface IAutoBot : IDataHolder,
+    public interface IAutoBot : IDataHolder, IAutoBotEventHandler,
         IEquatable<IAutoBot>
     {
         /// <summary>
