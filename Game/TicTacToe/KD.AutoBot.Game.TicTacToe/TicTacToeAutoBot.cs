@@ -3,6 +3,7 @@ using KD.AutoBot.Connection.Windows;
 using KD.AutoBot.Connection.Windows.Extensions;
 using KD.AutoBot.Connection.Windows.Native;
 using KD.AutoBot.Game.TicTacToe.GeneticSharp;
+using KD.AutoBot.Game.TicTacToe.Settings;
 using KD.AutoBot.Input.Windows;
 using System;
 using System.Diagnostics;
@@ -16,8 +17,6 @@ namespace KD.AutoBot.Game.TicTacToe
     [Serializable]
     internal class TicTacToeAutoBot : AbstractAutoBot
     {
-        public const string TICTACTOE = "TicTacToe";
-
         /// <summary>
         /// Handler for TicTacToe window.
         /// </summary>
@@ -25,11 +24,11 @@ namespace KD.AutoBot.Game.TicTacToe
         {
             get
             {
-                return (IntPtr)this["windowPtr"];
+                return (IntPtr)this[TttSettings.WINDOW_PTR];
             }
             set
             {
-                this["windowPtr"] = value;
+                this[TttSettings.WINDOW_PTR] = value;
             }
         }
 
@@ -41,11 +40,11 @@ namespace KD.AutoBot.Game.TicTacToe
         {
             get
             {
-                return this["tttChar"].ToString();
+                return this[TttSettings.TTT_CHAR].ToString();
             }
             set
             {
-                this["tttChar"] = value;
+                this[TttSettings.TTT_CHAR] = value;
             }
         }
 
@@ -92,7 +91,7 @@ namespace KD.AutoBot.Game.TicTacToe
 
         private void ConnectAutoBotToProcess()
         {
-            Tuple<IntPtr, Process> process = NativeMethodsHelper.ConnectAutoBotToProcess(this, TICTACTOE);
+            Tuple<IntPtr, Process> process = NativeMethodsHelper.ConnectAutoBotToProcess(this, TttSettings.TIC_TAC_TOE);
             this.WindowPtr = process.Item1;
         }
 
@@ -107,7 +106,7 @@ namespace KD.AutoBot.Game.TicTacToe
         private bool IsBotConnectedToGame()
         {
             return this.ConnectionHandler.ConnectedProcesses.
-                Where(connectedProcess => connectedProcess.Process.ProcessName.Contains(TICTACTOE)).Count() > 0;
+                Where(connectedProcess => connectedProcess.Process.ProcessName.Contains(TttSettings.TIC_TAC_TOE)).Count() > 0;
         }
 
         private string FindCurrentPlayerChar()

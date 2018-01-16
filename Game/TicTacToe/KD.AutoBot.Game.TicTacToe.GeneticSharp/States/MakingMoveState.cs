@@ -9,6 +9,7 @@ using KD.AutoBot.Connection;
 using KD.AutoBot.Connection.Extensions;
 using KD.AutoBot.Connection.Windows.Extensions;
 using KD.AutoBot.Connection.Windows.Native;
+using KD.AutoBot.Game.TicTacToe.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,6 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
 {
     internal class MakingMoveState : AbstractState
     {
-        public const string TTT_CHAR = "tttChar";
-        public const string TICTACTOE = "TicTacToe";
         public static readonly int BOARD_SIZE = Settings.BoardSize;
 
         private string TttChar { get; set; }
@@ -26,7 +25,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
         public MakingMoveState(ILearningModule learningModule) :
             base(learningModule)
         {
-            object genericChar = this.LearningModule.Bot[TTT_CHAR];
+            object genericChar = this.LearningModule.Bot[TttSettings.TTT_CHAR];
             if (genericChar == null)
             {
                 throw new NullReferenceException("Unknown AutoBot's char.");
@@ -35,7 +34,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
             this.TttChar = genericChar.ToString();
             if (this.TttChar == null)
             {
-                throw new IndexOutOfRangeException($"Player char should be stored in AutoBot with key equals. \"{ TTT_CHAR }\"");
+                throw new IndexOutOfRangeException($"Player char should be stored in AutoBot with key equals. \"{ TttSettings.TTT_CHAR }\"");
             }
         }
 
@@ -82,7 +81,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
         private bool CanMakeMove()
         {
             IWindowControl mainControl = this.LearningModule.Bot.ConnectionHandler.ConnectedProcesses.ElementAt(0).WindowHandle.ToWindowControl();
-            IWindowControl playerCharGroupBox = NativeMethodsHelper.GetWindowControlByText(mainControl, "Current Player Turn");
+            IWindowControl playerCharGroupBox = NativeMethodsHelper.GetWindowControlByText(mainControl, TttSettings.CURRENT_PLAYER_TURN);
             IWindowControl charControl = playerCharGroupBox.GetChildControls().FirstOrDefault();
             string tttChar = charControl.GetControlValue().ToString();
 
@@ -167,7 +166,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
         private IConnectedProcess GetGameProcess()
         {
             return this.LearningModule.Bot.ConnectionHandler.ConnectedProcesses.
-                Where(process => process.Process.MainWindowTitle.Equals(TICTACTOE)).FirstOrDefault();
+                Where(process => process.Process.MainWindowTitle.Equals(TttSettings.TIC_TAC_TOE)).FirstOrDefault();
         }
 
         private bool IsBotConnectedToGame()
@@ -226,7 +225,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
             IConnectedProcess gameProcess = this.GetGameProcess();
             IntPtr windowHandler = gameProcess.WindowHandle;
             IWindowControl mainWindowControl = windowHandler.ToWindowControl();
-            IWindowControl buttonsGroupBox = NativeMethodsHelper.GetWindowControlByText(mainWindowControl, "Buttons");
+            IWindowControl buttonsGroupBox = NativeMethodsHelper.GetWindowControlByText(mainWindowControl, TttSettings.BUTTONS);
             IEnumerable<IWindowControl> buttons = buttonsGroupBox.GetChildControls();
 
             return buttons;

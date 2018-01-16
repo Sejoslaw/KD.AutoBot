@@ -62,6 +62,10 @@
       <Project>{f99517d0-f154-40d4-b5fd-24d918c93e94}</Project>
       <Name>KD.AutoBot.Game.TicTacToe.GeneticSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KD.AutoBot.Game.TicTacToe.Settings\KD.AutoBot.Game.TicTacToe.Settings.csproj">
+      <Project>{53f932e2-5267-4bf4-a9fc-58553a51861c}</Project>
+      <Name>KD.AutoBot.Game.TicTacToe.Settings</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="KD.AutoBot.Game.TicTacToe.snk" />

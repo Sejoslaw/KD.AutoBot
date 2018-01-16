@@ -87,6 +87,10 @@
       <Project>{77A2613F-3C30-4A9B-B8A5-C3D281B0C0E6}</Project>
       <Name>KD.AutoBot.Connection.Windows</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KD.AutoBot.Game.TicTacToe.Settings\KD.AutoBot.Game.TicTacToe.Settings.csproj">
+      <Project>{53f932e2-5267-4bf4-a9fc-58553a51861c}</Project>
+      <Name>KD.AutoBot.Game.TicTacToe.Settings</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
