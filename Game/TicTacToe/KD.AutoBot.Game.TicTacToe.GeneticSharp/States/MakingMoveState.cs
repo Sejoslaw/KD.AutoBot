@@ -160,6 +160,10 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
             {
                 return 1;
             }
+            else if (value.Equals("")) // Return 0 for empty board cell
+            {
+                return 0;
+            }
             return -1;
         }
 

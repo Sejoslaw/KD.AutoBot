@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0E610B9C-C406-4DA4-9603-D74ABE1C5AC9}"
 EndProject
@@ -57,7 +57,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Game_TicTacToe_TestAut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Checkers", "Checkers", "{670B9086-5F83-4197-A9E0-51223339F01C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KD.AutoBot.Game.TicTacToe.Settings", "Game\TicTacToe\KD.AutoBot.Game.TicTacToe.Settings\KD.AutoBot.Game.TicTacToe.Settings.csproj", "{53F932E2-5267-4BF4-A9FC-58553A51861C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KD.AutoBot.Game.TicTacToe.Settings", "Game\TicTacToe\KD.AutoBot.Game.TicTacToe.Settings\KD.AutoBot.Game.TicTacToe.Settings.csproj", "{53F932E2-5267-4BF4-A9FC-58553A51861C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

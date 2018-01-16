@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <Authors>Krzysztof Dobrzyński</Authors>
+    <Company>Krzysztof Dobrzyński</Company>
+    <Copyright>https://github.com/Sejoslaw/KD.AutoBot</Copyright>
+    <PackageLicenseUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Sejoslaw/KD.AutoBot</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sejoslaw/KD.AutoBot</RepositoryUrl>
+    <AssemblyOriginatorKeyFile>KD.AutoBot.Game.TicTacToe.Settings.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
 </Project>

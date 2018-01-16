@@ -11,7 +11,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
         {
             get
             {
-                string boardSize = ConfigurationManager.AppSettings["board_size"];
+                string boardSize = ConfigurationManager.AppSettings["board_size"] ?? "3";
                 int boardSizeValue = int.Parse(boardSize);
                 return boardSizeValue;
             }
