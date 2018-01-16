@@ -10,6 +10,17 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
     internal class TicTacToeFitness : IFitness
     {
         /// <summary>
+        /// How much to add when if blocking should happened.
+        /// </summary>
+        public double BlockValue
+        {
+            get
+            {
+                return 100;
+            }
+        }
+
+        /// <summary>
         /// Number of minimum same chars in single row or column.
         /// </summary>
         public int Minimum { get; set; }
@@ -31,13 +42,15 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
         /// </summary>
         private double CalculateNextMove(TicTacToeChromosome chromosome)
         {
+            double positionValue = 0;
+
             double[][] board = chromosome.Board;
             // In game board
             Point randomEmptySpace = this.CalculateNextEmptySpace(board);
             // Connect empty space with chromosome
             this.SetEmptySpaceForChromosome(chromosome, randomEmptySpace);
             // Valculate value for specified position
-            double positionValue = this.CalculatePositionValue(board, randomEmptySpace);
+            positionValue = this.CalculatePositionValue(board, randomEmptySpace);
 
             return positionValue;
         }
@@ -51,18 +64,47 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
             double sum = 0;
 
             // Each possible direction
-            for (int x = -1; x < 2; ++x)
-            {
-                for (int y = -1; y < 2; ++y)
-                {
-                    if ((x != 0) && (y != 0)) // Prevent from infinite loop
-                    {
-                        sum += this.CalculateVectorValue(board, point, x, y);
-                    }
-                }
-            }
+            //for (int x = -1; x < 2; ++x)
+            //{
+            //    for (int y = -1; y < 2; ++y)
+            //    {
+            //        if ((x != 0) && (y != 0)) // Prevent from infinite loop
+            //        {
+            //            sum += this.CalculateVectorValue(board, point, x, y);
+            //        }
+            //    }
+            //}
+
+            // Calculate for pairs of direction
+            // Up - Down
+            sum += this.CalculateDirectionPairVectorValue(board, point, 0, 1);
+            // Up-Right - Left-Down
+            sum += this.CalculateDirectionPairVectorValue(board, point, 1, 1);
+            // Right - Left
+            sum += this.CalculateDirectionPairVectorValue(board, point, 1, 0);
+            // Right-Down - Left-Up
+            sum += this.CalculateDirectionPairVectorValue(board, point, 1, -1);
 
             return sum;
+        }
+
+        private double CalculateDirectionPairVectorValue(double[][] board, Point point, int x, int y)
+        {
+            double pairValue = this.CalculateVectorValue(board, point, x, y);
+            if (pairValue <= -(this.Minimum - 1))
+            {
+                return this.BlockValue * this.BlockValue;
+            }
+
+            pairValue = this.CalculateVectorValue(board, point, -x, -y);
+            if (pairValue <= -(this.Minimum - 1))
+            {
+                return this.BlockValue * this.BlockValue;
+            }
+            else
+            {
+                return pairValue;
+            }
         }
 
         private double CalculateVectorValue(double[][] board, Point point, int x, int y)
@@ -87,7 +129,8 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
                 }
                 else
                 {
-                    value += board[vectorX][vectorY];
+                    double cellValue = board[vectorX][vectorY];
+                    value += cellValue;
                     addedTimes++;
 
                     if (addedTimes >= this.Minimum)

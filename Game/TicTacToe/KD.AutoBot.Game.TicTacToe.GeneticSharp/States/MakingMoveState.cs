@@ -109,7 +109,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
             var mutation = new UniformMutation();
             var termination = new OrTermination(new ITermination[]
             {
-                new FitnessStagnationTermination(1000),
+                new FitnessStagnationTermination(2000),
                 new FitnessThresholdTermination(4),
                 new FitnessThresholdTermination(3),
                 new FitnessThresholdTermination(2)
