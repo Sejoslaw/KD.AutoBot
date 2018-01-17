@@ -16,26 +16,13 @@ using System.Linq;
 
 namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
 {
-    internal class MakingMoveState : AbstractState
+    internal class MakingMoveState : AbstractTicTacToeState
     {
         public static readonly int BOARD_SIZE = Settings.BoardSize;
-
-        private string TttChar { get; set; }
 
         public MakingMoveState(ILearningModule learningModule) :
             base(learningModule)
         {
-            object genericChar = this.LearningModule.Bot[TttSettings.TTT_CHAR];
-            if (genericChar == null)
-            {
-                throw new NullReferenceException("Unknown AutoBot's char.");
-            }
-
-            this.TttChar = genericChar.ToString();
-            if (this.TttChar == null)
-            {
-                throw new IndexOutOfRangeException($"Player char should be stored in AutoBot with key equals. \"{ TttSettings.TTT_CHAR }\"");
-            }
         }
 
         public override bool PerformNextAction()
@@ -78,16 +65,6 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
             }
         }
 
-        private bool CanMakeMove()
-        {
-            IWindowControl mainControl = this.LearningModule.Bot.ConnectionHandler.ConnectedProcesses.ElementAt(0).WindowHandle.ToWindowControl();
-            IWindowControl playerCharGroupBox = NativeMethodsHelper.GetWindowControlByText(mainControl, TttSettings.CURRENT_PLAYER_TURN);
-            IWindowControl charControl = playerCharGroupBox.GetChildControls().FirstOrDefault();
-            string tttChar = charControl.GetControlValue().ToString();
-
-            return this.TttChar.Equals(tttChar);
-        }
-
         private void PressButton(IEnumerable<IWindowControl> buttons, Point boardCell)
         {
             IWindowControl button = buttons.ElementAt(boardCell.X * BOARD_SIZE + boardCell.Y);
@@ -109,7 +86,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
             var mutation = new UniformMutation();
             var termination = new OrTermination(new ITermination[]
             {
-                new FitnessStagnationTermination(2000),
+                new FitnessStagnationTermination(3000),
                 new FitnessThresholdTermination(4),
                 new FitnessThresholdTermination(3),
                 new FitnessThresholdTermination(2)
@@ -119,7 +96,13 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
             {
                 Termination = termination
             };
-
+#if DEBUG
+            geneticAlgorithm.GenerationRan += (sender, e) =>
+            {
+                var bestChromosome = geneticAlgorithm.BestChromosome as TicTacToeChromosome;
+                Console.WriteLine($"Generation { geneticAlgorithm.GenerationsNumber }: Position ({ bestChromosome.Position.X }, { bestChromosome.Position.Y }) = { bestChromosome.Fitness }");
+            };
+#endif
             return geneticAlgorithm;
         }
 
@@ -158,13 +141,13 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
         {
             if (value.Equals(this.TttChar))
             {
-                return 1;
+                return TttSettings.ROBOT_CHAR_VALUE;
             }
             else if (value.Equals("")) // Return 0 for empty board cell
             {
-                return 0;
+                return TttSettings.EMPTY_SPACE_VALUE;
             }
-            return -1;
+            return TttSettings.ENEMY_CHAR_VALUE; // It is more appropriate to block enemy first
         }
 
         private IConnectedProcess GetGameProcess()

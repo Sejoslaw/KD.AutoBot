@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Settings.cs" />
+    <Compile Include="States\AbstractTicTacToeState.cs" />
     <Compile Include="States\MakingMoveState.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="TicTacToeChromosome.cs" />
     <Compile Include="TicTacToeFitness.cs" />
     <Compile Include="TicTacToeLearningModule.cs" />
+    <Compile Include="Utilities\Vector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -25,5 +25,17 @@
         /// Buttons Groupbox.
         /// </summary>
         public const string BUTTONS = "Buttons";
+        /// <summary>
+        /// Robot char value on board.
+        /// </summary>
+        public const int ROBOT_CHAR_VALUE = 1;
+        /// <summary>
+        /// Value of the empty space on board.
+        /// </summary>
+        public const int EMPTY_SPACE_VALUE = 0;
+        /// <summary>
+        /// Value of the Enemy char on board.
+        /// </summary>
+        public const int ENEMY_CHAR_VALUE = 2;
     }
 }

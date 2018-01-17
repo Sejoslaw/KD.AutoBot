@@ -1,25 +1,18 @@
 ﻿using GeneticSharp.Domain.Chromosomes;
 using GeneticSharp.Domain.Fitnesses;
+using KD.AutoBot.Game.TicTacToe.GeneticSharp.Utilities;
+using KD.AutoBot.Game.TicTacToe.Settings;
 using System;
+using static KD.AutoBot.Game.TicTacToe.GeneticSharp.Utilities.Vector<double>;
 
 namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
 {
     /// <summary>
     /// Used to calculate fitness - place on the board where to place char.
+    /// Everything is counted for board with size (N x N).
     /// </summary>
     internal class TicTacToeFitness : IFitness
     {
-        /// <summary>
-        /// How much to add when if blocking should happened.
-        /// </summary>
-        public double BlockValue
-        {
-            get
-            {
-                return 100;
-            }
-        }
-
         /// <summary>
         /// Number of minimum same chars in single row or column.
         /// </summary>
@@ -55,99 +48,52 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp
             return positionValue;
         }
 
-        /// <summary>
-        /// Calculates the value of given position in given board.
-        /// Return value is a sum of cells around specified point.
-        /// </summary>
         private double CalculatePositionValue(double[][] board, Point point)
         {
-            double sum = 0;
-
-            // Each possible direction
-            //for (int x = -1; x < 2; ++x)
-            //{
-            //    for (int y = -1; y < 2; ++y)
-            //    {
-            //        if ((x != 0) && (y != 0)) // Prevent from infinite loop
-            //        {
-            //            sum += this.CalculateVectorValue(board, point, x, y);
-            //        }
-            //    }
-            //}
-
-            // Calculate for pairs of direction
+            Vector<double> vector = null;
             // Up - Down
-            sum += this.CalculateDirectionPairVectorValue(board, point, 0, 1);
+            vector = Vector<double>.FromDirectionPair(board, point, 0, 1);
+            if (vector.NumberOfContainedValues(TttSettings.ENEMY_CHAR_VALUE) == this.Minimum - 1)
+            {
+                return this.CalculateValueTotalWeight(vector, TttSettings.ENEMY_CHAR_VALUE);
+            }
+
             // Up-Right - Left-Down
-            sum += this.CalculateDirectionPairVectorValue(board, point, 1, 1);
+            vector = Vector<double>.FromDirectionPair(board, point, 1, 1);
+            if (vector.NumberOfContainedValues(TttSettings.ENEMY_CHAR_VALUE) == this.Minimum - 1)
+            {
+                return this.CalculateValueTotalWeight(vector, TttSettings.ENEMY_CHAR_VALUE);
+            }
+
             // Right - Left
-            sum += this.CalculateDirectionPairVectorValue(board, point, 1, 0);
+            vector = Vector<double>.FromDirectionPair(board, point, 1, 0);
+            if (vector.NumberOfContainedValues(TttSettings.ENEMY_CHAR_VALUE) == this.Minimum - 1)
+            {
+                return this.CalculateValueTotalWeight(vector, TttSettings.ENEMY_CHAR_VALUE);
+            }
+
             // Right-Down - Left-Up
-            sum += this.CalculateDirectionPairVectorValue(board, point, 1, -1);
+            vector = Vector<double>.FromDirectionPair(board, point, 1, -1);
+            if (vector.NumberOfContainedValues(TttSettings.ENEMY_CHAR_VALUE) == this.Minimum - 1)
+            {
+                return this.CalculateValueTotalWeight(vector, TttSettings.ENEMY_CHAR_VALUE);
+            }
 
+            return 0;
+        }
+
+        private double CalculateValueTotalWeight(Vector<double> vector, double value)
+        {
+            double sum = 0;
+            for (int i = 0; i < vector.Length; ++i)
+            {
+                VectorElement element = vector[i];
+                if (element.Value == value)
+                {
+                    sum += (1 / (element.Value * element.Weight));
+                }
+            }
             return sum;
-        }
-
-        private double CalculateDirectionPairVectorValue(double[][] board, Point point, int x, int y)
-        {
-            double pairValue = this.CalculateVectorValue(board, point, x, y);
-            if (pairValue <= -(this.Minimum - 1))
-            {
-                return this.BlockValue * this.BlockValue;
-            }
-
-            pairValue = this.CalculateVectorValue(board, point, -x, -y);
-            if (pairValue <= -(this.Minimum - 1))
-            {
-                return this.BlockValue * this.BlockValue;
-            }
-            else
-            {
-                return pairValue;
-            }
-        }
-
-        private double CalculateVectorValue(double[][] board, Point point, int x, int y)
-        {
-            int vectorX = point.X, vectorY = point.Y;
-            int addedTimes = 0;
-            double value = 0;
-            bool canGoForward = true;
-
-            while (canGoForward)
-            {
-                vectorX += x;
-                vectorY += y;
-
-                if ((vectorX < 0) || (vectorX >= board.Length))
-                {
-                    canGoForward = false;
-                }
-                else if ((vectorY < 0) || (vectorY >= board[0].Length))
-                {
-                    canGoForward = false;
-                }
-                else
-                {
-                    double cellValue = board[vectorX][vectorY];
-                    value += cellValue;
-                    addedTimes++;
-
-                    if (addedTimes >= this.Minimum)
-                    {
-                        canGoForward = false;
-                    }
-                }
-            }
-
-            return value;
-        }
-
-        private double GetValueFromPosition(double[][] board, int x, int y)
-        {
-            if ((x < 0) || (x >= board.Length)) return 0;
-            if ((y < 0) || (y >= board[0].Length)) return 0;
-            return board[x][y];
         }
 
         private void SetEmptySpaceForChromosome(TicTacToeChromosome chromosome, Point point)

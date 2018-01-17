@@ -8,7 +8,7 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
     /// <summary>
     /// State in which <see cref="IAutoBot"/> is when waiting for opponent's move.
     /// </summary>
-    internal class WaitingState : AbstractState
+    internal class WaitingState : AbstractTicTacToeState
     {
         public WaitingState(ILearningModule learningModule) :
             base(learningModule)
@@ -17,9 +17,16 @@ namespace KD.AutoBot.Game.TicTacToe.GeneticSharp.States
 
         public override bool PerformNextAction()
         {
-            Thread.Sleep(1000);
-            this.LearningModule.CurrentState = this.LearningModule.States.ElementAt(1);
-            return true;
+            Thread.Sleep(2000);
+            if (!this.CanMakeMove())
+            {
+                return false;
+            }
+            else
+            {
+                this.LearningModule.CurrentState = this.LearningModule.States.ElementAt(1);
+                return true;
+            }
         }
 
         public override void PrepareNextAction()
