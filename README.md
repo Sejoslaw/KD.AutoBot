@@ -15,11 +15,11 @@ KD.AutoBot:
 - [X] Can simulate User input (Keyboard, Mouse, new specially prepared device) using system native API.
 - [X] Will learn which action is right. But this is something what needs to be setup programmatically (see: [ILearningModule](https://github.com/Sejoslaw/KD.AutoBot/blob/master/Core/KD.AutoBot/AI/ILearningModule.cs)).
 - [X] Finish porting to TicTacToe game.
+- [X] Extend [IAutoBot](https://github.com/Sejoslaw/KD.AutoBot/blob/master/Core/KD.AutoBot/IAutoBot.cs) and [IModule](https://github.com/Sejoslaw/KD.AutoBot/blob/master/Core/KD.AutoBot/IModule.cs) with events.
 
 TODO:
 ---
 - [ ] Add predefined logging options in additional library.
-- [ ] Extend [IAutoBot](https://github.com/Sejoslaw/KD.AutoBot/blob/master/Core/KD.AutoBot/IAutoBot.cs) and [IModule](https://github.com/Sejoslaw/KD.AutoBot/blob/master/Core/KD.AutoBot/IModule.cs) with events.
 - [ ] Clean everything from TODO.txt file.
 
 Solution overview:
