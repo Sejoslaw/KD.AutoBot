@@ -14,6 +14,7 @@ namespace KD.AutoBot.AI.NeuralNetwork
         IDendrite<TNeuronDataType> Bias { get; }
         /// <summary>
         /// Represents a learning error.
+        /// Somethimes called Delta.
         /// </summary>
         TNeuronDataType Error { get; set; }
         /// <summary>

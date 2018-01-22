@@ -7,6 +7,8 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Neurons
     /// </summary>
     public class DoubleNeuron : AbstractNeuron<double>
     {
+        private object key = new object();
+
         public DoubleNeuron(ICollection<IDendrite<double>> inputs)
         {
             this.Inputs = inputs;
@@ -20,7 +22,7 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Neurons
 
         public override void Pulse(INeuralLayer<double> source)
         {
-            lock (this)
+            lock (key)
             {
                 this.Value = 0;
 

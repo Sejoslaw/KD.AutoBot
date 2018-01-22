@@ -25,7 +25,7 @@ namespace Test_NeuralNetwork_Addition
                 Console.WriteLine($"Iteration: { iteration }");
                 for (int i = 0; i < iterations; ++i)
                 {
-                    network.Train(input, output);
+                    (network as BackPropagationNeuralNetwork).Train(input, output);
                 }
 
                 int value1 = rand.Next(10); Console.WriteLine($"Value1 = { value1 }");

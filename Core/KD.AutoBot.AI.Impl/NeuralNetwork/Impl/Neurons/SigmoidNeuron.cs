@@ -7,6 +7,8 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Neurons
     /// </summary>
     public class SigmoidNeuron : DoubleNeuron
     {
+        private object key = new object();
+
         public SigmoidNeuron(ICollection<IDendrite<double>> inputs) :
             base(inputs)
         {
@@ -14,7 +16,7 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Neurons
 
         public override void Pulse(INeuralLayer<double> source)
         {
-            lock (this)
+            lock (key)
             {
                 base.Pulse(source);
                 this.Value = AiMath.Sigmoid(this.Value);

@@ -12,7 +12,7 @@ namespace KD.AutoBot.AI.NeuralNetwork
         protected INeuralLayer<TNeuronDataType> OutputLayer { get; set; }
 
         public abstract void BuildNetwork(object[] args);
-        public abstract void BuildNetwork(int inputNeurons, ICollection<int> hiddenLayersNeurons, int outputNeurons);
+        public abstract void BuildNetwork(int inputNeurons, IEnumerable<int> hiddenLayersNeurons, int outputNeurons);
         public abstract INeuralNetwork<TNeuronDataType> InitializeNeuralNetworkWithData(TNeuronDataType[] inputLayerValues, TNeuronDataType[][] hiddenLayersValues, TNeuronDataType[] outputLayerValues);
     }
 }

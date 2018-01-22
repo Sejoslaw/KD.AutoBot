@@ -17,7 +17,7 @@ namespace KD.AutoBot.AI.NeuralNetwork
         /// </summary>
         ICollection<INeuralLayer<TNeuronDataType>> HiddenLayers { get; }
         /// <summary>
-        /// REpresents an output layer from current network.
+        /// Represents an output layer from current network.
         /// </summary>
         INeuralLayer<TNeuronDataType> Output { get; }
         /// <summary>
@@ -29,13 +29,5 @@ namespace KD.AutoBot.AI.NeuralNetwork
         /// Initializes current Network.
         /// </summary>
         void Initialize(INeuralLayer<TNeuronDataType> input, ICollection<INeuralLayer<TNeuronDataType>> hiddenLayers, INeuralLayer<TNeuronDataType> output);
-        /// <summary>
-        /// Applies input, pulses the Neural Network and performs additional learning.
-        /// </summary>
-        void Train(TNeuronDataType[] input, TNeuronDataType[] wantedResults);
-        /// <summary>
-        /// Applies input, pulses the Neural Network and performs additional learning.
-        /// </summary>
-        void Train(TNeuronDataType[][] input, TNeuronDataType[][] wantedResults);
     }
 }

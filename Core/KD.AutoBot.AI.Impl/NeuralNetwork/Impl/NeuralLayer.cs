@@ -22,6 +22,7 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl
 
         public override void Pulse(INeuralNetwork<double> source)
         {
+            // Set Neuron Values
             foreach (INeuron<double> neuron in this.Neurons)
             {
                 neuron.Pulse(this);

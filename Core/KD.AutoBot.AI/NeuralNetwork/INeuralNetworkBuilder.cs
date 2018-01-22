@@ -15,7 +15,7 @@ namespace KD.AutoBot.AI.NeuralNetwork
         /// <summary>
         /// Builds internal Neural Network.
         /// </summary>
-        void BuildNetwork(int inputNeurons, ICollection<int> hiddenLayersNeurons, int outputNeurons);
+        void BuildNetwork(int inputNeurons, IEnumerable<int> hiddenLayersNeurons, int outputNeurons);
         /// <summary>
         /// Initializes Neural Network with given data.
         /// Where on index:

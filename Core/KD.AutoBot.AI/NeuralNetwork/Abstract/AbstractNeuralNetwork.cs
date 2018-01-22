@@ -13,7 +13,5 @@ namespace KD.AutoBot.AI.NeuralNetwork
         public TNeuronDataType LearningRate { get; set; }
 
         public abstract void Initialize(INeuralLayer<TNeuronDataType> input, ICollection<INeuralLayer<TNeuronDataType>> hiddenLayers, INeuralLayer<TNeuronDataType> output);
-        public abstract void Train(TNeuronDataType[] input, TNeuronDataType[] wantedResults);
-        public abstract void Train(TNeuronDataType[][] input, TNeuronDataType[][] wantedResults);
     }
 }

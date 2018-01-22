@@ -15,17 +15,20 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Builders
             this.BuildNetwork((int)args[0], (ICollection<int>)args[1], (int)args[2]);
         }
 
-        public override void BuildNetwork(int inputNeurons, ICollection<int> hiddenLayersNeurons, int outputNeurons)
+        public override void BuildNetwork(int inputNeurons, IEnumerable<int> hiddenLayersNeurons, int outputNeurons)
         {
             // Prepare Input
             this.InputLayer = this.BuildLayer(inputNeurons);
 
             // Prepare Hidden Layers
             this.HiddenLayers = new List<INeuralLayer<double>>();
-            foreach (int neuronsInLayer in hiddenLayersNeurons)
+            if (hiddenLayersNeurons != null)
             {
-                INeuralLayer<double> hiddenLayer = this.BuildLayer(neuronsInLayer);
-                this.HiddenLayers.Add(hiddenLayer);
+                foreach (int neuronsInLayer in hiddenLayersNeurons)
+                {
+                    INeuralLayer<double> hiddenLayer = this.BuildLayer(neuronsInLayer);
+                    this.HiddenLayers.Add(hiddenLayer);
+                }
             }
 
             // Prepare Output

@@ -13,4 +13,15 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\KD.AutoBot.AI.Impl\KD.AutoBot.AI.Impl.csproj" />
+    <ProjectReference Include="..\..\Core\KD.AutoBot.AI\KD.AutoBot.AI.csproj" />
+    <ProjectReference Include="..\..\Core\KD.AutoBot\KD.AutoBot.csproj" />
+    <ProjectReference Include="..\..\Game\TicTacToe\KD.AutoBot.Game.TicTacToe.GeneticSharp\KD.AutoBot.Game.TicTacToe.GeneticSharp.csproj" />
+    <ProjectReference Include="..\..\Game\TicTacToe\KD.AutoBot.Game.TicTacToe.Settings\KD.AutoBot.Game.TicTacToe.Settings.csproj" />
+    <ProjectReference Include="..\..\Game\TicTacToe\KD.AutoBot.Game.TicTacToe\KD.AutoBot.Game.TicTacToe.csproj" />
+    <ProjectReference Include="..\..\PlatformSpecific\Windows\KD.AutoBot.Connection.Windows\KD.AutoBot.Connection.Windows.csproj" />
+    <ProjectReference Include="..\..\PlatformSpecific\Windows\KD.AutoBot.Input.Windows\KD.AutoBot.Input.Windows.csproj" />
+  </ItemGroup>
+
 </Project>
