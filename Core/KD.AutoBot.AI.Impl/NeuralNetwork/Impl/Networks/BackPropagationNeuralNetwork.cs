@@ -46,8 +46,8 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
 
                 for (int i = 1; i < this.HiddenLayers.Count; ++i)
                 {
-                    var layerInput = this.HiddenLayers.ElementAt(i);
-                    var layerOutput = this.HiddenLayers.ElementAt(i - 1);
+                    var layerInput = this.HiddenLayers.ElementAt(i - 1);
+                    var layerOutput = this.HiddenLayers.ElementAt(i);
                     this.ConnectLayers(layerInput, layerOutput);
                 }
 
@@ -74,7 +74,7 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
 
             if (input.Length != this.Input.Count)
             {
-                throw new ArgumentException($"Current Network requires { this.Input.Count } inputs.");
+                throw new ArgumentException($"Current Network requires { input.Length } inputs.");
             }
 
             // Initialize data
@@ -99,6 +99,15 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
                 foreach (INeuron<double> inputNeuron in input.Neurons)
                 {
                     outputNeuron.Inputs.Add(new Dendrite(inputNeuron, new NeuronWeight() { Weight = 0.5 }));
+                }
+
+                // Normalize actual input neuron weight.
+                double numberOfDendrites = input.Neurons.Count;
+                double normalizedWeight = (1 / numberOfDendrites);
+
+                foreach (IDendrite<double> dendrite in outputNeuron.Inputs)
+                {
+                    dendrite.DendriteWeight.Weight = normalizedWeight;
                 }
             }
         }

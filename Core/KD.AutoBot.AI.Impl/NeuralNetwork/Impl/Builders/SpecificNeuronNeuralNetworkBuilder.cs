@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace KD.AutoBot.AI.NeuralNetwork.Impl.Builders
@@ -40,7 +41,14 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Builders
             for (int i = 0; i < this.HiddenLayers.Count; ++i)
             {
                 INeuralLayer<double> layer = this.HiddenLayers.ElementAt(i);
-                this.InitializeData(layer, hiddenLayersValues[i]);
+                try
+                {
+                    this.InitializeData(layer, hiddenLayersValues[i]);
+                }
+                catch (NullReferenceException)
+                {
+                    this.InitializeData(layer, null);
+                }
             }
 
             // Initialize Output Layer values
@@ -56,12 +64,17 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Builders
         {
             if (values == null)
             {
-                return;
+                for (int i = 0; i < layer.Count; ++i)
+                {
+                    layer[i].Value = 0;
+                }
             }
-
-            for (int i = 0; i < layer.Count; ++i)
+            else
             {
-                layer[i].Value = values[i];
+                for (int i = 0; i < layer.Count; ++i)
+                {
+                    layer[i].Value = values[i];
+                }
             }
         }
 

@@ -59,6 +59,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Checkers", "Checkers", "{67
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KD.AutoBot.Game.TicTacToe.Settings", "Game\TicTacToe\KD.AutoBot.Game.TicTacToe.Settings\KD.AutoBot.Game.TicTacToe.Settings.csproj", "{53F932E2-5267-4BF4-A9FC-58553A51861C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Game_TicTacToe_NeuralNetwork_BasicIO", "Test_Game_TicTacToe_NeuralNetwork_BasicIO\Test_Game_TicTacToe_NeuralNetwork_BasicIO.csproj", "{85CC98B8-9329-4407-BD81-4B3691DBF455}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,10 @@ Global
 		{53F932E2-5267-4BF4-A9FC-58553A51861C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53F932E2-5267-4BF4-A9FC-58553A51861C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53F932E2-5267-4BF4-A9FC-58553A51861C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85CC98B8-9329-4407-BD81-4B3691DBF455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85CC98B8-9329-4407-BD81-4B3691DBF455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85CC98B8-9329-4407-BD81-4B3691DBF455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85CC98B8-9329-4407-BD81-4B3691DBF455}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -178,6 +184,7 @@ Global
 		{2F52D024-8A78-4144-BE46-2E988FD0BB4F} = {B57AF87B-C8E8-445C-BFF9-98D1CF9D2F82}
 		{670B9086-5F83-4197-A9E0-51223339F01C} = {2A9C44E2-5A24-49A3-9972-A65BCD737214}
 		{53F932E2-5267-4BF4-A9FC-58553A51861C} = {CD09B200-F0CC-478C-BAB9-C66C58949FCA}
+		{85CC98B8-9329-4407-BD81-4B3691DBF455} = {B57AF87B-C8E8-445C-BFF9-98D1CF9D2F82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {130DE857-F2F1-4108-BBE6-0BBB0DF7C3D3}

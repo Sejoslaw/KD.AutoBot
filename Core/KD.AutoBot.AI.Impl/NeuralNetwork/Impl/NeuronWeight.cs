@@ -5,5 +5,11 @@
     /// </summary>
     public class NeuronWeight : AbstractNeuronWeight<double>
     {
+        public NeuronWeight()
+        {
+            // Set random default values.
+            this.Delta = 0;
+            this.Weight = 0.1;
+        }
     }
 }
