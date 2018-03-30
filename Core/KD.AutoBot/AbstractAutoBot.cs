@@ -19,6 +19,7 @@ namespace KD.AutoBot
         public ILearningModule LearningModule { get; protected set; }
         public ICollection<IModule> Modules { get; protected set; }
 
+        #region Events
         public event EventHandler OnPreStart;
         public event EventHandler OnPostStart;
         public event EventHandler OnPrePause;
@@ -29,6 +30,7 @@ namespace KD.AutoBot
         public event EventHandler OnPostRestart;
         public event EventHandler OnPreInitialization;
         public event EventHandler OnPostInitialization;
+        #endregion
 
         /// <summary>
         /// Describes if an AutoBot is paused.
@@ -53,82 +55,52 @@ namespace KD.AutoBot
         #region Event Calls
         protected void OnPreStartEvent(object sender, EventArgs args)
         {
-            if (this.OnPreStart != null)
-            {
-                this.OnPreStart(sender, args);
-            }
+            this.OnPreStart?.Invoke(sender, args);
         }
 
         protected void OnPostStartEvent(object sender, EventArgs args)
         {
-            if (this.OnPostStart != null)
-            {
-                this.OnPostStart(sender, args);
-            }
+            this.OnPostStart?.Invoke(sender, args);
         }
 
         protected void OnPrePauseEvent(object sender, EventArgs args)
         {
-            if (this.OnPrePause != null)
-            {
-                this.OnPrePause(sender, args);
-            }
+            this.OnPrePause?.Invoke(sender, args);
         }
 
         protected void OnPostPauseEvent(object sender, EventArgs args)
         {
-            if (this.OnPostPause != null)
-            {
-                this.OnPostPause(sender, args);
-            }
+            this.OnPostPause?.Invoke(sender, args);
         }
 
         protected void OnPreStopEvent(object sender, EventArgs args)
         {
-            if (this.OnPreStop != null)
-            {
-                this.OnPreStop(sender, args);
-            }
+            this.OnPreStop?.Invoke(sender, args);
         }
 
         protected void OnPostStopEvent(object sender, EventArgs args)
         {
-            if (this.OnPostStop != null)
-            {
-                this.OnPostStop(sender, args);
-            }
+            this.OnPostStop?.Invoke(sender, args);
         }
 
         protected void OnPreRestartEvent(object sender, EventArgs args)
         {
-            if (this.OnPreRestart != null)
-            {
-                this.OnPreRestart(sender, args);
-            }
+            this.OnPreRestart?.Invoke(sender, args);
         }
 
         protected void OnPostRestartEvent(object sender, EventArgs args)
         {
-            if (this.OnPostRestart != null)
-            {
-                this.OnPostRestart(sender, args);
-            }
+            this.OnPostRestart?.Invoke(sender, args);
         }
 
         protected void OnPreInitializationEvent(object sender, EventArgs args)
         {
-            if (this.OnPreInitialization != null)
-            {
-                this.OnPreInitialization(sender, args);
-            }
+            this.OnPreInitialization?.Invoke(sender, args);
         }
 
         protected void OnPostInitializationEvent(object sender, EventArgs args)
         {
-            if (this.OnPostInitialization != null)
-            {
-                this.OnPostInitialization(sender, args);
-            }
+            this.OnPostInitialization?.Invoke(sender, args);
         }
         #endregion
 

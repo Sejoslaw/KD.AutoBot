@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace KD.AutoBot.AI.NeuralNetwork.Impl.Neurons
 {
@@ -12,7 +13,7 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Neurons
         public DoubleNeuron(ICollection<IDendrite<double>> inputs)
         {
             this.Inputs = inputs;
-            this.Bias = new Dendrite(new NeuronSignal { Value = 1 }, new NeuronWeight() { Weight = 0.5 });
+            this.Bias = new Dendrite(new NeuronSignal { Value = 1 }, new NeuronWeight() { Weight = new Random().NextDouble() });
         }
 
         public override void ApplyLearning(INeuralLayer<double> source)
@@ -24,14 +25,18 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Neurons
         {
             lock (key)
             {
-                this.Value = 0;
+                double newValue = 0;
 
                 foreach (IDendrite<double> dendrite in this.Inputs)
                 {
-                    this.Value += dendrite.Output.Value * dendrite.DendriteWeight.Weight;
+                    newValue += dendrite.Output.Value * dendrite.DendriteWeight.Weight;
                 }
 
-                this.Value += this.Bias.Output.Value * this.Bias.DendriteWeight.Weight;
+                newValue += this.Bias.Output.Value * this.Bias.DendriteWeight.Weight;
+
+                // Run Event before setting new value
+                this.OnNeuronValueChange?.Invoke(this, new NNEventArgs(null, source, this, null, newValue));
+                this.Value = newValue;
             }
         }
     }

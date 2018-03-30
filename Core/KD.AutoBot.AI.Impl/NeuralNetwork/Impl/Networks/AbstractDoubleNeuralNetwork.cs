@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
@@ -63,16 +64,22 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
 
         private void ConnectLayers(INeuralLayer<double> input, INeuralLayer<double> output)
         {
+            Random rand = new Random();
+            double dendriteWeight = 0.1;
+            double numberOfDendrites = 1;
+            double normalizedWeight = 0.1;
+
             foreach (INeuron<double> outputNeuron in output.Neurons)
             {
                 foreach (INeuron<double> inputNeuron in input.Neurons)
                 {
-                    outputNeuron.Inputs.Add(new Dendrite(inputNeuron, new NeuronWeight() { Weight = 0.5 }));
+                    dendriteWeight = rand.NextDouble();
+                    outputNeuron.Inputs.Add(new Dendrite(inputNeuron, new NeuronWeight() { Weight = dendriteWeight }));
                 }
 
                 // Normalize actual input neuron weight.
-                double numberOfDendrites = input.Neurons.Count + 1; // One more for Bias
-                double normalizedWeight = (1 / numberOfDendrites);
+                numberOfDendrites = input.Neurons.Count + 1; // One more for Bias
+                normalizedWeight = (1 / numberOfDendrites);
 
                 foreach (IDendrite<double> dendrite in outputNeuron.Inputs)
                 {

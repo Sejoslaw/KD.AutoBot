@@ -15,6 +15,8 @@ namespace KD.AutoBot.AI.NeuralNetwork
         public TNeuronDataType ThresholdValue { get; set; }
         public ICollection<IDendrite<TNeuronDataType>> Inputs { get; set; }
         public TNeuronDataType Value { get; set; }
+        public EventHandler<NNEventArgs<INeuralNetwork<TNeuronDataType>, INeuralLayer<TNeuronDataType>, INeuron<TNeuronDataType>, IDendrite<TNeuronDataType>, TNeuronDataType>> OnDendriteWeightChange { get; set; }
+        public EventHandler<NNEventArgs<INeuralNetwork<TNeuronDataType>, INeuralLayer<TNeuronDataType>, INeuron<TNeuronDataType>, IDendrite<TNeuronDataType>, TNeuronDataType>> OnNeuronValueChange { get; set; }
 
         public IDendrite<TNeuronDataType> this[int index]
         {

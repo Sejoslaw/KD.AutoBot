@@ -78,19 +78,16 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
 
             // Adjust output layer weight change
             i = j = 0;
-            foreach (INeuralLayer<double> layer in this.HiddenLayers)
+            if (this.HiddenLayers.Count > 0)
             {
-                for (i = 0; i < layer.Count; ++i)
+                foreach (INeuralLayer<double> layer in this.HiddenLayers)
                 {
-                    neuron = layer[i];
-
-                    for (j = 0; j < this.Output.Count; ++j)
-                    {
-                        outputNeuron = this.Output[j /*neuron*/];
-                        outputNeuron[i].DendriteWeight.Weight += this.LearningRate * this.Output[j].Error * neuron.Value;
-                        outputNeuron.Bias.DendriteWeight.Delta += this.LearningRate * this.Output[j].Error * outputNeuron.Bias.DendriteWeight.Weight;
-                    }
+                    this.AdjustOutputLayerWeightChange(layer);
                 }
+            }
+            else
+            {
+                this.AdjustOutputLayerWeightChange(this.Output);
             }
 
             // Adjust first hidden layer weight change
@@ -108,6 +105,28 @@ namespace KD.AutoBot.AI.NeuralNetwork.Impl.Networks
                         hiddenNeuron[i /*inputNeuron*/].DendriteWeight.Weight += this.LearningRate * hiddenNeuron.Error * inputNeuron.Value;
                         hiddenNeuron.Bias.DendriteWeight.Delta += this.LearningRate * hiddenNeuron.Error * inputNeuron.Bias.DendriteWeight.Weight;
                     }
+                }
+            }
+        }
+
+        private void AdjustOutputLayerWeightChange(INeuralLayer<double> layer)
+        {
+            INeuron<double> outputNeuron, neuron;
+
+            for (int i = 0; i < layer.Count; ++i)
+            {
+                neuron = layer[i];
+
+                for (int j = 0; j < this.Output.Count; ++j)
+                {
+                    outputNeuron = this.Output[j /*neuron*/];
+                    double newDendriteWeight = outputNeuron[i].DendriteWeight.Weight + (this.LearningRate * this.Output[j].Error * neuron.Value);
+
+                    // Run an Event.
+                    outputNeuron.OnDendriteWeightChange?.Invoke(this, new NNEventArgs(this, layer, outputNeuron, outputNeuron[i], newDendriteWeight));
+
+                    outputNeuron[i].DendriteWeight.Weight = newDendriteWeight;
+                    outputNeuron.Bias.DendriteWeight.Delta += this.LearningRate * this.Output[j].Error * outputNeuron.Bias.DendriteWeight.Weight;
                 }
             }
         }
